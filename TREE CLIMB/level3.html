@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree Climb</title>
+    <link rel="stylesheet" href="../styles2.css">
+</head>
+<body>
+    
+   
+    <video id="video1" width="900">
+        <source src="videos/1.mp4" type="video/mp4">
+        Your browser does not support HTML video.
+      </video>
+      <div class="group">
+        <div class="buttons">
+      <button onclick="playPause(), setTimeout(showgroup1, 3000)" class="green12" id="start-btn">START LVL 3</button>
+      <button onclick="next()" class="next-btn" id="next-btn">
+        LEVEL 3
+      </button>
+      </div>
+        <div id="coconut-group1">
+            <div class="buttons">
+                <button onclick="butt1()" class="button button5 cool12">
+                  1
+                  <div class="hidden" id="innerbutton1">0</div>
+                </button>
+                <button onclick="butt2()" class="button button5 cool12">
+                  2
+                  <div class="hidden" id="innerbutton2">0</div>
+                </button>
+                <button onclick="butt3()" class="button button5 cool12">
+                  3
+                  <div class="hidden" id="innerbutton3">0</div>
+                </button>
+                <button onclick="butt4()" class="button button5 cool12">
+                  4
+                  <div class="hidden" id="innerbutton4">0</div>
+                </button>
+                <button onclick="butt5()" class="button button5 cool12">
+                  5
+                  <div class="hidden" id="innerbutton5">0</div>
+                </button>
+                
+              </div>
+              
+        </div>
+        
+    </div>
+
+    <!-- <button id="idfk">Generate</button> -->
+
+    <script>
+
+        window.onload = hide();
+function hide() {
+    document.getElementById("coconut-group1").style.display = "none";
+    document.getElementById("next-btn").style.display = "none";
+}
+function showgroup1() {
+  var x = document.getElementById("coconut-group1");
+  var y = document.getElementById("next-btn");
+  var z = document.getElementById("start-btn");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+  if (y.style.display === "none") {
+    y.style.display = "block";
+  } else {
+    y.style.display = "none";
+  }
+  if (z.style.display === "none") {
+    z.style.display = "block";
+  } else {
+    z.style.display = "none";
+  }
+
+}
+        var vid1 = document.getElementById("video1"); 
+        function playPause() { 
+        if (vid1.paused) 
+            vid1.play(); 
+        else 
+            vid1.play(); 
+        } 
+
+
+        
+      //   var list = [1,2,3,4,5]
+      // list.random()
+        
+        
+
+
+
+        let btn = document.querySelector('#idfk');
+// let output = document.querySelector('#output');
+
+function getRandomNumber(min, max) {
+    let step1 = max - min + 1;
+    let step2 = Math.random() * step1;
+    let result = Math.floor(step2) + min;
+    return result;
+}
+
+function createArrayOfNumbers(start, end){
+    let myArray = [];
+    for(let i = start; i <= end; i++) { 
+        myArray.push(i);
+    }
+    return myArray;
+}
+
+
+let numbersArray = createArrayOfNumbers(1,5);
+
+function set1() {
+  if(numbersArray.length == 0){
+        // output.innerText = 'No More Random Numbers';
+        return;
+    }
+
+    let randomIndex = getRandomNumber(0, numbersArray.length-1);
+    let randomNumber = numbersArray[randomIndex];
+    numbersArray.splice(randomIndex, 1)
+    console.log(randomNumber)
+   
+    document.getElementById("innerbutton1").innerHTML = randomNumber;
+    // alert(randomNumber);
+    // alert(document.getElementById("innerbutton1").innerHTML) //TESTING
+};
+
+function set2() {
+  if(numbersArray.length == 0){
+        // output.innerText = 'No More Random Numbers';
+        return;
+    }
+
+    let randomIndex = getRandomNumber(0, numbersArray.length-1);
+    let randomNumber2 = numbersArray[randomIndex];
+    numbersArray.splice(randomIndex, 1)
+    console.log(randomNumber2)
+   
+    document.getElementById("innerbutton2").innerHTML = randomNumber2;
+    // alert(randomNumber);
+    // alert(document.getElementById("innerbutton1").innerHTML) //TESTING
+};
+
+function set3() {
+  if(numbersArray.length == 0){
+        // output.innerText = 'No More Random Numbers';
+        return;
+    }
+
+    let randomIndex = getRandomNumber(0, numbersArray.length-1);
+    let randomNumber3 = numbersArray[randomIndex];
+    numbersArray.splice(randomIndex, 1)
+    console.log(randomNumber3)
+   
+    document.getElementById("innerbutton3").innerHTML = randomNumber3;
+    // alert(randomNumber);
+    // alert(document.getElementById("innerbutton1").innerHTML) //TESTING
+};
+
+function set4() {
+  if(numbersArray.length == 0){
+        // output.innerText = 'No More Random Numbers';
+        return;
+    }
+
+    let randomIndex = getRandomNumber(0, numbersArray.length-1);
+    let randomNumber4 = numbersArray[randomIndex];
+    numbersArray.splice(randomIndex, 1)
+    console.log(randomNumber4)
+   
+    document.getElementById("innerbutton4").innerHTML = randomNumber4;
+    // alert(randomNumber);
+    // alert(document.getElementById("innerbutton1").innerHTML) //TESTING
+};
+
+function set5() {
+  if(numbersArray.length == 0){
+        // output.innerText = 'No More Random Numbers';
+        return;
+    }
+
+    let randomIndex = getRandomNumber(0, numbersArray.length-1);
+    let randomNumber5 = numbersArray[randomIndex];
+    numbersArray.splice(randomIndex, 1)
+    console.log(randomNumber5)
+   
+    document.getElementById("innerbutton5").innerHTML = randomNumber5;
+    // alert(randomNumber);
+    // alert(document.getElementById("innerbutton1").innerHTML) //TESTING
+};
+
+// // if (aa === 1) {
+//             document.getElementById("innerbutton1").innerHTML = randomNumber;
+//         // } else {
+//             document.getElementById("p1").innerHTML = "⬇";
+//         // }
+
+window.onload = set1(), set2(), set3(), set4(), set5();
+
+function butt1() {
+  var num = document.getElementById("innerbutton1").innerHTML;
+
+  if (num === "1") {
+    // alert("ADVANCE")
+    window.location.href = "PROCEEDafter3.html";
+  } else if (num === "2") {
+    // alert("ADVANCE")
+    window.location.href = "FAILafter1.html";
+  } else if (num === "3") {
+    // alert("FAIL")
+    window.location.href = "GETCardafter3.html";
+  } else if (num === "4") {
+    // alert("GET CARD - FAIL")
+    window.location.href = "GETCardafter3.html";
+  } else if (num === "5") {
+    // alert("FAIL")
+    window.location.href = "FAILafter1.html";
+  } else alert("BROKE")
+}
+
+function butt2() {
+  var num = document.getElementById("innerbutton2").innerHTML;
+
+  if (num === "1") {
+    // alert("ADVANCE")
+    window.location.href = "PROCEEDafter3.html";
+  } else if (num === "2") {
+    // alert("ADVANCE")
+    window.location.href = "FAILafter1.html";
+  } else if (num === "3") {
+    // alert("FAIL")
+    window.location.href = "GETCardafter3.html";
+  } else if (num === "4") {
+    // alert("GET CARD - FAIL")
+    window.location.href = "GETCardafter3.html";
+  } else if (num === "5") {
+    // alert("FAIL")
+    window.location.href = "FAILafter1.html";
+  } else alert("BROKE")
+}
+
+function butt3() {
+  var num = document.getElementById("innerbutton3").innerHTML;
+
+  if (num === "1") {
+    // alert("ADVANCE")
+    window.location.href = "PROCEEDafter3.html";
+  } else if (num === "2") {
+    // alert("ADVANCE")
+    window.location.href = "FAILafter1.html";
+  } else if (num === "3") {
+    // alert("FAIL")
+    window.location.href = "GETCardafter3.html";
+  } else if (num === "4") {
+    // alert("GET CARD - FAIL")
+    window.location.href = "GETCardafter3.html";
+  } else if (num === "5") {
+    // alert("FAIL")
+    window.location.href = "FAILafter1.html";
+  } else alert("BROKE")
+}
+
+function butt4() {
+  var num = document.getElementById("innerbutton4").innerHTML;
+
+  if (num === "1") {
+    // alert("ADVANCE")
+    window.location.href = "PROCEEDafter3.html";
+  } else if (num === "2") {
+    // alert("ADVANCE")
+    window.location.href = "FAILafter1.html";
+  } else if (num === "3") {
+    // alert("FAIL")
+    window.location.href = "GETCardafter3.html";
+  } else if (num === "4") {
+    // alert("GET CARD - FAIL")
+    window.location.href = "GETCardafter3.html";
+  } else if (num === "5") {
+    // alert("FAIL")
+    window.location.href = "FAILafter1.html";
+  } else alert("BROKE")
+}
+
+function butt5() {
+  var num = document.getElementById("innerbutton5").innerHTML;
+
+  if (num === "1") {
+    // alert("ADVANCE")
+    window.location.href = "FAILafter1.html";
+  } else if (num === "2") {
+    // alert("ADVANCE")
+    window.location.href = "FAILafter1.html";
+  } else if (num === "3") {
+    // alert("FAIL")
+    window.location.href = "GETCardafter3.html";
+  } else if (num === "4") {
+    // alert("GET CARD - FAIL")
+    window.location.href = "GETCardafter3.html";
+  } else if (num === "5") {
+    // alert("FAIL")
+    window.location.href = "FAILafter1.html";
+  } else alert("BROKE")
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="random">Generate</button>
+
+    <h1 id="output" style="text-align: center">Random Number</h1>
+
+    <script>
+
+let btn = document.getElementById('random');
+let output = document.querySelector('#output');
+
+function getRandomNumber(min, max) {
+    let step1 = max - min + 1;
+    let step2 = Math.random() * step1;
+    let result = Math.floor(step2) + min;
+    return result;
+}
+
+function createArrayOfNumbers(start, end){
+    let myArray = [];
+    for(let i = start; i <= end; i++) { 
+        myArray.push(i);
+    }
+    return myArray;
+}
+
+
+let numbersArray = createArrayOfNumbers(1,5);
+
+btn.addEventListener('click', () => {
+    if(numbersArray.length == 0){
+        output.innerText = 'No More Random Numbers';
+        return;
+    }
+
+    let randomIndex = getRandomNumber(0, numbersArray.length-1);
+    let randomNumber = numbersArray[randomIndex];
+    numbersArray.splice(randomIndex, 1)
+    output.innerText = randomNumber;
+});
+
+    </script>
+</body>
+
+</html>

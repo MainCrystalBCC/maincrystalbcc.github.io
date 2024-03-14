@@ -1,0 +1,4505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <audio id="upSound">
+        <source src="Complete.mp3" type="audio/mpeg">
+        <!-- Your browser does not sup1port the audio element. -->
+      </audio>
+      <audio id="downSound">
+        <source src="FAIL.mp3" type="audio/mpeg">
+        <!-- Your browser does not sup1port the audio element. -->
+      </audio>
+      <!-- <div id="result"></div> -->
+      <div id="overlay1" onclick="strikeoff()">
+        <div id="text">Check</div>
+      </div>
+      <div id="overlay2" onclick="strikeoff()">
+        <div id="text">
+            <img class="ximg" src="Family_Feud_Strike_Indicator.webp">
+        </div>
+      </div>
+      <div id="overlay3" onclick="strikeoff()">
+        <div id="text">
+            <img class="ximg" src="Family_Feud_Strike_Indicator.webp">
+            <img class="ximg" src="Family_Feud_Strike_Indicator.webp">
+        </div>
+      </div>
+      <div id="overlay4" onclick="strikeoff()">
+        <div id="text">
+            <img class="ximg" src="Family_Feud_Strike_Indicator.webp">
+            <img class="ximg" src="Family_Feud_Strike_Indicator.webp">
+            <img class="ximg" src="Family_Feud_Strike_Indicator.webp">
+        </div>
+        <button class="reset2" onclick="reset()">RANDOMIZE</button>
+      </div>
+      <div id="overlaycomplete" onclick="strikeoff()">
+        <div id="text">
+            <!-- <img height="500rem" src="output-onlinegiftools.gif"> -->
+        </div>
+        
+      </div>
+      <!-- <button onclick="strikeon()">Turn on overlay effect</button> -->
+    <div class="grid-container">
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div><div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div><div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div><div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div><div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div><div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div><div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div><div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div><div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div><div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div><div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div><div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div><div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div><div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+
+<!-- ROW 10 -->
+
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+
+<!-- ROW 7 -->
+
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+
+<!-- ROW 6 -->
+
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+
+<!-- ROW 5 -->
+
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+
+<!-- ROW 4 -->
+
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+
+<!-- ROW 3 -->
+
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item">
+    <button class="flip-card-container-button">
+        
+        <div class="flip-card-container">
+            <div id="s41" class="flip-card">
+              <div class="flip-card-front">
+                <h1></h1>
+              </div>
+              <div class="flip-card-back">
+                <p id="p41">
+                    ⬆⬇
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+</div>
+<div class="grid-item">
+    <button class="flip-card-container-button">
+        
+        <div class="flip-card-container">
+            <div id="s42" class="flip-card">
+              <div class="flip-card-front">
+                <h1></h1>
+              </div>
+              <div class="flip-card-back">
+                <p id="p42">
+                    ⬆⬇
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+</div>
+<div class="grid-item">
+    <button class="flip-card-container-button">
+        
+        <div class="flip-card-container">
+            <div id="s43" class="flip-card">
+              <div class="flip-card-front">
+                <h1></h1>
+              </div>
+              <div class="flip-card-back">
+                <p id="p43">
+                    ⬆⬇
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+</div>
+<div class="grid-item">
+    <button class="flip-card-container-button">
+        
+        <div class="flip-card-container">
+            <div id="s44" class="flip-card">
+              <div class="flip-card-front">
+                <h1></h1>
+              </div>
+              <div class="flip-card-back">
+                <p id="p44">
+                    ⬆⬇
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+</div>
+<div class="grid-item">
+    <button class="flip-card-container-button">
+        
+        <div class="flip-card-container">
+            <div id="s45" class="flip-card">
+              <div class="flip-card-front">
+                <h1></h1>
+              </div>
+              <div class="flip-card-back">
+                <p id="p45">
+                    ⬆⬇
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+</div>
+<div class="grid-item">
+    <button class="flip-card-container-button">
+        
+        <div class="flip-card-container">
+            <div id="s46" class="flip-card">
+              <div class="flip-card-front">
+                <h1></h1>
+              </div>
+              <div class="flip-card-back">
+                <p id="p46">
+                    ⬆⬇
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+</div>
+<div class="grid-item">
+    <button class="flip-card-container-button">
+        
+        <div class="flip-card-container">
+            <div id="s47" class="flip-card">
+              <div class="flip-card-front">
+                <h1></h1>
+              </div>
+              <div class="flip-card-back">
+                <p id="p47">
+                    ⬆⬇
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+</div>
+<div class="grid-item left">
+    <button class="flip-card-container-button">
+        
+        <div class="flip-card-container">
+            <div id="s48" class="flip-card">
+              <div class="flip-card-front">
+                <h1></h1>
+              </div>
+              <div class="flip-card-back">
+                <p id="p48">
+                    ⬆⬇
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+</div>
+<div class="grid-item surround-all">
+    <button class="flip-card-container-button" onclick="p49()">
+        
+        <div class="flip-card-container">
+            <div id="s49" class="flip-card">
+              <div class="flip-card-front">
+                <h1>9</h1>
+              </div>
+              <div class="flip-card-back">
+                <p id="p49">
+                    ⬆⬇
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+</div>
+<div class="grid-item right">
+    <button class="flip-card-container-button">
+        
+        <div class="flip-card-container">
+            <div id="s50" class="flip-card">
+              <div class="flip-card-front">
+                <h1></h1>
+              </div>
+              <div class="flip-card-back">
+                <p id="p50">
+                    ⬆⬇
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+</div>
+<div class="grid-item air">
+    <button class="flip-card-container-button">
+        
+        <div class="flip-card-container">
+            <div id="s51" class="flip-card">
+              <div class="flip-card-front">
+                <h1></h1>
+              </div>
+              <div class="flip-card-back">
+                <p id="p51">
+                    ⬆⬇
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+</div>
+<div class="grid-item air">
+    <button class="flip-card-container-button">
+        
+        <div class="flip-card-container">
+            <div id="s52" class="flip-card">
+              <div class="flip-card-front">
+                <h1></h1>
+              </div>
+              <div class="flip-card-back">
+                <p id="p52">
+                    ⬆⬇
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+</div>
+<div class="grid-item air">
+    <button class="flip-card-container-button">
+        
+        <div class="flip-card-container">
+            <div id="s53" class="flip-card">
+              <div class="flip-card-front">
+                <h1></h1>
+              </div>
+              <div class="flip-card-back">
+                <p id="p53">
+                    ⬆⬇
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+</div>
+<div class="grid-item air">
+    <button class="flip-card-container-button">
+        
+        <div class="flip-card-container">
+            <div id="s54" class="flip-card">
+              <div class="flip-card-front">
+                <h1></h1>
+              </div>
+              <div class="flip-card-back">
+                <p id="p54">
+                    ⬆⬇
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+</div>
+<div class="grid-item air">
+    <button class="flip-card-container-button">
+        
+        <div class="flip-card-container">
+            <div id="s55" class="flip-card">
+              <div class="flip-card-front">
+                <h1></h1>
+              </div>
+              <div class="flip-card-back">
+                <p id="p55">
+                    ⬆⬇
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+</div>
+<div class="grid-item air">
+    <button class="flip-card-container-button">
+        
+        <div class="flip-card-container">
+            <div id="s56" class="flip-card">
+              <div class="flip-card-front">
+                <h1></h1>
+              </div>
+              <div class="flip-card-back">
+                <p id="p56">
+                    ⬆⬇
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+</div>
+<div class="grid-item air">
+    <button class="flip-card-container-button">
+        
+        <div class="flip-card-container">
+            <div id="s57" class="flip-card">
+              <div class="flip-card-front">
+                <h1></h1>
+              </div>
+              <div class="flip-card-back">
+                <p id="p57">
+                    ⬆⬇
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+</div>
+<div class="grid-item air"></div>
+<div class="grid-item air"></div>
+<div class="grid-item air"></div>
+<div class="grid-item air">$price</div>
+
+<!-- ROW 2 -->
+
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+<div class="grid-item">
+    <button class="flip-card-container-button">
+        
+        <div class="flip-card-container">
+            <div id="s22" class="flip-card">
+              <div class="flip-card-front">
+                <h1></h1>
+              </div>
+              <div class="flip-card-back">
+                <p id="p22">
+                    ⬆⬇
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+</div>
+<div class="grid-item">
+    <button class="flip-card-container-button">
+        
+        <div class="flip-card-container">
+            <div id="s23" class="flip-card">
+              <div class="flip-card-front">
+                <h1></h1>
+              </div>
+              <div class="flip-card-back">
+                <p id="p23">
+                    ⬆⬇
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+</div>
+<div class="grid-item">
+    <button class="flip-card-container-button">
+        
+        <div class="flip-card-container">
+            <div id="s24" class="flip-card">
+              <div class="flip-card-front">
+                <h1></h1>
+              </div>
+              <div class="flip-card-back">
+                <p id="p24">
+                    ⬆⬇
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+</div>
+<div class="grid-item">
+    <button class="flip-card-container-button">
+        
+        <div class="flip-card-container">
+            <div id="s25" class="flip-card">
+              <div class="flip-card-front">
+                <h1></h1>
+              </div>
+              <div class="flip-card-back">
+                <p id="p25">
+                    ⬆⬇
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+</div>
+<div class="grid-item">
+    <button class="flip-card-container-button">
+        
+        <div class="flip-card-container">
+            <div id="s26" class="flip-card">
+              <div class="flip-card-front">
+                <h1></h1>
+              </div>
+              <div class="flip-card-back">
+                <p id="p26">
+                    ⬆⬇
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+</div>
+<div class="grid-item">
+    <button class="flip-card-container-button">
+        
+        <div class="flip-card-container">
+            <div id="s27" class="flip-card">
+              <div class="flip-card-front">
+                <h1></h1>
+              </div>
+              <div class="flip-card-back">
+                <p id="p27">
+                    ⬆⬇
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+</div>
+<div class="grid-item">
+    <button class="flip-card-container-button">
+        
+        <div class="flip-card-container">
+            <div id="s28" class="flip-card">
+              <div class="flip-card-front">
+                <h1></h1>
+              </div>
+              <div class="flip-card-back">
+                <p id="p28">
+                    ⬆⬇
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+</div>
+<div class="grid-item left">
+    <button class="flip-card-container-button">
+        
+        <div class="flip-card-container">
+            <div id="s29" class="flip-card">
+              <div class="flip-card-front">
+                <h1></h1>
+              </div>
+              <div class="flip-card-back">
+                <p id="p29">
+                    ⬆⬇
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+</div>
+<div class="grid-item surround-left">
+    <button class="flip-card-container-button" onclick="p30()">
+        
+        <div class="flip-card-container">
+            <div id="s30" class="flip-card">
+              <div class="flip-card-front">
+                <h1>6</h1>
+              </div>
+              <div class="flip-card-back">
+                <p id="p30">
+                    ⬆⬇
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+</div>
+<div class="grid-item surround">
+    <button class="flip-card-container-button" onclick="p31()">
+        
+        <div class="flip-card-container">
+            <div id="s31" class="flip-card">
+              <div class="flip-card-front">
+                <h1>7</h1>
+              </div>
+              <div class="flip-card-back">
+                <p id="p31">
+                    ⬆⬇
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+</div>
+<div class="grid-item surround-right">
+    <button class="flip-card-container-button" onclick="p32()">
+        
+        <div class="flip-card-container">
+            <div id="s32" class="flip-card">
+              <div class="flip-card-front">
+                <h1>8</h1>
+              </div>
+              <div class="flip-card-back">
+                <p id="p32">
+                    ⬆⬇
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+</div>
+<div class="grid-item right">
+    <button class="flip-card-container-button">
+        
+        <div class="flip-card-container">
+            <div id="s33" class="flip-card">
+              <div class="flip-card-front">
+                <h1></h1>
+              </div>
+              <div class="flip-card-back">
+                <p id="p33">
+                    ⬆⬇
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+</div>
+<div class="grid-item air">
+    <button class="flip-card-container-button">
+        
+        <div class="flip-card-container">
+            <div id="s34" class="flip-card">
+              <div class="flip-card-front">
+                <h1></h1>
+              </div>
+              <div class="flip-card-back">
+                <p id="p34">
+                    ⬆⬇
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+</div>
+<div class="grid-item air">
+    <button class="flip-card-container-button">
+        
+        <div class="flip-card-container">
+            <div id="s35" class="flip-card">
+              <div class="flip-card-front">
+                <h1></h1>
+              </div>
+              <div class="flip-card-back">
+                <p id="p35">
+                    ⬆⬇
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+</div>
+<div class="grid-item air">
+    <button class="flip-card-container-button">
+        
+        <div class="flip-card-container">
+            <div id="s36" class="flip-card">
+              <div class="flip-card-front">
+                <h1></h1>
+              </div>
+              <div class="flip-card-back">
+                <p id="p36">
+                    ⬆⬇
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+</div>
+<div class="grid-item air">
+    <button class="flip-card-container-button">
+        
+        <div class="flip-card-container">
+            <div id="s37" class="flip-card">
+              <div class="flip-card-front">
+                <h1></h1>
+              </div>
+              <div class="flip-card-back">
+                <p id="p37">
+                    ⬆⬇
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+</div>
+<div class="grid-item air">
+    <button class="flip-card-container-button">
+        
+        <div class="flip-card-container">
+            <div id="s38" class="flip-card">
+              <div class="flip-card-front">
+                <h1></h1>
+              </div>
+              <div class="flip-card-back">
+                <p id="p38">
+                    ⬆⬇
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+</div>
+<div class="grid-item air">
+    <button class="flip-card-container-button">
+        
+        <div class="flip-card-container">
+            <div id="s39" class="flip-card">
+              <div class="flip-card-front">
+                <h1></h1>
+              </div>
+              <div class="flip-card-back">
+                <p id="p39">
+                    ⬆⬇
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+</div>
+<div class="grid-item air">
+    <button class="flip-card-container-button">
+        
+        <div class="flip-card-container">
+            <div id="s40" class="flip-card">
+              <div class="flip-card-front">
+                <h1></h1>
+              </div>
+              <div class="flip-card-back">
+                <p id="p40">
+                    ⬆⬇
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+</div>
+<div class="grid-item air"></div>
+<div class="grid-item air"></div>
+<div class="grid-item air">$price</div>
+<!-- ROW 1 -->
+<div class="grid-item"></div>
+<div class="grid-item"></div>
+        <div class="grid-item">
+            <button class="flip-card-container-button">
+                
+                <div class="flip-card-container">
+                    <div id="s1" class="flip-card">
+                      <div class="flip-card-front">
+                        <h1></h1>
+                      </div>
+                      <div class="flip-card-back">
+                        <p id="p1">
+                            ⬆⬇
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+        </div>
+        <div class="grid-item">
+            <button class="flip-card-container-button">
+                
+                <div class="flip-card-container">
+                    <div id="s2" class="flip-card">
+                      <div class="flip-card-front">
+                        <h1></h1>
+                      </div>
+                      <div class="flip-card-back">
+                        <p id="p2">
+                            ⬆⬇
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+        </div>
+        <div class="grid-item">
+            <button class="flip-card-container-button">
+                
+                <div class="flip-card-container">
+                    <div id="s3" class="flip-card">
+                      <div class="flip-card-front">
+                        <h1></h1>
+                      </div>
+                      <div class="flip-card-back">
+                        <p id="p3">
+                            ⬆⬇
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+        </div>
+        <div class="grid-item">
+            <button class="flip-card-container-button">
+                
+                <div class="flip-card-container">
+                    <div id="s4" class="flip-card">
+                      <div class="flip-card-front">
+                        <h1></h1>
+                      </div>
+                      <div class="flip-card-back">
+                        <p id="p4">
+                            ⬆⬇
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+        </div>
+        <div class="grid-item">
+            <button class="flip-card-container-button">
+                
+            <div class="flip-card-container">
+                <div id="s5" class="flip-card">
+                  <div class="flip-card-front">
+                    <h1></h1>
+                  </div>
+                  <div class="flip-card-back">
+                    <p id="p5">
+                        ⬆⬇
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </button>
+        </div>
+        <div class="grid-item">
+            <button class="flip-card-container-button">
+                
+                <div class="flip-card-container">
+                    <div id="s6" class="flip-card">
+                      <div class="flip-card-front">
+                        <h1></h1>
+                      </div>
+                      <div class="flip-card-back">
+                        <p id="p6">
+                            ⬆⬇
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+        </div>
+        <div class="grid-item">
+            <button class="flip-card-container-button">
+                
+                <div class="flip-card-container">
+                    <div id="s7" class="flip-card">
+                      <div class="flip-card-front">
+                        <h1></h1>
+                      </div>
+                      <div class="flip-card-back">
+                        <p id="p7">
+                            ⬆⬇
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+        </div>
+        <div class="grid-item left">
+            <button class="flip-card-container-button">
+                
+                <div class="flip-card-container">
+                    <div id="s8" class="flip-card">
+                      <div class="flip-card-front">
+                        <h1></h1>
+                      </div>
+                      <div class="flip-card-back">
+                        <p id="p8">
+                            ⬆⬇
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+        </div>
+        <div class="grid-item surround-left">
+            <button class="flip-card-container-button" onclick="p9()">
+                
+                <div class="flip-card-container">
+                    <div id="s9" class="flip-card">
+                      <div class="flip-card-front">
+                        <h1>1</h1>
+                      </div>
+                      <div class="flip-card-back">
+                        <p id="p9">
+                            ⬆⬇
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+        </div>
+        <div class="grid-item surround">
+            <button class="flip-card-container-button" onclick="p10()">
+                
+                <div class="flip-card-container">
+                    <div id="s10" class="flip-card">
+                      <div class="flip-card-front">
+                        <h1>2</h1>
+                      </div>
+                      <div class="flip-card-back">
+                        <p id="p10">
+                            ⬆⬇
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+        </div>
+        <div class="grid-item surround">
+            <button class="flip-card-container-button" onclick="p11()">
+                
+                <div class="flip-card-container">
+                    <div id="s11" class="flip-card">
+                      <div class="flip-card-front">
+                        <h1>3</h1>
+                      </div>
+                      <div class="flip-card-back">
+                        <p id="p11">
+                            ⬆⬇
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+        </div>
+        <div class="grid-item surround">
+            <button class="flip-card-container-button" onclick="p12()">
+                
+                <div class="flip-card-container">
+                    <div id="s12" class="flip-card">
+                      <div class="flip-card-front">
+                        <h1>4</h1>
+                      </div>
+                      <div class="flip-card-back">
+                        <p id="p12">
+                            ⬆⬇
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+        </div>
+        <div class="grid-item surround-right">
+            <button class="flip-card-container-button" onclick="p13()">
+                
+                <div class="flip-card-container">
+                    <div id="s13" class="flip-card">
+                      <div class="flip-card-front">
+                        <h1>5</h1>
+                      </div>
+                      <div class="flip-card-back">
+                        <p id="p13">
+                            ⬆⬇
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+        </div>
+        <div class="grid-item right">
+            <button class="flip-card-container-button">
+                
+                <div class="flip-card-container">
+                    <div id="s14" class="flip-card">
+                      <div class="flip-card-front">
+                        <h1></h1>
+                      </div>
+                      <div class="flip-card-back">
+                        <p id="p14">
+                            ⬆⬇
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+        </div>
+        <div class="grid-item air">
+            <button class="flip-card-container-button">
+                
+                <div class="flip-card-container">
+                    <div id="s15" class="flip-card">
+                      <div class="flip-card-front">
+                        <h1></h1>
+                      </div>
+                      <div class="flip-card-back">
+                        <p id="p15">
+                            ⬆⬇
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+        </div>
+        <div class="grid-item air">
+            <button class="flip-card-container-button">
+                
+                <div class="flip-card-container">
+                    <div id="s16" class="flip-card">
+                      <div class="flip-card-front">
+                        <h1></h1>
+                      </div>
+                      <div class="flip-card-back">
+                        <p id="p16">
+                            ⬆⬇
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+        </div>
+        <div class="grid-item air">
+            <button class="flip-card-container-button">
+                
+                <div class="flip-card-container">
+                    <div id="s17" class="flip-card">
+                      <div class="flip-card-front">
+                        <h1></h1>
+                      </div>
+                      <div class="flip-card-back">
+                        <p id="p17">
+                            ⬆⬇
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+        </div>
+        <div class="grid-item air">
+            <button class="flip-card-container-button">
+                
+                <div class="flip-card-container">
+                    <div id="s18" class="flip-card">
+                      <div class="flip-card-front">
+                        <h1></h1>
+                      </div>
+                      <div class="flip-card-back">
+                        <p id="p18">
+                            ⬆⬇
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+        </div>
+        <div class="grid-item air">
+            <button class="flip-card-container-button">
+                
+                <div class="flip-card-container">
+                    <div id="s19" class="flip-card">
+                      <div class="flip-card-front">
+                        <h1></h1>
+                      </div>
+                      <div class="flip-card-back">
+                        <p id="p19">
+                            ⬆⬇
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+        </div>
+        <div class="grid-item air">
+            <button class="flip-card-container-button">
+                
+                <div class="flip-card-container">
+                    <div id="s20" class="flip-card">
+                      <div class="flip-card-front">
+                        <h1></h1>
+                      </div>
+                      <div class="flip-card-back">
+                        <p id="p20">
+                            ⬆⬇
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+        </div>
+        <div class="grid-item air">
+            <button class="flip-card-container-button">
+                
+                <div class="flip-card-container">
+                    <div id="s21" class="flip-card">
+                      <div class="flip-card-front">
+                        <h1></h1>
+                      </div>
+                      <div class="flip-card-back">
+                        <p id="p21">
+                            ⬆⬇
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+        </div>
+        <div class="grid-item air"></div>
+        <div class="grid-item air">$price</div>
+        
+      </div>
+
+      
+      <div class="group">
+      <button class="reset" onclick="reset()">RANDOMIZE</button>
+      <div style=" display: flex;
+      justify-content: center;
+      align-items: center;">
+      <!-- <h1>Player:<input type="text" id="fname" name="fname"></h1> -->
+      <img id="ximg1" class="ximg1 xx" src="Family_Feud_Strike_Indicator.webp">
+      <img id="ximg2"  class="ximg2 xx" src="Family_Feud_Strike_Indicator.webp">
+      <img id="ximg3"  class="ximg3 xx" src="Family_Feud_Strike_Indicator.webp">
+      </div>
+      <h1>BrandName</h1>
+      
+      </div>
+      <!-- <p id="1"></p>
+      <p id="2"></p> -->
+
+      <script>
+        //row 1
+        let aa = Math.floor((Math.random() * 2) + 1);
+        if (aa === 1) {
+            document.getElementById("p1").innerHTML = "⬆";
+        } else {
+            document.getElementById("p1").innerHTML = "⬇";
+        }
+        let ab = Math.floor((Math.random() * 2) + 1);
+        if (ab === 1) {
+            document.getElementById("p2").innerHTML = "⬆";
+        } else {
+            document.getElementById("p2").innerHTML = "⬇";
+        }
+        let ac = Math.floor((Math.random() * 2) + 1);
+        if (ac === 1) {
+            document.getElementById("p3").innerHTML = "⬆";
+        } else {
+            document.getElementById("p3").innerHTML = "⬇";
+        }
+        let ad = Math.floor((Math.random() * 2) + 1);
+        if (ad === 1) {
+            document.getElementById("p4").innerHTML = "⬆";
+        } else {
+            document.getElementById("p4").innerHTML = "⬇";
+        }
+        let ae = Math.floor((Math.random() * 2) + 1);
+        if (ae === 1) {
+            document.getElementById("p5").innerHTML = "⬆";
+        } else {
+            document.getElementById("p5").innerHTML = "⬇";
+        }
+        let af = Math.floor((Math.random() * 2) + 1);
+        if (af === 1) {
+            document.getElementById("p6").innerHTML = "⬆";
+        } else {
+            document.getElementById("p6").innerHTML = "⬇";
+        }
+        let ag = Math.floor((Math.random() * 2) + 1);
+        if (ag === 1) {
+            document.getElementById("p7").innerHTML = "⬆";
+        } else {
+            document.getElementById("p7").innerHTML = "⬇";
+        }
+        let ah = Math.floor((Math.random() * 2) + 1);
+        if (ah === 1) {
+            document.getElementById("p8").innerHTML = "⬆";
+        } else {
+            document.getElementById("p8").innerHTML = "⬇";
+        }
+        let ai = Math.floor((Math.random() * 2) + 1);
+        if (ai === 1) {
+            document.getElementById("p9").innerHTML = "⬆";
+        } else {
+            document.getElementById("p9").innerHTML = "⬇";
+        }
+        let aj = Math.floor((Math.random() * 2) + 1);
+        if (aj === 1) {
+            document.getElementById("p10").innerHTML = "⬆";
+        } else {
+            document.getElementById("p10").innerHTML = "⬇";
+        }
+        let ak = Math.floor((Math.random() * 2) + 1);
+        if (ak === 1) {
+            document.getElementById("p11").innerHTML = "⬆";
+        } else {
+            document.getElementById("p11").innerHTML = "⬇";
+        }
+        let al = Math.floor((Math.random() * 2) + 1);
+        if (al === 1) {
+            document.getElementById("p12").innerHTML = "⬆";
+        } else {
+            document.getElementById("p12").innerHTML = "⬇";
+        }
+        let am = Math.floor((Math.random() * 2) + 1);
+        if (am === 1) {
+            document.getElementById("p13").innerHTML = "⬆";
+        } else {
+            document.getElementById("p13").innerHTML = "⬇";
+        }
+        let an = Math.floor((Math.random() * 2) + 1);
+        if (an === 1) {
+            document.getElementById("p14").innerHTML = "⬆";
+        } else {
+            document.getElementById("p14").innerHTML = "⬇";
+        }
+        let ao = Math.floor((Math.random() * 2) + 1);
+        if (ao === 1) {
+            document.getElementById("p15").innerHTML = "⬆";
+        } else {
+            document.getElementById("p15").innerHTML = "⬇";
+        }
+        let ap = Math.floor((Math.random() * 2) + 1);
+        if (ap === 1) {
+            document.getElementById("p16").innerHTML = "⬆";
+        } else {
+            document.getElementById("p16").innerHTML = "⬇";
+        }
+        let aq = Math.floor((Math.random() * 2) + 1);
+        if (aq === 1) {
+            document.getElementById("p17").innerHTML = "⬆";
+        } else {
+            document.getElementById("p17").innerHTML = "⬇";
+        }
+        let ar = Math.floor((Math.random() * 2) + 1);
+        if (ar === 1) {
+            document.getElementById("p18").innerHTML = "⬆";
+        } else {
+            document.getElementById("p18").innerHTML = "⬇";
+        }
+        let as = Math.floor((Math.random() * 2) + 1);
+        if (as === 1) {
+            document.getElementById("p19").innerHTML = "⬆";
+        } else {
+            document.getElementById("p19").innerHTML = "⬇";
+        }
+        let at = Math.floor((Math.random() * 2) + 1);
+        if (at === 1) {
+            document.getElementById("p20").innerHTML = "⬆";
+        } else {
+            document.getElementById("p20").innerHTML = "⬇";
+        }
+        let au = Math.floor((Math.random() * 2) + 1);     
+        if (au === 1) {
+            document.getElementById("p21").innerHTML = "⬆";
+        } else {
+            document.getElementById("p21").innerHTML = "⬇";
+        }   
+        let av = Math.floor((Math.random() * 2) + 1);
+        if (av === 1) {
+            document.getElementById("p22").innerHTML = "⬆";
+        } else {
+            document.getElementById("p22").innerHTML = "⬇";
+        }
+        let aw = Math.floor((Math.random() * 2) + 1);
+        if (aw === 1) {
+            document.getElementById("p23").innerHTML = "⬆";
+        } else {
+            document.getElementById("p23").innerHTML = "⬇";
+        }
+        let ax = Math.floor((Math.random() * 2) + 1);
+        if (ax === 1) {
+            document.getElementById("p24").innerHTML = "⬆";
+        } else {
+            document.getElementById("p24").innerHTML = "⬇";
+        }
+        let ay = Math.floor((Math.random() * 2) + 1);
+        if (ay === 1) {
+            document.getElementById("p25").innerHTML = "⬆";
+        } else {
+            document.getElementById("p25").innerHTML = "⬇";
+        }
+        let az = Math.floor((Math.random() * 2) + 1);
+        if (az === 1) {
+            document.getElementById("p26").innerHTML = "⬆";
+        } else {
+            document.getElementById("p26").innerHTML = "⬇";
+        }
+        
+        let ba = Math.floor((Math.random() * 2) + 1);
+        if (ba === 1) {
+            document.getElementById("p27").innerHTML = "⬆";
+        } else {
+            document.getElementById("p27").innerHTML = "⬇";
+        }
+        let bb = Math.floor((Math.random() * 2) + 1);
+        if (bb === 1) {
+            document.getElementById("p28").innerHTML = "⬆";
+        } else {
+            document.getElementById("p28").innerHTML = "⬇";
+        }
+        let bc = Math.floor((Math.random() * 2) + 1);
+        if (bc === 1) {
+            document.getElementById("p29").innerHTML = "⬆";
+        } else {
+            document.getElementById("p29").innerHTML = "⬇";
+        }
+        let bd = Math.floor((Math.random() * 2) + 1);
+        if (bd === 1) {
+            document.getElementById("p30").innerHTML = "⬆";
+        } else {
+            document.getElementById("p30").innerHTML = "⬇";
+        }
+        let be = Math.floor((Math.random() * 2) + 1);
+        if (be === 1) {
+            document.getElementById("p31").innerHTML = "⬆";
+        } else {
+            document.getElementById("p31").innerHTML = "⬇";
+        }
+        let bf = Math.floor((Math.random() * 2) + 1);
+        if (bf === 1) {
+            document.getElementById("p32").innerHTML = "⬆";
+        } else {
+            document.getElementById("p32").innerHTML = "⬇";
+        }
+        let bg = Math.floor((Math.random() * 2) + 1);
+        if (bg === 1) {
+            document.getElementById("p33").innerHTML = "⬆";
+        } else {
+            document.getElementById("p33").innerHTML = "⬇";
+        }
+        let bh = Math.floor((Math.random() * 2) + 1);
+        if (bh === 1) {
+            document.getElementById("p34").innerHTML = "⬆";
+        } else {
+            document.getElementById("p34").innerHTML = "⬇";
+        }
+        let bi = Math.floor((Math.random() * 2) + 1);
+        if (bi === 1) {
+            document.getElementById("p35").innerHTML = "⬆";
+        } else {
+            document.getElementById("p35").innerHTML = "⬇";
+        }
+        let bj = Math.floor((Math.random() * 2) + 1);
+        if (bj === 1) {
+            document.getElementById("p36").innerHTML = "⬆";
+        } else {
+            document.getElementById("p36").innerHTML = "⬇";
+        }
+        let bk = Math.floor((Math.random() * 2) + 1);
+        if (bk === 1) {
+            document.getElementById("p37").innerHTML = "⬆";
+        } else {
+            document.getElementById("p37").innerHTML = "⬇";
+        }
+        let bl = Math.floor((Math.random() * 2) + 1);
+        if (bl === 1) {
+            document.getElementById("p38").innerHTML = "⬆";
+        } else {
+            document.getElementById("p38").innerHTML = "⬇";
+        }
+        let bm = Math.floor((Math.random() * 2) + 1);
+        if (bm === 1) {
+            document.getElementById("p39").innerHTML = "⬆";
+        } else {
+            document.getElementById("p39").innerHTML = "⬇";
+        }
+        let bn = Math.floor((Math.random() * 2) + 1);
+        if (bn === 1) {
+            document.getElementById("p40").innerHTML = "⬆";
+        } else {
+            document.getElementById("p40").innerHTML = "⬇";
+        }
+        let bo = Math.floor((Math.random() * 2) + 1);
+        if (bo === 1) {
+            document.getElementById("p41").innerHTML = "⬆";
+        } else {
+            document.getElementById("p41").innerHTML = "⬇";
+        }
+        let bp = Math.floor((Math.random() * 2) + 1);  
+        if (bp === 1) {
+            document.getElementById("p42").innerHTML = "⬆";
+        } else {
+            document.getElementById("p42").innerHTML = "⬇";
+        }
+        let bq = Math.floor((Math.random() * 2) + 1);
+        if (bq === 1) {
+            document.getElementById("p43").innerHTML = "⬆";
+        } else {
+            document.getElementById("p43").innerHTML = "⬇";
+        }
+        let br = Math.floor((Math.random() * 2) + 1);
+        if (br === 1) {
+            document.getElementById("p44").innerHTML = "⬆";
+        } else {
+            document.getElementById("p44").innerHTML = "⬇";
+        }
+        let bs = Math.floor((Math.random() * 2) + 1);
+        if (bs === 1) {
+            document.getElementById("p45").innerHTML = "⬆";
+        } else {
+            document.getElementById("p45").innerHTML = "⬇";
+        }
+        let bt = Math.floor((Math.random() * 2) + 1);
+        if (bt === 1) {
+            document.getElementById("p46").innerHTML = "⬆";
+        } else {
+            document.getElementById("p46").innerHTML = "⬇";
+        }
+        let bu = Math.floor((Math.random() * 2) + 1);
+        if (bu === 1) {
+            document.getElementById("p47").innerHTML = "⬆";
+        } else {
+            document.getElementById("p47").innerHTML = "⬇";
+        }
+        let bv = Math.floor((Math.random() * 2) + 1);
+        if (bv === 1) {
+            document.getElementById("p48").innerHTML = "⬆";
+        } else {
+            document.getElementById("p48").innerHTML = "⬇";
+        }
+        let bw = Math.floor((Math.random() * 2) + 1);
+        if (bw === 1) {
+            document.getElementById("p49").innerHTML = "⬆";
+        } else {
+            document.getElementById("p49").innerHTML = "⬆";
+        }
+        let bx = Math.floor((Math.random() * 2) + 1);
+        if (bx === 1) {
+            document.getElementById("p50").innerHTML = "⬆";
+        } else {
+            document.getElementById("p50").innerHTML = "⬇";
+        }
+        let by = Math.floor((Math.random() * 2) + 1);
+        if (by === 1) {
+            document.getElementById("p51").innerHTML = "⬆";
+        } else {
+            document.getElementById("p51").innerHTML = "⬇";
+        }
+        let bz = Math.floor((Math.random() * 2) + 1);
+        if (bz === 1) {
+            document.getElementById("p52").innerHTML = "⬆";
+        } else {
+            document.getElementById("p52").innerHTML = "⬇";
+        }
+
+        let ca = Math.floor((Math.random() * 2) + 1);
+        if (ca === 1) {
+            document.getElementById("p53").innerHTML = "⬆";
+        } else {
+            document.getElementById("p53").innerHTML = "⬇";
+        }
+        let cb = Math.floor((Math.random() * 2) + 1);
+        if (cb === 1) {
+            document.getElementById("p54").innerHTML = "⬆";
+        } else {
+            document.getElementById("p54").innerHTML = "⬇";
+        }
+        let cc = Math.floor((Math.random() * 2) + 1);
+        if (cc === 1) {
+            document.getElementById("p55").innerHTML = "⬆";
+        } else {
+            document.getElementById("p55").innerHTML = "⬇";
+        }
+        let cd = Math.floor((Math.random() * 2) + 1);
+        if (cd === 1) {
+            document.getElementById("p56").innerHTML = "⬆";
+        } else {
+            document.getElementById("p56").innerHTML = "⬇";
+        }
+        let ce = Math.floor((Math.random() * 2) + 1);
+        if (ce === 1) {
+            document.getElementById("p57").innerHTML = "⬆";
+        } else {
+            document.getElementById("p57").innerHTML = "⬇";
+        }
+        let cf = Math.floor((Math.random() * 2) + 1);
+        if (cf === 1) {
+            document.getElementById("p58").innerHTML = "⬆";
+        } else {
+            document.getElementById("p58").innerHTML = "⬇";
+        }
+        let cg = Math.floor((Math.random() * 2) + 1);
+        if (cg === 1) {
+            document.getElementById("p59").innerHTML = "⬆";
+        } else {
+            document.getElementById("p59").innerHTML = "⬇";
+        }
+        let ch = Math.floor((Math.random() * 2) + 1);
+        if (ch === 1) {
+            document.getElementById("p60").innerHTML = "⬆";
+        } else {
+            document.getElementById("p60").innerHTML = "⬇";
+        }
+        let ci = Math.floor((Math.random() * 2) + 1);
+        if (ci === 1) {
+            document.getElementById("p61").innerHTML = "⬆";
+        } else {
+            document.getElementById("p61").innerHTML = "⬇";
+        }
+        let cj = Math.floor((Math.random() * 2) + 1);
+        if (cj === 1) {
+            document.getElementById("p62").innerHTML = "⬆";
+        } else {
+            document.getElementById("p62").innerHTML = "⬇";
+        }
+        let ck = Math.floor((Math.random() * 2) + 1);
+        if (ck === 1) {
+            document.getElementById("p63").innerHTML = "⬆";
+        } else {
+            document.getElementById("p63").innerHTML = "⬇";
+        }
+        let cl = Math.floor((Math.random() * 2) + 1);
+        if (cl === 1) {
+            document.getElementById("p64").innerHTML = "⬆";
+        } else {
+            document.getElementById("p64").innerHTML = "⬇";
+        }
+        let cm = Math.floor((Math.random() * 2) + 1);
+        if (cm === 1) {
+            document.getElementById("p65").innerHTML = "⬆";
+        } else {
+            document.getElementById("p65").innerHTML = "⬇";
+        }
+        let cn = Math.floor((Math.random() * 2) + 1);
+        if (cn === 1) {
+            document.getElementById("p66").innerHTML = "⬆";
+        } else {
+            document.getElementById("p66").innerHTML = "⬇";
+        }
+        let co = Math.floor((Math.random() * 2) + 1);
+        if (co === 1) {
+            document.getElementById("p67").innerHTML = "⬆";
+        } else {
+            document.getElementById("p67").innerHTML = "⬇";
+        }
+        let cp = Math.floor((Math.random() * 2) + 1);
+        if (cp === 1) {
+            document.getElementById("p68").innerHTML = "⬆";
+        } else {
+            document.getElementById("p68").innerHTML = "⬇";
+        }
+        let cq = Math.floor((Math.random() * 2) + 1);
+        if (cq === 1) {
+            document.getElementById("p69").innerHTML = "⬆";
+        } else {
+            document.getElementById("p69").innerHTML = "⬇";
+        }
+        let cr = Math.floor((Math.random() * 2) + 1);
+        if (cr === 1) {
+            document.getElementById("p70").innerHTML = "⬆";
+        } else {
+            document.getElementById("p70").innerHTML = "⬇";
+        }
+        let cs = Math.floor((Math.random() * 2) + 1);
+        if (cs === 1) {
+            document.getElementById("p71").innerHTML = "⬆";
+        } else {
+            document.getElementById("p71").innerHTML = "⬇";
+        }
+        let ct = Math.floor((Math.random() * 2) + 1);
+        if (ct === 1) {
+            document.getElementById("p72").innerHTML = "⬆";
+        } else {
+            document.getElementById("p72").innerHTML = "⬇";
+        }
+        let cu = Math.floor((Math.random() * 2) + 1);
+        if (cu === 1) {
+            document.getElementById("p73").innerHTML = "⬆";
+        } else {
+            document.getElementById("p73").innerHTML = "⬇";
+        }
+        let cv = Math.floor((Math.random() * 2) + 1);
+        if (cv === 1) {
+            document.getElementById("p74").innerHTML = "⬆";
+        } else {
+            document.getElementById("p74").innerHTML = "⬇";
+        }
+        let cw = Math.floor((Math.random() * 2) + 1);
+        if (cw === 1) {
+            document.getElementById("p75").innerHTML = "⬆";
+        } else {
+            document.getElementById("p75").innerHTML = "⬇";
+        }
+        let cx = Math.floor((Math.random() * 2) + 1);
+        if (cx === 1) {
+            document.getElementById("p76").innerHTML = "⬆";
+        } else {
+            document.getElementById("p76").innerHTML = "⬇";
+        }
+        let cy = Math.floor((Math.random() * 2) + 1);
+        if (cy === 1) {
+            document.getElementById("p77").innerHTML = "⬆";
+        } else {
+            document.getElementById("p77").innerHTML = "⬇";
+        }
+        let cz = Math.floor((Math.random() * 2) + 1);
+        if (cz === 1) {
+            document.getElementById("p78").innerHTML = "⬆";
+        } else {
+            document.getElementById("p78").innerHTML = "⬇";
+        }
+
+        let da = Math.floor((Math.random() * 2) + 1);
+        if (da === 1) {
+            document.getElementById("p79").innerHTML = "⬆";
+        } else {
+            document.getElementById("p79").innerHTML = "⬇";
+        }
+        let db = Math.floor((Math.random() * 2) + 1);
+        if (cz === 1) {
+            document.getElementById("p80").innerHTML = "⬆";
+        } else {
+            document.getElementById("p80").innerHTML = "⬇";
+        }
+        let dc = Math.floor((Math.random() * 2) + 1);
+        if (dc === 1) {
+            document.getElementById("p81").innerHTML = "⬆";
+        } else {
+            document.getElementById("p81").innerHTML = "⬇";
+        }
+        let dd = Math.floor((Math.random() * 2) + 1);
+        if (dd === 1) {
+            document.getElementById("p82").innerHTML = "⬆";
+        } else {
+            document.getElementById("p82").innerHTML = "⬇";
+        }
+        let de = Math.floor((Math.random() * 2) + 1);
+        if (de === 1) {
+            document.getElementById("p83").innerHTML = "⬆";
+        } else {
+            document.getElementById("p83").innerHTML = "⬇";
+        }
+        let df = Math.floor((Math.random() * 2) + 1);
+        if (df === 1) {
+            document.getElementById("p84").innerHTML = "⬆";
+        } else {
+            document.getElementById("p84").innerHTML = "⬇";
+        }
+        let dg = Math.floor((Math.random() * 2) + 1);
+        if (dg === 1) {
+            document.getElementById("p85").innerHTML = "⬆";
+        } else {
+            document.getElementById("p85").innerHTML = "⬇";
+        }
+        let dh = Math.floor((Math.random() * 2) + 1);
+        if (dh === 1) {
+            document.getElementById("p86").innerHTML = "⬆";
+        } else {
+            document.getElementById("p86").innerHTML = "⬇";
+        }
+        let di = Math.floor((Math.random() * 2) + 1);
+        if (di === 1) {
+            document.getElementById("p87").innerHTML = "⬆";
+        } else {
+            document.getElementById("p87").innerHTML = "⬇";
+        }
+        let dj = Math.floor((Math.random() * 2) + 1);
+        if (dj === 1) {
+            document.getElementById("p88").innerHTML = "⬆";
+        } else {
+            document.getElementById("p88").innerHTML = "⬇";
+        }
+        let dk = Math.floor((Math.random() * 2) + 1);
+        if (dk === 1) {
+            document.getElementById("p89").innerHTML = "⬆";
+        } else {
+            document.getElementById("p89").innerHTML = "⬇";
+        }
+        let dl = Math.floor((Math.random() * 2) + 1);
+        if (dl === 1) {
+            document.getElementById("p90").innerHTML = "⬆";
+        } else {
+            document.getElementById("p90").innerHTML = "⬇";
+        }
+        let dm = Math.floor((Math.random() * 2) + 1);
+        if (dm === 1) {
+            document.getElementById("p91").innerHTML = "⬆";
+        } else {
+            document.getElementById("p91").innerHTML = "⬇";
+        }
+        let dn = Math.floor((Math.random() * 2) + 1);
+        if (dn === 1) {
+            document.getElementById("p92").innerHTML = "⬆";
+        } else {
+            document.getElementById("p92").innerHTML = "⬇";
+        }
+        let dp = Math.floor((Math.random() * 2) + 1);
+        if (dp === 1) {
+            document.getElementById("p93").innerHTML = "⬆";
+        } else {
+            document.getElementById("p93").innerHTML = "⬇";
+        }
+        let dq = Math.floor((Math.random() * 2) + 1);
+        if (dq === 1) {
+            document.getElementById("p94").innerHTML = "⬆";
+        } else {
+            document.getElementById("p94").innerHTML = "⬇";
+        }
+        let dr = Math.floor((Math.random() * 2) + 1);
+        if (dr === 1) {
+            document.getElementById("p95").innerHTML = "⬆";
+        } else {
+            document.getElementById("p95").innerHTML = "⬇";
+        }
+        let ds = Math.floor((Math.random() * 2) + 1);
+        if (ds === 1) {
+            document.getElementById("p96").innerHTML = "⬆";
+        } else {
+            document.getElementById("p96").innerHTML = "⬇";
+        }
+        let dt = Math.floor((Math.random() * 2) + 1);
+        if (dt === 1) {
+            document.getElementById("p97").innerHTML = "⬆";
+        } else {
+            document.getElementById("p97").innerHTML = "⬇";
+        }
+        let du = Math.floor((Math.random() * 2) + 1);
+        if (du === 1) {
+            document.getElementById("p98").innerHTML = "⬆";
+        } else {
+            document.getElementById("p98").innerHTML = "⬇";
+        }
+        let dv = Math.floor((Math.random() * 2) + 1);
+        if (dv === 1) {
+            document.getElementById("p99").innerHTML = "⬆";
+        } else {
+            document.getElementById("p99").innerHTML = "⬇";
+        }
+        let dw = Math.floor((Math.random() * 2) + 1);
+        if (dw === 1) {
+            document.getElementById("p100").innerHTML = "⬆";
+        } else {
+            document.getElementById("p100").innerHTML = "⬇";
+        }
+        let dx = Math.floor((Math.random() * 2) + 1);
+        if (dx === 1) {
+            document.getElementById("p101").innerHTML = "⬆";
+        } else {
+            document.getElementById("p101").innerHTML = "⬇";
+        }
+        let dy = Math.floor((Math.random() * 2) + 1);
+        if (dy === 1) {
+            document.getElementById("p102").innerHTML = "⬆";
+        } else {
+            document.getElementById("p102").innerHTML = "⬇";
+        }
+        let dz = Math.floor((Math.random() * 2) + 1);
+        if (dz === 1) {
+            document.getElementById("p103").innerHTML = "⬆";
+        } else {
+            document.getElementById("p103").innerHTML = "⬇";
+        }
+
+        let ea = Math.floor((Math.random() * 2) + 1);
+        if (ea === 1) {
+            document.getElementById("p104").innerHTML = "⬆";
+        } else {
+            document.getElementById("p104").innerHTML = "⬇";
+        }
+        let eb = Math.floor((Math.random() * 2) + 1);
+        if (eb === 1) {
+            document.getElementById("p105").innerHTML = "⬆";
+        } else {
+            document.getElementById("p105").innerHTML = "⬇";
+        }
+        let ec = Math.floor((Math.random() * 2) + 1);
+        if (ec === 1) {
+            document.getElementById("p106").innerHTML = "⬆";
+        } else {
+            document.getElementById("p106").innerHTML = "⬇";
+        }
+        let ed = Math.floor((Math.random() * 2) + 1);
+        if (ed === 1) {
+            document.getElementById("p107").innerHTML = "⬆";
+        } else {
+            document.getElementById("p107").innerHTML = "⬇";
+        }
+        let ee = Math.floor((Math.random() * 2) + 1);
+        if (ee === 1) {
+            document.getElementById("p108").innerHTML = "⬆";
+        } else {
+            document.getElementById("p108").innerHTML = "⬇";
+        }
+        let ef = Math.floor((Math.random() * 2) + 1);
+        if (ef === 1) {
+            document.getElementById("p109").innerHTML = "⬆";
+        } else {
+            document.getElementById("p109").innerHTML = "⬇";
+        }
+        let eg = Math.floor((Math.random() * 2) + 1);
+        if (eg === 1) {
+            document.getElementById("p110").innerHTML = "⬆";
+        } else {
+            document.getElementById("p110").innerHTML = "⬇";
+        }
+        let eh = Math.floor((Math.random() * 2) + 1);
+        if (eh === 1) {
+            document.getElementById("p111").innerHTML = "⬆";
+        } else {
+            document.getElementById("p111").innerHTML = "⬇";
+        }
+        let ei = Math.floor((Math.random() * 2) + 1);
+        if (ei === 1) {
+            document.getElementById("p112").innerHTML = "⬆";
+        } else {
+            document.getElementById("p112").innerHTML = "⬇";
+        }
+        let ej = Math.floor((Math.random() * 2) + 1);
+        if (ej === 1) {
+            document.getElementById("p113").innerHTML = "⬆";
+        } else {
+            document.getElementById("p113").innerHTML = "⬇";
+        }
+        let ek = Math.floor((Math.random() * 2) + 1);
+        if (ek === 1) {
+            document.getElementById("p114").innerHTML = "⬆";
+        } else {
+            document.getElementById("p114").innerHTML = "⬇";
+        }
+        let el = Math.floor((Math.random() * 2) + 1);
+        if (el === 1) {
+            document.getElementById("p115").innerHTML = "⬆";
+        } else {
+            document.getElementById("p115").innerHTML = "⬇";
+        }
+        let em = Math.floor((Math.random() * 2) + 1);
+        if (em === 1) {
+            document.getElementById("p116").innerHTML = "⬆";
+        } else {
+            document.getElementById("p116").innerHTML = "⬇";
+        }
+        let en = Math.floor((Math.random() * 2) + 1);
+        if (en === 1) {
+            document.getElementById("p117").innerHTML = "⬆";
+        } else {
+            document.getElementById("p117").innerHTML = "⬇";
+        }
+        let eo = Math.floor((Math.random() * 2) + 1);
+        if (eo === 1) {
+            document.getElementById("p118").innerHTML = "⬆";
+        } else {
+            document.getElementById("p118").innerHTML = "⬇";
+        }
+        let ep = Math.floor((Math.random() * 2) + 1);
+        if (ep === 1) {
+            document.getElementById("p119").innerHTML = "⬆";
+        } else {
+            document.getElementById("p119").innerHTML = "⬆";
+        }
+        let eq = Math.floor((Math.random() * 2) + 1);
+        if (eq === 1) {
+            document.getElementById("p120").innerHTML = "⬆";
+        } else {
+            document.getElementById("p120").innerHTML = "⬇";
+        }
+        
+        var up1 = document.getElementById("upSound"); 
+        var down1 = document.getElementById("downSound"); 
+
+        function p1() {
+        var element = document.getElementById("s1");
+        element.classList.add("flipped");
+        if (document.getElementById("p1").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p2() {
+        var element = document.getElementById("s2");
+        element.classList.add("flipped");
+        if (document.getElementById("p2").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p3() {
+        var element = document.getElementById("s3");
+        element.classList.add("flipped");
+        if (document.getElementById("p3").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p4() {
+        var element = document.getElementById("s4");
+        element.classList.add("flipped");
+        if (document.getElementById("p4").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p5() {
+        var element = document.getElementById("s5");
+        element.classList.add("flipped");
+        if (document.getElementById("p5").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p6() {
+        var element = document.getElementById("s6");
+        element.classList.add("flipped");
+        if (document.getElementById("p6").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p7() {
+        var element = document.getElementById("s7");
+        element.classList.add("flipped");
+        if (document.getElementById("p7").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p8() {
+        var element = document.getElementById("s8");
+        element.classList.add("flipped");
+        if (document.getElementById("p8").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p9() {
+        var element = document.getElementById("s9");
+        element.classList.add("flipped");
+        if (document.getElementById("p9").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p10() {
+        var element = document.getElementById("s10");
+        element.classList.add("flipped");
+        if (document.getElementById("p10").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p11() {
+        var element = document.getElementById("s11");
+        element.classList.add("flipped");
+        if (document.getElementById("p11").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p12() {
+        var element = document.getElementById("s12");
+        element.classList.add("flipped");
+        if (document.getElementById("p12").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p13() {
+        var element = document.getElementById("s13");
+        element.classList.add("flipped");
+        if (document.getElementById("p13").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p14() {
+        var element = document.getElementById("s14");
+        element.classList.add("flipped");
+        if (document.getElementById("p14").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p15() {
+        var element = document.getElementById("s15");
+        element.classList.add("flipped");
+        if (document.getElementById("p15").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p16() {
+        var element = document.getElementById("s16");
+        element.classList.add("flipped");
+        if (document.getElementById("p16").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p17() {
+        var element = document.getElementById("s17");
+        element.classList.add("flipped");
+        if (document.getElementById("p17").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p18() {
+        var element = document.getElementById("s18");
+        element.classList.add("flipped");
+        if (document.getElementById("p18").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p19() {
+        var element = document.getElementById("s19");
+        element.classList.add("flipped");
+        if (document.getElementById("p19").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p20() {
+        var element = document.getElementById("s20");
+        element.classList.add("flipped");
+        if (document.getElementById("p20").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p21() {
+        var element = document.getElementById("s21");
+        element.classList.add("flipped");
+        if (document.getElementById("p21").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p22() {
+        var element = document.getElementById("s22");
+        element.classList.add("flipped");
+        if (document.getElementById("p22").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p23() {
+        var element = document.getElementById("s23");
+        element.classList.add("flipped");
+        if (document.getElementById("p23").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p24() {
+        var element = document.getElementById("s24");
+        element.classList.add("flipped");
+        if (document.getElementById("p24").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p25() {
+        var element = document.getElementById("s25");
+        element.classList.add("flipped");
+        if (document.getElementById("p25").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p26() {
+        var element = document.getElementById("s26");
+        element.classList.add("flipped");
+        if (document.getElementById("p26").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p27() {
+        var element = document.getElementById("s27");
+        element.classList.add("flipped");
+        if (document.getElementById("p27").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p28() {
+        var element = document.getElementById("s28");
+        element.classList.add("flipped");
+        if (document.getElementById("p28").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p29() {
+        var element = document.getElementById("s29");
+        element.classList.add("flipped");
+        if (document.getElementById("p29").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p30() {
+        var element = document.getElementById("s30");
+        element.classList.add("flipped");
+        if (document.getElementById("p30").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p31() {
+        var element = document.getElementById("s31");
+        element.classList.add("flipped");
+        if (document.getElementById("p31").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p32() {
+        var element = document.getElementById("s32");
+        element.classList.add("flipped");
+        if (document.getElementById("p32").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p33() {
+        var element = document.getElementById("s33");
+        element.classList.add("flipped");
+        if (document.getElementById("p33").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p34() {
+        var element = document.getElementById("s34");
+        element.classList.add("flipped");
+        if (document.getElementById("p34").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p35() {
+        var element = document.getElementById("s35");
+        element.classList.add("flipped");
+        if (document.getElementById("p35").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p36() {
+        var element = document.getElementById("s36");
+        element.classList.add("flipped");
+        if (document.getElementById("p36").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p37() {
+        var element = document.getElementById("s37");
+        element.classList.add("flipped");
+        if (document.getElementById("p37").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p38() {
+        var element = document.getElementById("s38");
+        element.classList.add("flipped");
+        if (document.getElementById("p38").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p39() {
+        var element = document.getElementById("s39");
+        element.classList.add("flipped");
+        if (document.getElementById("p39").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p40() {
+        var element = document.getElementById("s40");
+        element.classList.add("flipped");
+        if (document.getElementById("p40").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p41() {
+        var element = document.getElementById("s41");
+        element.classList.add("flipped");
+        if (document.getElementById("p41").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p42() {
+        var element = document.getElementById("s42");
+        element.classList.add("flipped");
+        if (document.getElementById("p42").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p43() {
+        var element = document.getElementById("s43");
+        element.classList.add("flipped");
+        if (document.getElementById("p43").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p44() {
+        var element = document.getElementById("s44");
+        element.classList.add("flipped");
+        if (document.getElementById("p44").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p45() {
+        var element = document.getElementById("s45");
+        element.classList.add("flipped");
+        if (document.getElementById("p45").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p46() {
+        var element = document.getElementById("s46");
+        element.classList.add("flipped");
+        if (document.getElementById("p46").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p47() {
+        var element = document.getElementById("s47");
+        element.classList.add("flipped");
+        if (document.getElementById("p47").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p48() {
+        var element = document.getElementById("s48");
+        element.classList.add("flipped");
+        if (document.getElementById("p48").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p49() {
+        var element = document.getElementById("s49");
+        element.classList.add("flipped");
+        if (document.getElementById("p49").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p50() {
+        var element = document.getElementById("s50");
+        element.classList.add("flipped");
+        if (document.getElementById("p50").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p51() {
+        var element = document.getElementById("s51");
+        element.classList.add("flipped");
+        if (document.getElementById("p51").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p52() {
+        var element = document.getElementById("s52");
+        element.classList.add("flipped");
+        if (document.getElementById("p52").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p53() {
+        var element = document.getElementById("s53");
+        element.classList.add("flipped");
+        if (document.getElementById("p53").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p54() {
+        var element = document.getElementById("s54");
+        element.classList.add("flipped");
+        if (document.getElementById("p54").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p55() {
+        var element = document.getElementById("s55");
+        element.classList.add("flipped");
+        if (document.getElementById("p55").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p56() {
+        var element = document.getElementById("s56");
+        element.classList.add("flipped");
+        if (document.getElementById("p56").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p57() {
+        var element = document.getElementById("s57");
+        element.classList.add("flipped");
+        if (document.getElementById("p57").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p58() {
+        var element = document.getElementById("s58");
+        element.classList.add("flipped");
+        if (document.getElementById("p58").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p59() {
+        var element = document.getElementById("s59");
+        element.classList.add("flipped");
+        if (document.getElementById("p59").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p60() {
+        var element = document.getElementById("s60");
+        element.classList.add("flipped");
+        if (document.getElementById("p60").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p61() {
+        var element = document.getElementById("s61");
+        element.classList.add("flipped");
+        if (document.getElementById("p61").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p62() {
+        var element = document.getElementById("s62");
+        element.classList.add("flipped");
+        if (document.getElementById("p62").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p63() {
+        var element = document.getElementById("s63");
+        element.classList.add("flipped");
+        if (document.getElementById("p63").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p64() {
+        var element = document.getElementById("s64");
+        element.classList.add("flipped");
+        if (document.getElementById("p64").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p65() {
+        var element = document.getElementById("s65");
+        element.classList.add("flipped");
+        if (document.getElementById("p65").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p66() {
+        var element = document.getElementById("s66");
+        element.classList.add("flipped");
+        if (document.getElementById("p66").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p67() {
+        var element = document.getElementById("s67");
+        element.classList.add("flipped");
+        if (document.getElementById("p67").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p68() {
+        var element = document.getElementById("s68");
+        element.classList.add("flipped");
+        if (document.getElementById("p68").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p69() {
+        var element = document.getElementById("s69");
+        element.classList.add("flipped");
+        if (document.getElementById("p69").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p70() {
+        var element = document.getElementById("s70");
+        element.classList.add("flipped");
+        if (document.getElementById("p70").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p71() {
+        var element = document.getElementById("s71");
+        element.classList.add("flipped");
+        if (document.getElementById("p71").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p72() {
+        var element = document.getElementById("s72");
+        element.classList.add("flipped");
+        if (document.getElementById("p72").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p73() {
+        var element = document.getElementById("s73");
+        element.classList.add("flipped");
+        if (document.getElementById("p73").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p74() {
+        var element = document.getElementById("s74");
+        element.classList.add("flipped");
+        if (document.getElementById("p74").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p75() {
+        var element = document.getElementById("s75");
+        element.classList.add("flipped");
+        if (document.getElementById("p75").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p76() {
+        var element = document.getElementById("s76");
+        element.classList.add("flipped");
+        if (document.getElementById("p76").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p77() {
+        var element = document.getElementById("s77");
+        element.classList.add("flipped");
+        if (document.getElementById("p77").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p78() {
+        var element = document.getElementById("s78");
+        element.classList.add("flipped");
+        if (document.getElementById("p78").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p79() {
+        var element = document.getElementById("s79");
+        element.classList.add("flipped");
+        if (document.getElementById("p79").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p80() {
+        var element = document.getElementById("s80");
+        element.classList.add("flipped");
+        if (document.getElementById("p80").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p81() {
+        var element = document.getElementById("s81");
+        element.classList.add("flipped");
+        if (document.getElementById("p81").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p82() {
+        var element = document.getElementById("s82");
+        element.classList.add("flipped");
+        if (document.getElementById("p82").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p83() {
+        var element = document.getElementById("s83");
+        element.classList.add("flipped");
+        if (document.getElementById("p83").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p84() {
+        var element = document.getElementById("s84");
+        element.classList.add("flipped");
+        if (document.getElementById("p84").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p85() {
+        var element = document.getElementById("s85");
+        element.classList.add("flipped");
+        if (document.getElementById("p85").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p86() {
+        var element = document.getElementById("s86");
+        element.classList.add("flipped");
+        if (document.getElementById("p86").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p87() {
+        var element = document.getElementById("s87");
+        element.classList.add("flipped");
+        if (document.getElementById("p87").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p88() {
+        var element = document.getElementById("s88");
+        element.classList.add("flipped");
+        if (document.getElementById("p88").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p89() {
+        var element = document.getElementById("s89");
+        element.classList.add("flipped");
+        if (document.getElementById("p89").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p90() {
+        var element = document.getElementById("s90");
+        element.classList.add("flipped");
+        if (document.getElementById("p90").innerHTML === "⬆") {
+            document.getElementById("upSound").play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p91() {
+        var element = document.getElementById("s91");
+        element.classList.add("flipped");
+        if (document.getElementById("p91").innerHTML === "⬆") {
+            document.getElementById("upSound").play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p92() {
+        var element = document.getElementById("s92");
+        element.classList.add("flipped");
+        if (document.getElementById("p92").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p93() {
+        var element = document.getElementById("s93");
+        element.classList.add("flipped");
+        if (document.getElementById("p93").innerHTML === "⬆") {
+            document.getElementById("upSound")1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p94() {
+        var element = document.getElementById("s94");
+        element.classList.add("flipped");
+        if (document.getElementById("p94").innerHTML === "⬆") {
+            up1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p95() {
+        var element = document.getElementById("s95");
+        element.classList.add("flipped");
+        if (document.getElementById("p95").innerHTML === "⬆") {
+            up1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p96() {
+        var element = document.getElementById("s96");
+        element.classList.add("flipped");
+        if (document.getElementById("p96").innerHTML === "⬆") {
+            up1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p97() {
+        var element = document.getElementById("s97");
+        element.classList.add("flipped");
+        if (document.getElementById("p97").innerHTML === "⬆") {
+            up1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p98() {
+        var element = document.getElementById("s98");
+        element.classList.add("flipped");
+        if (document.getElementById("p98").innerHTML === "⬆") {
+            up1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p99() {
+        var element = document.getElementById("s99");
+        element.classList.add("flipped");
+        if (document.getElementById("p99").innerHTML === "⬆") {
+            up1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p100() {
+        var element = document.getElementById("s100");
+        element.classList.add("flipped");
+        if (document.getElementById("p100").innerHTML === "⬆") {
+            up1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p101() {
+        var element = document.getElementById("s101");
+        element.classList.add("flipped");
+        if (document.getElementById("p101").innerHTML === "⬆") {
+            up1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p102() {
+        var element = document.getElementById("s102");
+        element.classList.add("flipped");
+        if (document.getElementById("p102").innerHTML === "⬆") {
+            up1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p103() {
+        var element = document.getElementById("s103");
+        element.classList.add("flipped");
+        if (document.getElementById("p103").innerHTML === "⬆") {
+            up1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p104() {
+        var element = document.getElementById("s104");
+        element.classList.add("flipped");
+        if (document.getElementById("p104").innerHTML === "⬆") {
+            up1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p105() {
+        var element = document.getElementById("s105");
+        element.classList.add("flipped");
+        if (document.getElementById("p105").innerHTML === "⬆") {
+            up1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p106() {
+        var element = document.getElementById("s106");
+        element.classList.add("flipped");
+        if (document.getElementById("p106").innerHTML === "⬆") {
+            up1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p107() {
+        var element = document.getElementById("s107");
+        element.classList.add("flipped");
+        if (document.getElementById("p107").innerHTML === "⬆") {
+            up1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p108() {
+        var element = document.getElementById("s108");
+        element.classList.add("flipped");
+        if (document.getElementById("p108").innerHTML === "⬆") {
+            up1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p109() {
+        var element = document.getElementById("s109");
+        element.classList.add("flipped");
+        if (document.getElementById("p109").innerHTML === "⬆") {
+            up1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p110() {
+        var element = document.getElementById("s110");
+        element.classList.add("flipped");
+        if (document.getElementById("p110").innerHTML === "⬆") {
+            up1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p111() {
+        var element = document.getElementById("s111");
+        element.classList.add("flipped");
+        if (document.getElementById("p111").innerHTML === "⬆") {
+            up1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p112() {
+        var element = document.getElementById("s112");
+        element.classList.add("flipped");
+        if (document.getElementById("p112").innerHTML === "⬆") {
+            up1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p113() {
+        var element = document.getElementById("s113");
+        element.classList.add("flipped");
+        if (document.getElementById("p113").innerHTML === "⬆") {
+            up1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p114() {
+        var element = document.getElementById("s114");
+        element.classList.add("flipped");
+        if (document.getElementById("p114").innerHTML === "⬆") {
+            up1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p115() {
+        var element = document.getElementById("s115");
+        element.classList.add("flipped");
+        if (document.getElementById("p115").innerHTML === "⬆") {
+            up1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p116() {
+        var element = document.getElementById("s116");
+        element.classList.add("flipped");
+        if (document.getElementById("p116").innerHTML === "⬆") {
+            up1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p117() {
+        var element = document.getElementById("s117");
+        element.classList.add("flipped");
+        if (document.getElementById("p117").innerHTML === "⬆") {
+            up1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p118() {
+        var element = document.getElementById("s118");
+        element.classList.add("flipped");
+        if (document.getElementById("p118").innerHTML === "⬆") {
+            up1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p119() {
+        var element = document.getElementById("s119");
+        element.classList.add("flipped");
+        if (document.getElementById("p119").innerHTML === "⬆") {
+            up1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function p120() {
+        var element = document.getElementById("s120");
+        element.classList.add("flipped");
+        if (document.getElementById("p120").innerHTML === "⬆") {
+            up1.play();
+            completeshow();
+        } else {
+            down.play();
+            var fails = parseInt(localStorage.getItem("fails"));
+            localStorage.setItem("fails", ++fails);
+            console.log(fails);
+            console.log("failed");
+            strikeon();
+        }
+        }
+
+        function reset() {
+        var aa = document.getElementById("s1");
+        aa.classList.remove("flipped")
+        var ab = document.getElementById("s2");
+        ab.classList.remove("flipped")
+        var ac = document.getElementById("s3");
+        ac.classList.remove("flipped")
+        var ad = document.getElementById("s4");
+        ad.classList.remove("flipped")
+        var af = document.getElementById("s5");
+        af.classList.remove("flipped")
+        var ag = document.getElementById("s6");
+        ag.classList.remove("flipped")
+        var ah = document.getElementById("s7");
+        ah.classList.remove("flipped")
+        var ai = document.getElementById("s8");
+        ai.classList.remove("flipped")
+        var aj = document.getElementById("s9");
+        aj.classList.remove("flipped")
+        var ak = document.getElementById("s10");
+        ak.classList.remove("flipped")
+        var al = document.getElementById("s11");
+        al.classList.remove("flipped")
+        var am = document.getElementById("s12");
+        am.classList.remove("flipped")
+        var an = document.getElementById("s13");
+        an.classList.remove("flipped")
+        var ao = document.getElementById("s14");
+        ao.classList.remove("flipped")
+        var ap = document.getElementById("s15");
+        ap.classList.remove("flipped")
+        var aq = document.getElementById("s16");
+        aq.classList.remove("flipped")
+        var ar = document.getElementById("s17");
+        ar.classList.remove("flipped")
+        var as = document.getElementById("s18");
+        as.classList.remove("flipped")
+        var at = document.getElementById("s19");
+        at.classList.remove("flipped")
+        var au = document.getElementById("s20");
+        au.classList.remove("flipped")
+        var av = document.getElementById("s21");
+        av.classList.remove("flipped")
+        var aw = document.getElementById("s22");
+        aw.classList.remove("flipped")
+        var ax = document.getElementById("s23");
+        ax.classList.remove("flipped")
+        var ay = document.getElementById("s24");
+        ay.classList.remove("flipped")
+        var az = document.getElementById("s25");
+        az.classList.remove("flipped")
+        var ba = document.getElementById("s26");
+        ba.classList.remove("flipped")
+        var bb = document.getElementById("s27");
+        bb.classList.remove("flipped")
+        var bc = document.getElementById("s28");
+        bc.classList.remove("flipped")
+        var bd = document.getElementById("s29");
+        bd.classList.remove("flipped")
+        var be = document.getElementById("s30");
+        be.classList.remove("flipped")
+        var bf = document.getElementById("s31");
+        bf.classList.remove("flipped")
+        var bg = document.getElementById("s32");
+        bg.classList.remove("flipped")
+        var bh = document.getElementById("s33");
+        bh.classList.remove("flipped")
+        var bi = document.getElementById("s34");
+        bi.classList.remove("flipped")
+        var bj = document.getElementById("s35");
+        bj.classList.remove("flipped")
+        var bk = document.getElementById("s36");
+        bk.classList.remove("flipped")
+        var bl = document.getElementById("s37");
+        bl.classList.remove("flipped")
+        var bm = document.getElementById("s38");
+        bm.classList.remove("flipped")
+        var bn = document.getElementById("s39");
+        bn.classList.remove("flipped")
+        var bo = document.getElementById("s40");
+        bo.classList.remove("flipped")
+        var bp = document.getElementById("s41");
+        bp.classList.remove("flipped")
+        var bq = document.getElementById("s42");
+        bq.classList.remove("flipped")
+        var br = document.getElementById("s43");
+        br.classList.remove("flipped")
+        var bs = document.getElementById("s44");
+        bs.classList.remove("flipped")
+        var bt = document.getElementById("s45");
+        bt.classList.remove("flipped")
+        var bu = document.getElementById("s46");
+        bu.classList.remove("flipped")
+        var bv = document.getElementById("s47");
+        bv.classList.remove("flipped")
+        var bw = document.getElementById("s48");
+        bw.classList.remove("flipped")
+        var bx = document.getElementById("s49");
+        bx.classList.remove("flipped")
+        var by = document.getElementById("s50");
+        by.classList.remove("flipped")
+        var bz = document.getElementById("s51");
+        bz.classList.remove("flipped")
+        var ca = document.getElementById("s52");
+        ca.classList.remove("flipped")
+        var cb = document.getElementById("s53");
+        cb.classList.remove("flipped")
+        var cc = document.getElementById("s54");
+        cc.classList.remove("flipped")
+        var cd = document.getElementById("s55");
+        cd.classList.remove("flipped")
+        var ce = document.getElementById("s56");
+        ce.classList.remove("flipped")
+        var cf = document.getElementById("s57");
+        cf.classList.remove("flipped")
+        var cg = document.getElementById("s58");
+        cg.classList.remove("flipped")
+        var ch = document.getElementById("s59");
+        ch.classList.remove("flipped")
+        var ci = document.getElementById("s60");
+        ci.classList.remove("flipped")
+        var cj = document.getElementById("s61");
+        cj.classList.remove("flipped")
+        var ck = document.getElementById("s62");
+        ck.classList.remove("flipped")
+        var cl = document.getElementById("s63");
+        cl.classList.remove("flipped")
+        var cm = document.getElementById("s64");
+        cm.classList.remove("flipped")
+        var cn = document.getElementById("s65");
+        cn.classList.remove("flipped")
+        var co = document.getElementById("s66");
+        co.classList.remove("flipped")
+        var cp = document.getElementById("s67");
+        cp.classList.remove("flipped")
+        var cf = document.getElementById("s68");
+        cf.classList.remove("flipped")
+        var cq = document.getElementById("s69");
+        cq.classList.remove("flipped")
+        var cr = document.getElementById("s70");
+        cr.classList.remove("flipped")
+        var cs = document.getElementById("s71");
+        cs.classList.remove("flipped")
+        var ct = document.getElementById("s72");
+        ct.classList.remove("flipped")
+        var cu = document.getElementById("s73");
+        cu.classList.remove("flipped")
+        var cv = document.getElementById("s74");
+        cv.classList.remove("flipped")
+        var cw = document.getElementById("s75");
+        cw.classList.remove("flipped")
+        var cx = document.getElementById("s76");
+        cx.classList.remove("flipped")
+        var cy = document.getElementById("s77");
+        cy.classList.remove("flipped")
+        var cz = document.getElementById("s78");
+        cz.classList.remove("flipped")
+        var da = document.getElementById("s79");
+        da.classList.remove("flipped")
+        var db = document.getElementById("s80");
+        db.classList.remove("flipped")
+        var dc = document.getElementById("s81");
+        dc.classList.remove("flipped")
+        var dd = document.getElementById("s82");
+        dd.classList.remove("flipped")
+        var de = document.getElementById("s83");
+        de.classList.remove("flipped")
+        var df = document.getElementById("s84");
+        df.classList.remove("flipped")
+        var dg = document.getElementById("s85");
+        dg.classList.remove("flipped")
+        var dh = document.getElementById("s86");
+        dh.classList.remove("flipped")
+        var di = document.getElementById("s87");
+        di.classList.remove("flipped")
+        var dj = document.getElementById("s88");
+        dj.classList.remove("flipped")
+        var dk = document.getElementById("s89");
+        dk.classList.remove("flipped")
+        var dl = document.getElementById("s90");
+        dl.classList.remove("flipped")
+        var dm = document.getElementById("s91");
+        dm.classList.remove("flipped")
+        var dn = document.getElementById("s92");
+        dn.classList.remove("flipped")
+        var dp = document.getElementById("s93");
+        dp.classList.remove("flipped")
+        var dq = document.getElementById("s94");
+        dq.classList.remove("flipped")
+        var dr = document.getElementById("s95");
+        dr.classList.remove("flipped")
+        var ds = document.getElementById("s96");
+        ds.classList.remove("flipped")
+        var dt = document.getElementById("s97");
+        dt.classList.remove("flipped")
+        var du = document.getElementById("s98");
+        du.classList.remove("flipped")
+        var dv = document.getElementById("s99");
+        dv.classList.remove("flipped")
+        var dw = document.getElementById("s100");
+        dw.classList.remove("flipped")
+        var dx = document.getElementById("s101");
+        dx.classList.remove("flipped")
+        var dy = document.getElementById("s102");
+        dy.classList.remove("flipped")
+        var dz = document.getElementById("s103");
+        dz.classList.remove("flipped")
+        var ea = document.getElementById("s104");
+        ea.classList.remove("flipped")
+        var eb = document.getElementById("s105");
+        eb.classList.remove("flipped")
+        var ec = document.getElementById("s106");
+        ec.classList.remove("flipped")
+        var ed = document.getElementById("s107");
+        ed.classList.remove("flipped")
+        var ee = document.getElementById("s108");
+        ee.classList.remove("flipped")
+        var ef = document.getElementById("s109");
+        ef.classList.remove("flipped")
+        var eg = document.getElementById("s110");
+        eg.classList.remove("flipped")
+        var eh = document.getElementById("s111");
+        eh.classList.remove("flipped")
+        var ei = document.getElementById("s112");
+        ei.classList.remove("flipped")
+        var ej = document.getElementById("s113");
+        ej.classList.remove("flipped")
+        var ek = document.getElementById("s114");
+        ek.classList.remove("flipped")
+        var el = document.getElementById("s115");
+        el.classList.remove("flipped")
+        var em = document.getElementById("s116");
+        em.classList.remove("flipped")
+        var en = document.getElementById("s117");
+        en.classList.remove("flipped")
+        var eo = document.getElementById("s118");
+        eo.classList.remove("flipped")
+        var ep = document.getElementById("s119");
+        ep.classList.remove("flipped")
+        var eq = document.getElementById("s120");
+        eq.classList.remove("flipped")
+
+        setTimeout(function(){
+        // Refresh the page
+        location.reload();
+        }, 1000);
+        }
+
+        var fails = parseInt(localStorage.getItem("fails"));
+        localStorage.setItem("fails", ++fails);
+        console.log(fails);
+        window.onload = localStorage.setItem("fails", "0");
+        // Check browser sup1port
+        if (typeof(Storage) !== "undefined") {
+        // Store
+        localStorage.setItem("fails", "0");
+        // Retrieve
+        }
+
+//         while (true) {
+//     console.log(fails);
+// }
+function completeshow() {
+document.getElementById("overlaycomplete").style.display = "block";
+}
+
+        function strikeon() {
+            // var x = localStorage.getItem("fails");
+            // if (localStorage.getItem("fails") === 1) {
+            //     alert("1")
+            // }
+            // if (localStorage.getItem("fails") === 2) {
+            //     alert("2")
+            // }
+            // if (localStorage.getItem("fails") === 3) {
+            //     alert("3")
+            // }
+            var fails2 = parseInt(localStorage.getItem("fails"));
+            if (fails2 === 0) {
+            document.getElementById("overlay1").style.display = "block";
+            } else if (fails2 === 1) {
+            document.getElementById("overlay2").style.display = "block";
+            document.getElementById("ximg1").style.opacity = "1";
+            } else if (fails2 === 2) {
+            document.getElementById("overlay3").style.display = "block";
+            document.getElementById("ximg2").style.opacity = "1";
+            } else if (fails2 === 3) {
+            document.getElementById("overlay4").style.display = "block";
+            document.getElementById("ximg3").style.opacity = "1";
+            } else {
+                document.getElementById("overlay4").style.display = "block";
+            }
+            }
+        
+            
+
+        function strikeoff() {
+            document.getElementById("overlay1").style.display = "none";
+            document.getElementById("overlay2").style.display = "none";
+            document.getElementById("overlay3").style.display = "none";
+            document.getElementById("overlaycomplete").style.display = "none";
+        }
+
+        function nextLevel() {
+            setTimeout(
+    function() {
+      window.location.href = "index.html";
+    }, 2000);
+          
+        }
+    </script>
+
+</body>
+
+
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queue</title>
+    <style>
+@import "https://unpkg.com/open-props";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--gradient-1);
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  color: white;
+}
+
+button {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-6);
+  font-size: var(--font-size-5);
+  color: var(--gray-8);
+  background: var(--gray-0);
+  border: 0;
+  padding: var(--size-4) var(--size-8);
+  transform: translateY(calc(var(--y, 0) * 1%)) scale(var(--scale));
+  transition: transform 0.1s;
+  position: relative;
+  margin-top: -40px;
+}
+
+
+button:hover {
+  --y: -10;
+  --scale: 1.1;
+  --border-scale: 1;
+}
+
+button:active {
+  --y: 5%;
+  --scale: 0.9;
+  --border-scale: 0.9, 0.8;
+}
+
+button:before {
+  content: "";
+  position: absolute;
+  inset: calc(var(--size-3) * -1);
+  border: var(--size-2) solid var(--gray-0);
+  transform: scale(var(--border-scale, 0));
+  transition: transform 0.125s;
+  
+  --angle-one: 105deg;
+  --angle-two: 290deg;
+  --spread-one: 30deg;
+  --spread-two: 40deg;
+  --start-one: calc(var(--angle-one) - (var(--spread-one) * 0.5));
+  --start-two: calc(var(--angle-two) - (var(--spread-two) * 0.5));
+  --end-one: calc(var(--angle-one) + (var(--spread-one) * 0.5));
+  --end-two: calc(var(--angle-two) + (var(--spread-two) * 0.5));
+  
+  mask: conic-gradient(
+    transparent 0 var(--start-one),
+    white var(--start-one) var(--end-one),
+    transparent var(--end-one) var(--start-two),
+    white var(--start-two) var(--end-two),
+    transparent var(--end-two)
+  );
+  
+  z-index: -1;
+}
+
+
+
+        .grid-container {
+          display: grid;
+          grid-template-columns: 90px auto;
+          background-color: #2196F3;
+          padding: 10px;
+          width: 100%;
+          margin-top: -140px;
+        }
+        .grid-item {
+          background-color: rgba(255, 255, 255, 0.8);
+          border: 1px solid rgba(0, 0, 0, 0.8);
+          padding: 20px;
+          font-size: 30px;
+          text-align: center;
+          color: black;
+        }
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  textarea:focus, input:focus{
+    outline: none;
+}
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    width: 100vw;
+    height: 100vh;
+    /* display: flex; */
+    max-width: 700px;
+  margin: auto;
+    justify-content: center;
+    align-items: center;
+    
+   
+  }
+  input {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    height: 150%;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+  }
+        </style>
+</head>
+<body>
+    <h1>Queue:<br> </h1>
+    <br>
+<div class="grid-container">
+  <div class="grid-item">➡</div>
+    <div class="grid-item"><input type="text" id="0" name="0"></div>
+  <div class="grid-item">1</div>
+  <div class="grid-item"><input type="text" id="1" name="1"></div>
+    <div class="grid-item">2</div>  
+    <div class="grid-item"><input type="text" id="2" name="2"></div>
+    <div class="grid-item">3</div>
+    <div class="grid-item"><input type="text" id="3" name="3"></div>  
+    <div class="grid-item">4</div>
+    <div class="grid-item"><input type="text" id="4" name="4"></div>
+    <div class="grid-item">5</div>  
+    <div class="grid-item"><input type="text" id="5" name="fn5ame"></div> 
+    <div class="grid-item">6</div>
+    <div class="grid-item"><input type="text" id="6" name="6"></div>
+    <div class="grid-item">7</div>  
+    <div class="grid-item"><input type="text" id="7" name="7"></div>
+    <div class="grid-item">8</div>
+    <div class="grid-item"><input type="text" id="8" name="8"></div>  
+    <div class="grid-item">9</div>
+    <div class="grid-item"><input type="text" id="9" name="9"></div>
+    <div class="grid-item">10</div>  
+    <div class="grid-item"><input type="text" id="10" name="10"></div>  
+</div>
+
+<button onclick="up1()">UP</button>
+
+
+<script>
+
+    function up1() {
+      var x = document.getElementById("0");
+        var z = document.getElementById("1");
+        var a = document.getElementById("2");
+        var b = document.getElementById("3");
+        var c = document.getElementById("4");
+        var d = document.getElementById("5");
+        var e = document.getElementById("6");
+        var f = document.getElementById("7");
+        var g = document.getElementById("8");
+        var h = document.getElementById("9");
+        var i = document.getElementById("10");
+
+        // z.addEventListener("input", () => {
+        // a.value = z.value
+        // removeEventListener("input")
+        // })
+        
+
+        x.value = z.value;
+        z.value = a.value;
+        a.value = b.value;
+        b.value = c.value;
+        c.value = d.value;
+        d.value = e.value;
+        e.value = f.value;
+        f.value = g.value;
+        g.value = h.value;
+        h.value = i.value;
+        i.value = ""
+
+
+    }
+
+
+
+
+</script>
+    
+</body>
+</html>
