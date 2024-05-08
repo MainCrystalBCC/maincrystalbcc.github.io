@@ -218,3 +218,9 @@ li {
     right: 20px;
     bottom: 0px;
  }
+
+ .homeBtn {
+    font-size: 45px;
+    color: lime;
+    text-shadow: 0 0 13px lime, 0 0 55px #000000;
+}

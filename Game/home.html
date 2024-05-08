@@ -12,6 +12,12 @@
         <h1 id="levelsLabel">Lock Game</h1>
       </div>
     <div class="levels">
+        <div class="centerAlignText">
+            <br>
+            <a onclick="home()"><div class="homeBtn" id="home">Home</div></a>
+            <br><br>
+            <a onclick="reset()"><div class="reset" id="reset">RESET</div></a>
+        </div>
         <div class="color" id="level1" id="level1"><a href="level1.html"><button class="levelsBTn">001</button></a></div>
         <div class="color" id="level2"><a href=""><button class="levelsBTn">🔒</button></a></div>
         <div class="color" id="level3"><a href=""><button class="levelsBTn">🔒</button></a></div>
@@ -112,7 +118,7 @@
         <!-- <div class="color" id="level98"><a href=""><button class="levelsBTn">🔒</button></a></div> -->
         <!-- <div class="color" id="level99"><a href=""><button class="levelsBTn">🔒</button></a></div> -->
         <!-- <div class="color" id="level100"><a href=""><button class="levelsBTn">🔒</button></a></div> -->
-        <a onclick="reset()"><div class="reset" id="reset">RESET</div></a>
+
         
         
         <script>
@@ -233,6 +239,11 @@
                     console.log('Sucessfully Canceled Reset')
                 }
                 // document.getElementById("demo").innerHTML = text;
+            }
+
+
+            function home() {
+                window.location.href = "../home.html";
             }
 
 

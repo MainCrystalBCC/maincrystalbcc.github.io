@@ -18,6 +18,7 @@
             Hard
             <p class="smallText" id="hardPlays">Games Played: 0</p>
         </button></a></div>
+        <a onclick="home()"><div class="homeBtn" id="home">Home</div></a>
         <a onclick="reset()"><div class="reset" id="reset">RESET</div></a>
         
     </div>
@@ -73,6 +74,10 @@
                     console.log('Sucessfully Canceled Reset')
                 }
                 document.getElementById("demo").innerHTML = text;
+            }
+
+            function home() {
+                window.location.href = "../home.html";
             }
             
     </script>
