@@ -1,3 +1,17 @@
+@import url(https://db.onlinewebfonts.com/c/cdc8c3de1e6bd5a9a67c6a001f9fedd0?family=Burbank+Big+Condensed+Black);
+@font-face {
+    font-family: "Burbank Big Condensed Black";
+    src: url("https://db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.eot");
+    src: url("https://db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.svg#Burbank Big Condensed Black")format("svg");
+}
+body {
+  font-family: "Burbank Big Condensed Black";
+}
+
 .holder2 {
     display: grid;
     grid-template-columns: 650px;
@@ -254,6 +268,7 @@
     font-size: 40px;
     text-align: center;
     border: white 3px solid;
+    font-family: "Burbank Big Condensed Black";
 }
 
 .red {
@@ -316,4 +331,12 @@ body {
 .correct {
     box-shadow: 120px 80px 40px 20px #0ff;
 
+}
+
+.levelsBTn {
+  font-family: "Burbank Big Condensed Black";
+}
+
+.next {
+  font-family: "Burbank Big Condensed Black";
 }

@@ -1,3 +1,14 @@
+@import url(https://db.onlinewebfonts.com/c/cdc8c3de1e6bd5a9a67c6a001f9fedd0?family=Burbank+Big+Condensed+Black);
+@font-face {
+    font-family: "Burbank Big Condensed Black";
+    src: url("https://db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.eot");
+    src: url("https://db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.svg#Burbank Big Condensed Black")format("svg");
+}
+
 .lock {
     display: grid;
     grid-template-columns: 110px 110px 110px 110px;
@@ -64,6 +75,7 @@ body {
     font-size: 110px;
     text-align: center;
     border-radius: 5px;
+    font-family: "Burbank Big Condensed Black";
     
 }
 
@@ -135,6 +147,7 @@ input[type="number"]::-webkit-inner-spin-button,
    grid-template-rows: 70px 70px 70px 70px;
    -webkit-text-stroke-width: 1px;
    -webkit-text-stroke-color: black;
+   font-family: "Burbank Big Condensed Black";
 }
 
 .clue {
@@ -143,6 +156,7 @@ input[type="number"]::-webkit-inner-spin-button,
     /* background-color: green; */
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
+    font-family: "Burbank Big Condensed Black";
 }
 .clueTitle {
     font-size: 30px;
@@ -170,6 +184,7 @@ input[type="number"]::-webkit-inner-spin-button,
     margin-left: 5%;
     padding: 20px;
     display: grid;
+    font-family: "Burbank Big Condensed Black";
     grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px;
     gap: 25px;
     grid-template-rows: 30px 30px 30px 30px 30px 30px 30px 30px;

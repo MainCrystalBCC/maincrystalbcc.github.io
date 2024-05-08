@@ -9,53 +9,52 @@
     url("https://db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.svg#Burbank Big Condensed Black")format("svg");
 }
 
-a {
-    cursor: pointer;
-}
-
-button {
-    cursor: pointer;
-}
-
 .levelsSafe {
     display: grid;
-    grid-template-columns: 250px 250px;
+    grid-template-columns: 550px 550px 550px;
     /* gap: 15px; */
     gap: 10px;
     
-    grid-template-rows: 220px;
+    grid-template-rows: 350px;
     color: white;
     position: absolute;
-  top: 60%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
+  
+  
 }
 
-.smallText {
-    font-size: 20px;
+.score1Test {
+    display: grid;
+    grid-template-columns: 650px;
+    /* gap: 15px; */
+    
+    grid-template-rows: 70px;
+    color: white;
+    position: absolute;
+    font-size: 50px;
+  top: 5%;
+  left: 64%;
+  transform: translate(-50%, -50%);
+  
+  
 }
 
-.reset {
-    font-size: 45px;
-    color: red;
-    text-shadow: 0 0 13px #FF0000, 0 0 55px #000000;
+img {
+    width: 100%;
+    height: auto;
 }
-.homeBtn {
-    font-size: 45px;
-    color: lime;
-    text-shadow: 0 0 13px lime, 0 0 55px #000000;
+
+
+.colorGame {
+    background-color: #db9801;
 }
+
 p {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    /* font-weight: 800; */
     font-family: "Burbank Big Condensed Black";
-    /* font-size: 26px; */
 }
 
-button {
-    font-family: "Burbank Big Condensed Black";
-}
-.score1 {
-    margin-top: -30px;
-}
-.color {
-    font-family: "Burbank Big Condensed Black";
-}
