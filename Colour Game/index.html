@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <link rel="stylesheet" href="Hard/Hard.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h1 class="score1" id="levels">Levels</h1>
+    <div class="levelsSafe">
+        <div class="color"><a href="EasyLevels.html"><button class="levelsBTn">
+            Easy
+            <p class="smallText" id="easyPlays">Games Played: 0</p>
+        </button></a></div>
+        <div class="color"><a href="HardLevels.html"><button class="levelsBTn">
+            Hard
+            <p class="smallText" id="hardPlays">Games Played: 0</p>
+        </button></a></div>
+        <a onclick="reset()"><div class="reset" id="reset">RESET</div></a>
+        
+    </div>
+
+
+    <script>
+            startStorage()
+            Easyplays()
+            Hardplays()
+            function Easyplays() {
+                const getELevel = parseInt(localStorage.getItem("EasyLevel"));
+                document.getElementById('easyPlays').innerText = 'Games Played: '+getELevel;
+                
+            }
+
+            function Hardplays() {
+                const getHLevel = parseInt(localStorage.getItem("HardLevel"));
+                document.getElementById('hardPlays').innerText = 'Games Played: '+getHLevel;
+                
+            }
+
+            function startStorage() {
+            
+
+                if(!localStorage.getItem('EasyLevel')){
+                localStorage.setItem('EasyLevel', '0')
+                
+                }
+
+                if(!localStorage.getItem('HardLevel')){
+                localStorage.setItem('HardLevel', '0')
+                
+                }
+            }
+
+            function reset() {
+                let text = "Do you want to reset?\nALL your progress will be gone forever.";
+                if (confirm(text) == true) {
+                    // text = "You pressed OK!";
+                    localStorage.setItem('HardLevel', '0')
+                    localStorage.setItem('EasyLevel', '0')
+                    localStorage.setItem('EasyLevel0', '0')
+                    localStorage.setItem('EasyLevel1', '0')
+                    localStorage.setItem('EasyLevel2', '0')
+                    localStorage.setItem('EasyLevel3', '0')
+                    localStorage.setItem('level2', '0')
+                    localStorage.setItem('level', '0')
+                    localStorage.setItem('level3', '0')
+                    localStorage.setItem('level4', '0')
+                    location.reload();
+                } else {
+                    // text = "You canceled!";
+                    console.log('Sucessfully Canceled Reset')
+                }
+                document.getElementById("demo").innerHTML = text;
+            }
+            
+    </script>
+</body>
+</html>

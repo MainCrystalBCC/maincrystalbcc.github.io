@@ -1,0 +1,31 @@
+a {
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
+}
+
+.levelsSafe {
+    display: grid;
+    grid-template-columns: 250px 250px;
+    /* gap: 15px; */
+    gap: 10px;
+    
+    grid-template-rows: 170px;
+    color: white;
+    position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.smallText {
+    font-size: 20px;
+}
+
+.reset {
+    font-size: 45px;
+    color: red;
+    text-shadow: 0 0 13px #FF0000, 0 0 55px #000000;
+}

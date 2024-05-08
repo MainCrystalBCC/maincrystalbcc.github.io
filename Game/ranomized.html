@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lock Puzzle Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="lock" id="lockMain">
+        <div class="code" id="1">
+            <input type="number" class="numInput" name="input1" pattern="[0-9]" maxlength="1" id="Number1" value="0" min="0" max="9" readonly>
+        </div>
+        <div class="code" id="2">
+            <input type="number" class="numInput" name="input2" pattern="[0-9]" maxlength="1" id="Number2" value="0" min="0" max="9" readonly>
+        </div>
+        <div class="code" id="3">
+            <input type="number" class="numInput" name="input3" pattern="[0-9]" maxlength="1" id="Number3" value="0" min="0" max="9" readonly>
+        </div>
+        <div class="code" id="4">
+            <input type="number" class="numInput" name="input4" pattern="[0-9]" maxlength="1" id="Number4" value="0" min="0" max="9" readonly>
+        </div>
+        <div class="editor" id="edit1">
+            <button class="buttoneditor" id="edit1down" onclick="edit1down()">↓</button>
+            <button class="buttoneditor" id="edit1up" onclick="edit1up()">↑</button>
+        </div>
+        <div class="editor" id="edit2">
+            <button class="buttoneditor" id="edit2down" onclick="edit2down()">↓</button>
+            <button class="buttoneditor" id="edit2up" onclick="edit2up()">↑</button>
+        </div>
+        <div class="editor" id="edit3">
+            <button class="buttoneditor" id="edit3down" onclick="edit3down()">↓</button>
+            <button class="buttoneditor" id="edit3up" onclick="edit3up()">↑</button>
+        </div>
+        <div class="editor" id="edit4">
+            <button class="buttoneditor" id="edit4down" onclick="edit4down()">↓</button>
+            <button class="buttoneditor" id="edit4up" onclick="edit4up()">↑</button>
+        </div>
+        
+    </div>
+    <button class="submit" onclick="submit()">Unlock</button>
+
+    <div class="clueHolder">
+        <div class="clueTitle" id="clue1">Clue 1:</div>
+        <div class="clue" id="Clue1">Number 1 is 2x Number 4</div>
+        <div class="clueTitle" id="clue2">Clue 2:</div>
+        <div class="clue" id="Clue2">Test</div>
+        <div class="clueTitle" id="clue3">Clue 3:</div>
+        <div class="clue" id="Clue3">Test</div>
+        <div class="clueTitle" id="clue4">Clue 4:</div>
+        <div class="clue" id="Clue4">Test</div>
+        
+    </div>
+
+    <footer>
+        <p class="footer">© 2024 - Landon Smith</p>
+    </footer>
+
+    <script>
+
+function pickAndRemoveNumbers(arr, count) {
+        const pickedNumbers = [];
+
+        if (arr.length >= count) {
+            for (let i = 0; i < count; i++) {
+            const randomIndex = Math.floor(Math.random() * arr.length);
+            const pickedNumber = arr[randomIndex];
+            arr.splice(randomIndex, 1);
+            pickedNumbers.push(pickedNumber);
+            }
+
+            // Display the picked numbers
+            console.log("Picked Numbers:", pickedNumbers);
+
+            // Return the picked numbers array
+            return pickedNumbers;
+        } else {
+            console.log("Invalid parameters or array length is less than count.");
+            return [];
+        }
+        }
+
+        function pickAndRemoveNumbers2(arr, count) {
+        const pickedNumbers2 = [];
+
+        if (arr.length >= count) {
+            for (let i = 0; i < count; i++) {
+            const randomIndex2 = Math.floor(Math.random() * arr.length);
+            const pickedNumber2 = arr[randomIndex2];
+            arr.splice(randomIndex2, 1);
+            pickedNumbers2.push(pickedNumber2);
+            }
+
+            // Display the picked numbers
+            console.log("Picked Numbers:", pickedNumbers2);
+
+            // Return the picked numbers array
+            return pickedNumbers2;
+        } else {
+            console.log("Invalid parameters or array length is less than count.");
+            return [];
+        }
+        }
+
+        function pickAndRemoveNumbers3(arr, count) {
+        const pickedNumbers3 = [];
+
+        if (arr.length >= count) {
+            for (let i = 0; i < count; i++) {
+            const randomIndex3 = Math.floor(Math.random() * arr.length);
+            const pickedNumber3 = arr[randomIndex3];
+            arr.splice(randomIndex3, 1);
+            pickedNumbers3.push(pickedNumber3);
+            }
+
+            // Display the picked numbers
+            console.log("Picked Numbers:", pickedNumbers3);
+
+            // Return the picked numbers array
+            return pickedNumbers3;
+        } else {
+            console.log("Invalid parameters or array length is less than count.");
+            return [];
+        }
+        }
+
+        function pickAndRemoveNumbers4(arr, count) {
+        const pickedNumbers4 = [];
+
+        if (arr.length >= count) {
+            for (let i = 0; i < count; i++) {
+            const randomIndex4 = Math.floor(Math.random() * arr.length);
+            const pickedNumber4 = arr[randomIndex4];
+            arr.splice(randomIndex4, 1);
+            pickedNumbers4.push(pickedNumber4);
+            }
+
+            // Display the picked numbers
+            console.log("Picked Numbers:", pickedNumbers4);
+
+            // Return the picked numbers array
+            return pickedNumbers4;
+        } else {
+            console.log("Invalid parameters or array length is less than count.");
+            return [];
+        }
+        }
+
+
+
+        // Example usage:
+        const numberArray = [0,1,2,3,4,5,6,7,8,9];
+        const numberArray2 = [0,1,2,3,4,5,6,7,8,9];
+        const numberArray3 = [0,1,2,3,4,5,6,7,8,9];
+        const numberArray4 = [0,1,2,3,4];
+        const pickedNumbersArray = pickAndRemoveNumbers(numberArray, 1);
+        const pickedNumbersArray2 = pickAndRemoveNumbers2(numberArray2, 1);
+        const pickedNumbersArray3 = pickAndRemoveNumbers3(numberArray3, 1);
+        const pickedNumbersArray4 = pickAndRemoveNumbers4(numberArray4, 1);
+
+        const Number1 = (pickedNumbersArray4[0]*2);
+        const Number2 = pickedNumbersArray2[0];
+        const Number3 = pickedNumbersArray3[0];
+        const Number4 = pickedNumbersArray4[0];
+
+        console.log(pickedNumbersArray4[0]*2, pickedNumbersArray2[0], pickedNumbersArray3[0], pickedNumbersArray4[0])
+
+        function submit() {
+            if (document.getElementById('Number1').value == Number1) {
+                // console.log('1 is Right')
+                if (document.getElementById('Number2').value == Number2) {
+                    if (document.getElementById('Number3').value == Number3) {
+                        if (document.getElementById('Number4').value == Number4) {
+                            console.log('correct!')
+                        }
+                    }
+                }
+            } else {
+                // console.log('1 is Wrong')
+                document.getElementById('lockMain').classList.add('shake');
+                setTimeout(() => {  document.getElementById('lockMain').classList.remove('shake');; }, 1000);
+            }
+
+            if (document.getElementById('Number2').value == Number2) {
+                // console.log('2 is Right')
+            } else {
+                // console.log('2 is Wrong')
+                document.getElementById('lockMain').classList.add('shake');
+                setTimeout(() => {  document.getElementById('lockMain').classList.remove('shake');; }, 1000);
+            }
+
+            if (document.getElementById('Number3').value == Number3) {
+                // console.log('3 is Right')
+            } else {
+                // console.log('3 is Wrong')
+                document.getElementById('lockMain').classList.add('shake');
+                setTimeout(() => {  document.getElementById('lockMain').classList.remove('shake');; }, 1000);
+            }
+
+            if (document.getElementById('Number4').value == Number4) {
+                // console.log('4 is Right')
+            } else {
+                // console.log('4 is Wrong')
+                document.getElementById('lockMain').classList.add('shake');
+                setTimeout(() => {  document.getElementById('lockMain').classList.remove('shake');; }, 1000);
+            }
+        }
+
+        function edit1down() {
+            var num = document.getElementById('Number1').value
+            var numAfter = num-1
+            if (num >= 1) {
+                document.getElementById('Number1').value = numAfter;
+            } else if (num == 0) {
+                document.getElementById('Number1').value = 9;
+            }
+        }
+        function edit1up() {
+            var num = document.getElementById('Number1').value
+            var numAfter = num+1
+            if (num < 9) {
+                document.getElementById('Number1').stepUp(1)
+                
+            } else if (num = 9) {
+                document.getElementById('Number1').value = 0;
+            }
+        }
+        function edit2down() {
+            var num = document.getElementById('Number2').value
+            var numAfter = num-1
+            if (num >= 1) {
+                document.getElementById('Number2').value = numAfter;
+            } else if (num == 0) {
+                document.getElementById('Number2').value = 9;
+            }
+        }
+        function edit2up() {
+            var num = document.getElementById('Number2').value
+            var numAfter = num+1
+            if (num < 9) {
+                document.getElementById('Number2').stepUp(1)
+                
+            } else if (num = 9) {
+                document.getElementById('Number2').value = 0;
+            }
+        }
+        function edit3down() {
+            var num = document.getElementById('Number3').value
+            var numAfter = num-1
+            if (num >= 1) {
+                document.getElementById('Number3').value = numAfter;
+            } else if (num == 0) {
+                document.getElementById('Number3').value = 9;
+            }
+        }
+        function edit3up() {
+            var num = document.getElementById('Number3').value
+            var numAfter = num+1
+            if (num < 9) {
+                document.getElementById('Number3').stepUp(1)
+                
+            } else if (num = 9) {
+                document.getElementById('Number3').value = 0;
+            }
+        }
+        function edit4down() {
+            var num = document.getElementById('Number4').value
+            var numAfter = num-1
+            if (num >= 1) {
+                document.getElementById('Number4').value = numAfter;
+            } else if (num == 0) {
+                document.getElementById('Number4').value = 9;
+            }
+        }
+        function edit4up() {
+            var num = document.getElementById('Number4').value
+            var numAfter = num+1
+            if (num < 9) {
+                document.getElementById('Number4').stepUp(1)
+            } else if (num = 9) {
+                document.getElementById('Number4').value = 0;
+            }
+        }
+        
+
+
+        if (pickedNumbersArray2[0] == 4){
+            document.getElementById('Clue2').innerText = "Number 2: What year was this website made?"
+        }
+        if (pickedNumbersArray2[0] == 3){
+            document.getElementById('Clue2').innerText = "Number 2: Odd Number"
+        }
+        if (pickedNumbersArray2[0] == 7){
+            document.getElementById('Clue2').innerText = "Number 2: Odd Number"
+        }
+        if (pickedNumbersArray2[0] == 5){
+            document.getElementById('Clue2').innerText = "Number 2: Odd Number"
+        }
+        if (pickedNumbersArray2[0] == 1){
+            document.getElementById('Clue2').innerText = "Number 2: Odd Number"
+        }
+        if (pickedNumbersArray2[0] == 9){
+            document.getElementById('Clue2').innerText = "Number 2: Odd Number"
+        }
+        if (pickedNumbersArray2[0] == 0){
+            document.getElementById('Clue2').innerText = "Number 2: Even Number"
+        }
+        if (pickedNumbersArray2[0] == 2){
+            document.getElementById('Clue2').innerText = "Number 2: Even Number"
+        }
+        if (pickedNumbersArray2[0] == 3){
+            document.getElementById('Clue2').innerText = "Number 2: Odd Number"
+        }
+
+       
+    </script>
+</body>
+</html>
