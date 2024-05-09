@@ -55,6 +55,24 @@ img {
     background-color: #d7d7d7;
 }
 
+.shooter {
+    background-color: #e08e79;
+}
+
+.memory {
+    background-color: #f1f1f1;
+}
+
+.picture {
+    background-color: #212121;
+}
+
+.food {
+    background-color: #212121;
+}
+
+
+
 p {
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
