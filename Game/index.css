@@ -240,18 +240,37 @@ body {
 
 
 .levels {
-    display: grid;
-    grid-template-columns: 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px;
-    gap: 10px;
-    
-    grid-template-rows: 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px;
-    color: white;
+  display: grid;
+  grid-template-columns: 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px;
+  gap: 10px;
   
-    /* display: flex; */
-    /* position: absolute; */
-    /* top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
+  grid-template-rows: 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px 175px;
+  color: white;
+
+  /* display: flex; */
+  /* position: absolute; */
+  /* top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+}
+
+.levels2 {
+  display: grid;
+  grid-template-columns: 550px 550px 550px;
+  gap: 10px;
+  
+  grid-template-rows: 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px;
+  color: white;
+  position: absolute;
+  top: 15%;
+  left: 6%;
+  /* transform: translate(-50%, -50%); */
+
+  /* display: flex; */
+  /* position: absolute; */
+  /* top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
 }
 
 .levels div {

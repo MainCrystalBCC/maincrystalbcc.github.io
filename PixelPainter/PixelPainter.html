@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Painter</title>
+    <style>
+        @import url(https://db.onlinewebfonts.com/c/cdc8c3de1e6bd5a9a67c6a001f9fedd0?family=Burbank+Big+Condensed+Black);
+        @font-face {
+            font-family: "Burbank Big Condensed Black";
+            src: url("https://db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.eot");
+            src: url("https://db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.eot?#iefix")format("embedded-opentype"),
+            url("https://db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.woff2")format("woff2"),
+            url("https://db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.woff")format("woff"),
+            url("https://db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.ttf")format("truetype"),
+            url("https://db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.svg#Burbank Big Condensed Black")format("svg");
+        }
+
+
+        body {
+            font-family: "Burbank Big Condensed Black";
+            background-color: #212121;
+            font-family: Arial, sans-serif;
+            display: grid;
+            grid-template-columns: 900px 370px 600px;
+            text-align: center;
+            color: white;
+        }
+        .grid-container {
+            display: inline-block;
+            border: 2px solid white;
+            /* margin: 20px; */
+            padding: 10px;
+            background-color: #d7d7d7;
+        }
+        .grid-item {
+            
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+            display: inline-block;
+           
+            cursor: pointer;
+            padding: 4px;
+            /* margin: 0; */
+            margin:-4px 0 0 0;
+            /* padding-inline-start: 0; */
+        }
+        .color-picker {
+            margin-top: 20px;
+        }
+        .color {
+            width: 30px;
+            height: 30px;
+            border: 1px solid white;
+            display: inline-block;
+            margin: 5px;
+            cursor: pointer;
+        }
+        .menu {
+            margin-top: 20px;
+        }
+        .saved-grid {
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .delete {
+            color: red;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+
+        input {
+            height: 40px;
+            width: 170px;
+            border-radius: 10px;
+            font-size: 20px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        h1 {
+            font-family: "Burbank Big Condensed Black";
+        }
+
+        h2 {
+            font-family: "Burbank Big Condensed Black";
+        }
+        button {
+            height: 40px;
+            width: 170px;
+            border-radius: 10px;
+            font-size: 20px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .clearGridColor {
+            border: 1px solid transparent;
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <div>
+    <h1>Pixel Painter</h1>
+    <div class="grid-container">
+        <!-- Generate grid dynamically using JavaScript -->
+    </div>
+    <div class="color-picker">
+        <div class="color" style="background-color: red;"></div>
+        <div class="color" style="background-color: orange;"></div>
+        <div class="color" style="background-color: yellow;"></div>
+        <div class="color" style="background-color: yellowgreen;"></div>
+        <div class="color" style="background-color: lime;"></div>
+        <div class="color" style="background-color: green;"></div>
+        <div class="color" style="background-color: lightblue;"></div>
+        <div class="color" style="background-color: cyan;"></div>
+        <div class="color" style="background-color: blue;"></div>
+        <div class="color" style="background-color: darkblue;"></div>
+        <div class="color" style="background-color: magenta;"></div>
+        <div class="color" style="background-color: purple;"></div>
+        <div class="color" style="background-color: black;"></div>
+        <div class="color" style="background-color: gray;"></div>
+        <div class="color" style="background-color: darkgray;"></div>
+        <div class="color" style="background-color: white;"></div>
+        <div class="color" style="background-color: brown;"></div>
+        <div class="color" style="background-color: #b56701;"></div>
+        <div class="color special" style="background-color: transparent;"></div>
+
+    </div>
+    </div>
+    <div id="saved-grids"></div>
+    <div class="menu">
+        <h2>Saved Grids</h2>
+        <input type="text" id="grid-name" placeholder="Grid Name">
+        <button onclick="saveGrid()">Save Grid</button>
+        <button onclick="clearSavedGrids()">Clear Saved Grids</button>
+        <br>
+        <br>
+        <input type="number" id="lengthx" placeholder="Height">
+        <input type="number" id="lengthy" placeholder="Width">
+        <button onclick="changeSize()">Change Size</button>
+        <br>
+        <br>
+        
+        <!-- <input name="checkbox" onclick="changeGrid()" type="checkbox" id="on-off-switch" /> -->
+        <div class="checkbox-wrapper-8">
+            <input class="tgl tgl-skewed" id="on-off-switch" onclick="changeGrid()" type="checkbox" checked/>
+            <label class="tgl-btn" data-tg-off="Grid OFF" data-tg-on="Grid ON" for="on-off-switch"></label>
+          </div>
+          
+          <style>
+            .checkbox-wrapper-8 .tgl {
+              display: none;
+            }
+            .checkbox-wrapper-8 .tgl,
+            .checkbox-wrapper-8 .tgl:after,
+            .checkbox-wrapper-8 .tgl:before,
+            .checkbox-wrapper-8 .tgl *,
+            .checkbox-wrapper-8 .tgl *:after,
+            .checkbox-wrapper-8 .tgl *:before,
+            .checkbox-wrapper-8 .tgl + .tgl-btn {
+              box-sizing: border-box;
+            }
+            .checkbox-wrapper-8 .tgl::-moz-selection,
+            .checkbox-wrapper-8 .tgl:after::-moz-selection,
+            .checkbox-wrapper-8 .tgl:before::-moz-selection,
+            .checkbox-wrapper-8 .tgl *::-moz-selection,
+            .checkbox-wrapper-8 .tgl *:after::-moz-selection,
+            .checkbox-wrapper-8 .tgl *:before::-moz-selection,
+            .checkbox-wrapper-8 .tgl + .tgl-btn::-moz-selection,
+            .checkbox-wrapper-8 .tgl::selection,
+            .checkbox-wrapper-8 .tgl:after::selection,
+            .checkbox-wrapper-8 .tgl:before::selection,
+            .checkbox-wrapper-8 .tgl *::selection,
+            .checkbox-wrapper-8 .tgl *:after::selection,
+            .checkbox-wrapper-8 .tgl *:before::selection,
+            .checkbox-wrapper-8 .tgl + .tgl-btn::selection {
+              background: none;
+            }
+            .checkbox-wrapper-8 .tgl + .tgl-btn {
+              outline: 0;
+              display: block;
+              width: 10em;
+              height: 2em;
+              position: relative;
+              cursor: pointer;
+              -webkit-user-select: none;
+                 -moz-user-select: none;
+                  -ms-user-select: none;
+                      user-select: none;
+            }
+            .checkbox-wrapper-8 .tgl + .tgl-btn:after,
+            .checkbox-wrapper-8 .tgl + .tgl-btn:before {
+              position: relative;
+              display: block;
+              content: "";
+              width: 50%;
+              height: 100%;
+            }
+            .checkbox-wrapper-8 .tgl + .tgl-btn:after {
+              left: 0;
+            }
+            .checkbox-wrapper-8 .tgl + .tgl-btn:before {
+              display: none;
+            }
+            .checkbox-wrapper-8 .tgl:checked + .tgl-btn:after {
+              left: 50%;
+            }
+          
+            .checkbox-wrapper-8 .tgl-skewed + .tgl-btn {
+              overflow: hidden;
+              transform: skew(-10deg);
+              -webkit-backface-visibility: hidden;
+                      backface-visibility: hidden;
+              transition: all 0.2s ease;
+              font-family: sans-serif;
+              background: #888;
+            }
+            .checkbox-wrapper-8 .tgl-skewed + .tgl-btn:after,
+            .checkbox-wrapper-8 .tgl-skewed + .tgl-btn:before {
+              transform: skew(10deg);
+              display: inline-block;
+              transition: all 0.2s ease;
+              width: 100%;
+              text-align: center;
+              position: absolute;
+              line-height: 2em;
+              font-weight: bold;
+              color: #fff;
+              text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+            }
+            .checkbox-wrapper-8 .tgl-skewed + .tgl-btn:after {
+              left: 100%;
+              content: attr(data-tg-on);
+            }
+            .checkbox-wrapper-8 .tgl-skewed + .tgl-btn:before {
+              left: 0;
+              content: attr(data-tg-off);
+            }
+            .checkbox-wrapper-8 .tgl-skewed + .tgl-btn:active {
+              background: #888;
+            }
+            .checkbox-wrapper-8 .tgl-skewed + .tgl-btn:active:before {
+              left: -10%;
+            }
+            .checkbox-wrapper-8 .tgl-skewed:checked + .tgl-btn {
+              background: #86d993;
+            }
+            .checkbox-wrapper-8 .tgl-skewed:checked + .tgl-btn:before {
+              left: -100%;
+            }
+            .checkbox-wrapper-8 .tgl-skewed:checked + .tgl-btn:after {
+              left: 0;
+            }
+            .checkbox-wrapper-8 .tgl-skewed:checked + .tgl-btn:active:after {
+              left: 10%;
+            }
+          </style>
+          
+        </script>
+    </div>
+
+    <script>
+        const gridContainer = document.querySelector('.grid-container');
+        const savedGridsContainer = document.getElementById('saved-grids');
+
+        // Function to generate grid
+        function generateGrid(rows, cols) {
+            for (let i = 0; i < rows; i++) {
+                for (let j = 0; j < cols; j++) {
+                    const gridItem = document.createElement('div');
+                    gridItem.classList.add('grid-item');
+                    gridItem.addEventListener('click', function() {
+                        const color = document.querySelector('.selected-color').style.backgroundColor;
+                        this.style.backgroundColor = color;
+                    });
+                    gridContainer.appendChild(gridItem);
+                }
+                gridContainer.appendChild(document.createElement('br'));
+            }
+        }
+
+        // Function to handle color selection
+        function selectColor() {
+            const colors = document.querySelectorAll('.color');
+            colors.forEach(color => {
+                color.addEventListener('click', function() {
+                    colors.forEach(c => c.classList.remove('selected-color'));
+                    this.classList.add('selected-color');
+                });
+            });
+        }
+
+        // Save grid to local storage
+        function saveGrid() {
+            const gridName = document.getElementById('grid-name').value;
+            if (!gridName) {
+                alert('Please enter a grid name.');
+                return;
+            }
+            const gridItems = document.querySelectorAll('.grid-item');
+            const gridData = [];
+            gridItems.forEach(gridItem => {
+                gridData.push(gridItem.style.backgroundColor || 'transparent');
+            });
+            localStorage.setItem('GR_' + gridName + ' | Size: ' + getDistanceXStorage + ', ' + getDistanceYStorage, JSON.stringify(gridData));
+            renderSavedGrids();
+        }
+
+        // Clear saved grids from local storage
+        function clearSavedGrids() {
+            for (let i = localStorage.length - 1; i >= 0; i--) {
+                const gridName = localStorage.key(i);
+                if (gridName.startsWith('GR_')) {
+                    localStorage.removeItem(gridName);
+                }
+            }
+            renderSavedGrids();
+        }
+
+        // Load saved grid from local storage
+        function loadSavedGrid(gridName) {
+            const savedGrid = JSON.parse(localStorage.getItem(gridName));
+            if (savedGrid) {
+                const gridItems = document.querySelectorAll('.grid-item');
+                gridItems.forEach((gridItem, index) => {
+                    gridItem.style.backgroundColor = savedGrid[index];
+                });
+            }
+        }
+
+        // Delete saved grid from local storage
+        function deleteSavedGrid(gridName) {
+            localStorage.removeItem(gridName);
+            renderSavedGrids();
+        }
+
+        // Render saved grids in the menu
+        function renderSavedGrids() {
+            savedGridsContainer.innerHTML = '';
+            for (let i = 0; i < localStorage.length; i++) {
+                const gridName = localStorage.key(i);
+                if (gridName.startsWith('GR_')) { // Only consider grid items with the 'GR_' prefix
+                    const savedGridElement = document.createElement('div');
+                    savedGridElement.textContent = gridName.substring(3); // Remove the 'GR_' prefix before displaying
+                    savedGridElement.classList.add('saved-grid');
+
+                    // Delete button
+                    const deleteButton = document.createElement('span');
+                    deleteButton.textContent = 'Delete';
+                    deleteButton.classList.add('delete');
+                    deleteButton.addEventListener('click', function(event) {
+                        event.stopPropagation(); // Prevent event bubbling
+                        deleteSavedGrid(gridName);
+                    });
+                    savedGridElement.appendChild(deleteButton);
+
+                    savedGridElement.addEventListener('click', function() {
+                        loadSavedGrid(gridName);
+                    });
+                    savedGridsContainer.appendChild(savedGridElement);
+                }
+            }
+        }
+
+        var varDistanceX = 0;
+        var varDistanceY = 0;
+        var getDistanceXStorage = localStorage.getItem('CanvasXLength')
+        var getDistanceYStorage = localStorage.getItem('CanvasYLength')
+
+        function changeSize() {
+            // set width and length into localstorage
+            //change variables, and refresh page
+            //give warning to sae first
+            if (document.getElementById('lengthx').value >= 30) {
+                alert('Please enter a number below 30');
+            } else if (document.getElementById('lengthy').value >= 30) {
+                alert('Please enter a number below 30');
+            }
+
+            if (document.getElementById('lengthx').value < 30 && document.getElementById('lengthy').value < 30) {
+                const warn = confirm('Unsaved Changes wont be saved, make sure to save before changing size')
+                if(warn){
+                    const getX = document.getElementById('lengthx').value;
+                    const getY = document.getElementById('lengthy').value;
+                    varDistanceX = getX;
+                    varDistanceY = getY;
+                    
+                    localStorage.setItem('CanvasXLength', varDistanceX)
+
+                    localStorage.setItem('CanvasYLength', varDistanceY)
+
+                    location.reload();
+
+                }
+            }
+            
+            
+        }
+        startStorage();
+        function startStorage() {
+            
+
+            if(!localStorage.getItem('CanvasXLength')){
+            localStorage.setItem('CanvasXLength', '20')
+            
+            }
+
+            if(!localStorage.getItem('CanvasYLength')){
+            localStorage.setItem('CanvasYLength', '20')
+            
+            }
+        }
+
+
+        // Generate grid with 20 rows and 20 columns
+        generateGrid(getDistanceXStorage, getDistanceYStorage);
+        // Select initial color
+        selectColor();
+        // Render saved grids
+        renderSavedGrids();
+        var element = document.getElementsByClassName('grid-item');
+        let checkbox = document.getElementById("on-off-switch");
+        function changeGrid() {
+                checkbox.addEventListener( "change", () => {
+                    if ( checkbox.checked ) {
+                        for(var i = 0; i < element.length; i++)
+                            {
+                                element[i].classList.remove('clearGridColor');
+                                // console.log(element[i].className);
+                            }
+                    } else {
+                        for(var i = 0; i < element.length; i++)
+                            {
+                                element[i].classList.add('clearGridColor');
+                                // console.log(element[i].className);
+                            }
+                    }
+                });
+                
+            }
+    </script>
+</body>
+</html>

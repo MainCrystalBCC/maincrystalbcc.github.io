@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<style>
+		.game-btn {
+		background-color: transparent;
+		padding: 20px;
+		width: 150px;
+		text-align: center;
+		margin: 0 auto;
+		position: relative;
+		top: 20px;
+		border-radius: 10px;
+		text-transform: uppercase;
+		font-weight: bold;
+		}
+
+		.spin-btn {
+		background-color: gold;
+		}
+
+		.vowel-btn {
+		background-color: green;
+		}
+
+		.solve-btn {
+		background-color: silver;
+		}
+
+		.new-btn {
+		background-color: red;
+		}
+
+		.wheel-container {
+		position: relative;
+		text-align: center;
+		top: 20px;
+		}
+
+		.wheel {
+		width: 800px; 
+		height: 800px;  
+		transform: rotate(0deg);
+		transition: transform 10s cubic-bezier(.08,.1,.15,1);
+		}
+
+		.picker {
+		text-align: center;
+		margin: 0 auto;
+		top: 20px;
+		position: relative;
+		z-index: 3;
+		width: 0;
+		height: 0;
+		border-left: 70px solid transparent;
+		border-right: 70px solid transparent;
+		border-top: 100px solid black;
+		border-radius: 50%;
+		}
+
+		.picker-move {
+		transform: rotate(-20deg);
+		}
+
+		.game-buttons {
+		display: flex;
+		flex-direction: row;
+		}
+
+		.guess-board {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 150px;
+		margin: 0 auto;
+		background-color: #1c7a45;
+		border: 2px solid black;
+		z-index: -1;
+		border-radius: 40px;
+		margin-top: 20px;
+		}
+
+		.guess-tiles-container {
+		display: flex;
+		position: relative;
+		width: 100%;
+		justify-content: center;   
+		}
+
+		.guess-tiles {
+		margin: 20px;
+		text-align: center;
+		width: 50px;
+		height: 50px;
+		background-color: white;
+		border: 1px solid black;
+		text-transform: uppercase;
+		font-size: 20px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		}
+
+		.guess-tiles:after {
+		content: "";
+		background-color: white;
+		position: absolute;
+		width: 50px;
+		height: 50px;
+		opacity: 1;
+		transform: rotateY(0deg);
+		}
+
+		.reveal:after {
+		content: "";
+		background-color: black;
+		position: absolute;
+		transition: all 1s ease;
+		opacity: 0;
+		transform: rotateY(180deg);
+		}
+
+
+
+    
+
+
+	</style>
+	<div class="container-fluid">
+		<div class="guess-board">
+		  <div class="guess-tiles-container"></div>
+		</div>
+	  </div>
+	  
+	  <div class="container-fluid">
+		<div class="row">
+		  <div class="col-lg-12">
+		   <div class="game-buttons">
+			<div class="game-btn vowel-btn" onclick="vowelClick()">Buy Vowel</div>
+			<div class="game-btn spin-btn" onclick="spinWheel()">Spin Wheel</div>
+			<div class="game-btn solve-btn" onclick="solve()">Solve Puzzle</div>
+			<div class="game-btn new-btn" onclick="newGame()">New Puzzle</div>
+	  
+			</div>
+	  
+			<div class="wheel-container"> 
+			  <div class="picker"></div>
+			  <img class="wheel"     onclick="spinWheels()"     src="https://wheel.fhtl.byu.edu/images/wheel.png" alt="">
+		   </div> 
+		  </div>
+		 </div>
+	  
+	  </div>
+	  
+	  
+		<script>
+			const wheel = document.getElementsByClassName('.wheel');
+			const spinButton = document.getElementsByClassName('.spin-btn');
+			const picker = document.getElementsByClassName('.picker');
+
+			randomNum = 0;
+
+			function spinWheel() {
+			//spins wheel randomly 
+			randomNum += (Math.random() * 360) + 2880;
+			wheel.css({'transform': 'rotate(' + randomNum + 'deg)'});
+			TweenMax.fromTo(picker, .1, {rotation: 0}, {yoyo: true, rotation: -20, repeat: 90});
+			};
+
+
+			function randomAnswer() {
+			//Selects a random answer from answers array
+			const randomSelection = answers[Math.floor(Math.random()*answers.length)];
+			let selectedAnswer = storeAnswer.push(randomSelection);
+			};
+
+			// Removes answer from arrays 
+			function removeAnswer() {
+			storeAnswer = [];
+			newAnswer = [];
+			};
+
+			// Spins wheel on spin wheel button click
+			function spinWheels() {
+			spinWheel(); 
+			console.log(randomNum);
+				// alert when wheel stops spinning
+			if(document.getElementsByClassName('.wheel').css('transform')) {
+				console.log('spinning');
+			}
+			// $wheel.removeAttr('style');
+			};
+
+			//click new puzzle to show a new puzzle
+			function newGame() {
+			document.getElementsByClassName('.guess-tiles-container').empty();
+			randomAnswer();
+			showAnswer();
+			};  
+
+			// Shows the correct amount of tiles for the current puzzle
+			function showAnswer() {
+			//Converts text to a string
+			makeString = storeAnswer.toString();
+			for(let i = 0; i < makeString.length; i++) { 
+				//Appends the newly converted string to the board display
+				console.log(makeString[i]);
+				let answer = makeString[i];
+				// newAnswer.push(answer);
+				// $('.guess-tiles-container').append('<p class="guess-tiles"> ' + answer + ' </p>');
+				document.getElementsByClassName('.guess-tiles-container').append('<p class="guess-tiles"> ' + answer + ' </p>');
+				removeAnswer(); 
+			}
+			};
+
+			//Solve puzzle on solve button click. Compares prompted answer to string alerts wrong or right.
+			function solve(){
+				let guess = prompt('Enter your answer');
+				if(guess === makeString) {
+				alert('You Win!');
+			} else {
+				alert('You Lose!');
+				}
+			};
+
+			// Guess a letter - temporarily on vowel button, needs to be at end of wheel spin 
+			function vowelClick() {
+			let guessLetter = prompt('Guess a consonant');
+			let str = makeString;
+			let indices = [];
+			for(let i = 0; i < str.length; i++) {
+				if (str[i] === guessLetter) {
+				indices.push(i+1);
+				}
+			}
+			
+			console.log('letters appear at ' + indices);
+			// $('.guess-tiles').html(str.charAt(indices));
+			indices.forEach(function(e){
+				setTimeout(() => {
+				document.getElementsByClassName('.guess-tiles-container .guess-tiles:nth-child(' + e + ')').addClass('reveal');  
+				}, e * 200);
+			});
+			};
+
+
+			// var newAnswer = [];
+			let storeAnswer = [];
+			let answers = [
+			'twentysix', 'nandos', 'friday sweets', 'atlassian', 'umbraco', 'java script'
+			];
+
+
+
+		</script>
+	  
+	  
+</body>
+</html>

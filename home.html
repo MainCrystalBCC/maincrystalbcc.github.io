@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Games</title>
+    <link rel="stylesheet" href="Game/index.css">
     <link href="https://db.onlinewebfonts.com/c/cdc8c3de1e6bd5a9a67c6a001f9fedd0?family=Burbank+Big+Condensed+Black" rel="stylesheet">
 </head>
 <body>
@@ -18,8 +19,11 @@
     <!-- <link rel="stylesheet" href="Colour Game/main.css"> -->
 </head>
 <body>
-    <h1 class="score1Test" id="levels">Games</h1>
-    <div class="levelsSafe">
+    <div class="header1" id="myHeader">
+        <h1 id="levelsLabel">Games</h1>
+      </div>
+    <!-- <div class="levelsSafe"> -->
+        <div class="levels2">
         <div class="color colorGame"><a href="Game/home.html"><button class="levelsBTn">
             <img src="img/lockgameImg.png">
             <p>Lock Game</p>
@@ -28,8 +32,26 @@
             <img src="img/ColorGameImg.png">
             <p>Color Game</p>
         </button></a></div>
+        <div class="color pixelPaint"><a href="Colour Game/index.html"><button class="levelsBTn">
+            <img src="img/ColorGame2.png">
+            <p>Pixel Painter</p>
+        </button></a></div>
+        <!-- </div> -->
     </div>
+<script>
+    window.onscroll = function() {myFunction()};
 
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+    if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+    } else {
+        header.classList.remove("sticky");
+    }
+}
+</script>
 </body>
 </html>
 </body>

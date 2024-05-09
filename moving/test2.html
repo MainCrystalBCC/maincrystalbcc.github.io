@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stacking Simulation</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+    #container {
+        width: 500px; /* Adjust container size as needed */
+        height: 500px; /* Adjust container size as needed */
+        position: relative;
+        border: 2px dashed #333;
+        overflow: hidden;
+    }
+    .draggable {
+        width: 100px;
+        height: 100px;
+        background-color: #ccc;
+        border: 1px solid #000;
+        position: absolute;
+        cursor: grab;
+    }
+</style>
+</head>
+<body>
+
+<div id="container">
+    <!-- Drag me 1 -->
+    <div class="draggable" style="top: 0; left: 0;">Drag me 1</div>
+    <!-- Drag me 2 -->
+    <div class="draggable" style="top: 0; left: 150px;">Drag me 2</div>
+    <!-- Add more draggable elements as needed -->
+</div>
+
+<script>
+    const container = document.getElementById('container');
+    const draggables = document.querySelectorAll('.draggable');
+
+    let gravity = 0.5; // Adjust gravity as needed
+    let friction = 0.9; // Adjust friction as needed
+    let isDragging = false;
+    let offsetX, offsetY;
+    let draggedElement;
+
+    function applyGravity() {
+        if (!isDragging) {
+            draggables.forEach(draggable => {
+                const rect = draggable.getBoundingClientRect();
+                let collision = false;
+
+                draggables.forEach(other => {
+                    if (draggable !== other) {
+                        const otherRect = other.getBoundingClientRect();
+                        if (rect.bottom + gravity >= otherRect.top && rect.top + gravity <= otherRect.top &&
+                            rect.right >= otherRect.left && rect.left <= otherRect.right) {
+                            collision = true;
+                            draggable.style.top = otherRect.top - rect.height + 'px';
+                        }
+                    }
+                });
+
+
+//                 document.addEventListener('mousemove', (e) => {
+//     if (isDragging && draggedElement) {
+//         const x = Math.round((e.clientX - offsetX - container.getBoundingClientRect().left) / 50) * 50;
+//         const y = Math.round((e.clientY - offsetY - container.getBoundingClientRect().top) / 50) * 50;
+
+//         // Check for collisions with other draggable elements
+//         let collision = false;
+//         draggables.forEach(other => {
+//             if (draggable !== other) {
+//                 const otherRect = other.getBoundingClientRect();
+//                 if (y < otherRect.bottom && y + draggedElement.offsetHeight > otherRect.top &&
+//                     x < otherRect.right && x + draggedElement.offsetWidth > otherRect.left) {
+//                     collision = true;
+//                 }
+//             }
+//         });
+
+//         // If there is no collision, update the position
+//         if (!collision) {
+//             draggedElement.style.left = `${x}px`;
+//             draggedElement.style.top = `${y}px`;
+//         }
+//     }
+// });
+
+                if (!collision) {
+                    const bottomOffset = container.getBoundingClientRect().bottom - rect.bottom;
+                    if (bottomOffset > 0) {
+                        const velocity = parseFloat(draggable.getAttribute('data-velocity')) || 0;
+                        const newVelocity = velocity + gravity;
+                        draggable.style.top = rect.top + newVelocity + 'px';
+                        draggable.setAttribute('data-velocity', newVelocity * friction);
+                    } else {
+                        draggable.removeAttribute('data-velocity');
+                    }
+                }
+            });
+        }
+
+        // Request animation frame to apply gravity recursively
+        requestAnimationFrame(applyGravity);
+    }
+
+    function snapToGrid(element) {
+        const rect = element.getBoundingClientRect();
+        const leftOffset = rect.left - container.getBoundingClientRect().left;
+        const topOffset = rect.top - container.getBoundingClientRect().top;
+        const snappedLeft = Math.round(leftOffset / 50) * 50;
+        const snappedTop = Math.round(topOffset / 50) * 50;
+        element.style.left = snappedLeft + 'px';
+        element.style.top = snappedTop + 'px';
+    }
+
+    draggables.forEach(draggable => {
+        draggable.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            draggedElement = draggable;
+            offsetX = e.clientX - draggable.getBoundingClientRect().left;
+            offsetY = e.clientY - draggable.getBoundingClientRect().top;
+            draggable.style.cursor = 'grabbing';
+
+            // Prevent text selection during drag
+            e.preventDefault();
+        });
+
+        draggable.addEventListener('mouseup', () => {
+            isDragging = false;
+            draggable.style.cursor = 'grab';
+            snapToGrid(draggable);
+            draggedElement = null;
+        });
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (isDragging && draggedElement) {
+            const x = e.clientX - offsetX;
+            const y = e.clientY - offsetY;
+            draggedElement.style.left = `${x}px`;
+            draggedElement.style.top = `${y}px`;
+        }
+    });
+
+    // Start simulation when the window is loaded
+    window.onload = applyGravity;
+</script>
+
+</body>
+</html>
