@@ -259,7 +259,7 @@ body {
   grid-template-columns: 550px 550px 550px;
   gap: 10px;
   
-  grid-template-rows: 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px 350px;
+  grid-template-rows: 350px;
   color: white;
   position: absolute;
   top: 15%;
