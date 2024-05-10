@@ -75,6 +75,49 @@ img {
     background-color: #212121;
 }
 
+.word {
+    background-color: #2c2c2c;
+}
+
+.tictactoe {
+    background-color: #212121;
+}
+
+.tetris {
+    background-color: #c5d6a7;
+}
+
+.maze {
+    background-color: #12798e;
+}
+
+.snake {
+    background-color: #212121;
+}
+
+.tennis {
+    background-color: #212121;
+}
+
+.solitare {
+    background-color: #218839;
+}
+
+.blocks {
+    background-color: #d0cbc7;
+}
+
+.hangman {
+    background-color: #c2d82e;
+}
+
+.tilt {
+    background-color: #ede6e3;
+}
+
+
+
+
 
 
 p {
