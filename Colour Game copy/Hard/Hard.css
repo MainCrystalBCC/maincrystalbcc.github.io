@@ -1,0 +1,342 @@
+@import url(https://db.onlinewebfonts.com/c/cdc8c3de1e6bd5a9a67c6a001f9fedd0?family=Burbank+Big+Condensed+Black);
+@font-face {
+    font-family: "Burbank Big Condensed Black";
+    src: url("https://db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.eot");
+    src: url("https://db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.svg#Burbank Big Condensed Black")format("svg");
+}
+body {
+  font-family: "Burbank Big Condensed Black";
+}
+
+.holder2 {
+    display: grid;
+    grid-template-columns: 650px;
+    /* gap: 15px; */
+    
+    grid-template-rows: 70px;
+    color: white;
+    position: absolute;
+  top: 62%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+
+.next {
+    display: grid;
+    grid-template-columns: 650px;
+    /* gap: 15px; */
+    
+    grid-template-rows: 70px;
+    color: white;
+    position: absolute;
+    font-size: 50px;
+  top: 69%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  opacity: 0%;
+}
+
+
+
+
+.levelLabel {
+    display: grid;
+    grid-template-columns: 650px;
+    /* gap: 15px; */
+    
+    grid-template-rows: 70px;
+    color: white;
+    position: absolute;
+    font-size: 50px;
+  top: 23%;
+  margin-left: -15px;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  
+}
+
+
+
+.score {
+    display: grid;
+    grid-template-columns: 650px;
+    /* gap: 15px; */
+    
+    grid-template-rows: 70px;
+    color: white;
+    position: absolute;
+    font-size: 50px;
+  top: 46%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 650px;
+    /* gap: 15px; */
+    
+    grid-template-rows: 70px;
+    color: white;
+    position: absolute;
+    font-size: 50px;
+  top: 25%;
+  left: 62%;
+  transform: translate(-50%, -50%);
+  
+}
+
+.score1 {
+    display: grid;
+    grid-template-columns: 650px;
+    /* gap: 15px; */
+    
+    grid-template-rows: 70px;
+    color: white;
+    position: absolute;
+    font-size: 50px;
+  top: 45%;
+  left: 64%;
+  transform: translate(-50%, -50%);
+  
+}
+
+.score2 {
+    display: grid;
+    grid-template-columns: 650px;
+    /* gap: 15px; */
+    
+    grid-template-rows: 70px;
+    color: white;
+    position: absolute;
+    font-size: 50px;
+  top: 45%;
+  left: 64%;
+  transform: translate(-50%, -50%);
+  
+}
+
+.holderAnswers {
+    display: grid;
+    grid-template-columns: 150px 150px 150px 150px 150px 150px 150px 150px;
+    /* gap: 15px; */
+    opacity: 0%;
+    grid-template-rows: 150px;
+    color: white;
+    position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+
+.holderAnswers2 {
+    display: grid;
+    grid-template-columns: 150px 150px 150px 150px;
+    /* gap: 15px; */
+    opacity: 0%;
+    grid-template-rows: 150px;
+    color: white;
+    position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+
+.holderAnswers3 {
+    display: grid;
+    grid-template-columns: 150px 150px 150px 150px 150px 150px;
+    /* gap: 15px; */
+    opacity: 0%;
+    grid-template-rows: 150px;
+    color: white;
+    position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+
+.holder3 {
+    display: grid;
+    grid-template-columns: 150px 150px 150px 150px 150px 150px;
+    /* gap: 15px; */
+    
+    grid-template-rows: 150px;
+    color: white;
+    position: absolute;
+  top: 36%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+.holderAnswers10 {
+    display: grid;
+    grid-template-columns: 150px 150px 150px 150px 150px 150px 150px 150px 150px 150px;
+    /* gap: 15px; */
+    opacity: 0%;
+    grid-template-rows: 150px;
+    color: white;
+    position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+
+.holder10 {
+    display: grid;
+    grid-template-columns: 150px 150px 150px 150px 150px 150px 150px 150px 150px 150px;
+    /* gap: 15px; */
+    
+    grid-template-rows: 150px;
+    color: white;
+    position: absolute;
+  top: 36%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.submit {
+    font-size: 40px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ 
+}
+
+.holder {
+    display: grid;
+    grid-template-columns: 150px 150px 150px 150px 150px 150px 150px 150px;
+    /* gap: 15px; */
+    
+    grid-template-rows: 150px;
+    color: white;
+    position: absolute;
+  top: 36%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.holder2 {
+    display: grid;
+    grid-template-columns: 150px 150px 150px 150px;
+    /* gap: 15px; */
+    
+    grid-template-rows: 150px;
+    color: white;
+    position: absolute;
+  top: 36%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+.levels {
+    display: grid;
+    grid-template-columns: 250px 250px;
+    /* gap: 15px; */
+    gap: 10px;
+    
+    grid-template-rows: 70px;
+    color: white;
+    position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.levelsBTn {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    color: white;
+    font-size: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.color {
+    font-size: 40px;
+    text-align: center;
+    border: white 3px solid;
+    font-family: "Burbank Big Condensed Black";
+}
+
+.red {
+    background-color: red;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.purple {
+    background-color: purple;
+}
+
+.gray {
+    background-color: gray;
+}
+
+.black {
+    background-color: black;
+}
+
+.cyan {
+    background-color: cyan;
+}
+
+.pink {
+    background-color: pink;
+}
+
+.invisible {
+    opacity:0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #282828;
+}
+
+.selected {
+    border: double white 14px;
+}
+
+.correct {
+    box-shadow: 120px 80px 40px 20px #0ff;
+
+}
+
+.levelsBTn {
+  font-family: "Burbank Big Condensed Black";
+}
+
+.next {
+  font-family: "Burbank Big Condensed Black";
+}

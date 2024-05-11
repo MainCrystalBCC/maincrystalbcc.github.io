@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hard - 6 Colors</title>
+    <link rel="stylesheet" href="Hard.css">
+</head>
+<body>
+    <h1 class="levelLabel" id="levelLabel">Level</h1>
+<!-- <button onclick="test()"></button> -->
+<h1 class="score" id="score">0 / 6</h1>
+    <div class="holder3">
+        <div class="color" id="1"></div>
+        <div class="color" id="2"></div>
+        <div class="color" id="3"></div>
+        <div class="color" id="4"></div>
+        <div class="color" id="5"></div>
+        <div class="color" id="6"></div>
+    </div>
+    <!-- <div class="holder2">
+        <button class="submit" id="submit" onclick="switchColors()">Send</button>
+    </div> -->
+    <div class="holderAnswers3" id="answersID">
+        <div class="color" id="1_ans"></div>
+        <div class="color" id="2_ans"></div>
+        <div class="color" id="3_ans"></div>
+        <div class="color" id="4_ans"></div>
+        <div class="color" id="5_ans"></div>
+        <div class="color" id="6_ans"></div>
+    </div>
+    <a href="" onclick="next()"><h1 class="next" id="next">Moves:0 Next -></h1></a>
+
+    <script>
+        function pickAndRemoveNumbers(arr, count) {
+        const pickedNumbers = [];
+
+        if (arr.length >= count) {
+            for (let i = 0; i < count; i++) {
+            const randomIndex = Math.floor(Math.random() * arr.length);
+            const pickedNumber = arr[randomIndex];
+            arr.splice(randomIndex, 1);
+            pickedNumbers.push(pickedNumber);
+            }
+
+            // Display the picked numbers
+            console.log("Picked Numbers:", pickedNumbers);
+
+            // Return the picked numbers array
+            return pickedNumbers;
+        } else {
+            console.log("Invalid parameters or array length is less than count.");
+            return [];
+        }
+        }
+
+        function pickAndRemoveNumbers1(arr, count) {
+        const pickedNumbers1 = [];
+
+        if (arr.length >= count) {
+            for (let i = 0; i < count; i++) {
+            const randomIndex1 = Math.floor(Math.random() * arr.length);
+            const pickedNumber1 = arr[randomIndex1];
+            arr.splice(randomIndex1, 1);
+            pickedNumbers1.push(pickedNumber1);
+            }
+
+            // Display the picked numbers
+            console.log("Picked Numbers:", pickedNumbers1);
+
+            // Return the picked numbers array
+            return pickedNumbers1;
+        } else {
+            console.log("Invalid parameters or array length is less than count.");
+            return [];
+        }
+        }
+
+        // Example usage:
+        const numberArray1 = [1,2,3,4,5,6];
+        const pickedNumbersArray1 = pickAndRemoveNumbers1(numberArray1, 6);
+
+        // Example usage:
+        const numberArray = [1,2,3,4,5,6];
+        const pickedNumbersArray = pickAndRemoveNumbers(numberArray, 6);
+
+        document.getElementById('1_ans').innerHTML = pickedNumbersArray1[0];
+        document.getElementById('2_ans').innerHTML = pickedNumbersArray1[1];
+        document.getElementById('3_ans').innerHTML = pickedNumbersArray1[2];
+        document.getElementById('4_ans').innerHTML = pickedNumbersArray1[3];
+        document.getElementById('5_ans').innerHTML = pickedNumbersArray1[4];
+        document.getElementById('6_ans').innerHTML = pickedNumbersArray1[5];
+
+        document.getElementById('1').innerHTML = pickedNumbersArray[0];
+        document.getElementById('2').innerHTML = pickedNumbersArray[1];
+        document.getElementById('3').innerHTML = pickedNumbersArray[2];
+        document.getElementById('4').innerHTML = pickedNumbersArray[3];
+        document.getElementById('5').innerHTML = pickedNumbersArray[4];
+        document.getElementById('6').innerHTML = pickedNumbersArray[5];
+
+        const levelGet = localStorage.getItem("level");
+        var currentLevel2 = levelGet;
+        localStorage.setItem("level", currentLevel2);
+        
+        
+        function startStorage (){
+            if(localStorage.getItem('level') == "null"){
+            localStorage.setItem('level', '1')
+            setTimeout(function() { document.getElementById('levelLabel').innerHTML = ('Level 1'); }, 250);
+            
+            }
+            }
+            startStorage();
+        
+
+
+
+        document.getElementById('levelLabel').innerHTML = ('Level '+currentLevel2);
+        
+
+        if (document.getElementById('1').innerHTML == 1){
+            document.getElementById('1').innerHTML = "<button class='invisible' id='but1' onclick='butClick1()'></button>"
+            document.getElementById('1').classList.add('red')
+        }
+
+        if (document.getElementById('1').innerHTML == 2){
+            document.getElementById('1').innerHTML = "<button class='invisible' id='but1' onclick='butClick1()'></button>"
+            document.getElementById('1').classList.add('orange')
+        }
+
+        if (document.getElementById('1').innerHTML == 3){
+            document.getElementById('1').innerHTML = "<button class='invisible' id='but1' onclick='butClick1()'></button>"
+            document.getElementById('1').classList.add('yellow')
+        }
+
+        if (document.getElementById('1').innerHTML == 4){
+            document.getElementById('1').innerHTML = "<button class='invisible' id='but1' onclick='butClick1()'></button>"
+            document.getElementById('1').classList.add('green')
+        }
+
+        if (document.getElementById('1').innerHTML == 5){
+            document.getElementById('1').innerHTML = "<button class='invisible' id='but1' onclick='butClick1()'></button>"
+            document.getElementById('1').classList.add('blue')
+        }
+
+        if (document.getElementById('1').innerHTML == 6){
+            document.getElementById('1').innerHTML = "<button class='invisible' id='but1' onclick='butClick1()'></button>"
+            document.getElementById('1').classList.add('purple')
+        }
+
+
+
+        if (document.getElementById('2').innerHTML == 1){
+            document.getElementById('2').innerHTML = "<button class='invisible' id='but2' onclick='butClick2()'></button>"
+            document.getElementById('2').classList.add('red')
+        }
+
+        if (document.getElementById('2').innerHTML == 2){
+            document.getElementById('2').innerHTML = "<button class='invisible' id='but2' onclick='butClick2()'></button>"
+            document.getElementById('2').classList.add('orange')
+        }
+
+        if (document.getElementById('2').innerHTML == 3){
+            document.getElementById('2').innerHTML = "<button class='invisible' id='but2' onclick='butClick2()'></button>"
+            document.getElementById('2').classList.add('yellow')
+        }
+
+        if (document.getElementById('2').innerHTML == 4){
+            document.getElementById('2').innerHTML = "<button class='invisible' id='but2' onclick='butClick2()'></button>"
+            document.getElementById('2').classList.add('green')
+        }
+
+        if (document.getElementById('2').innerHTML == 5){
+            document.getElementById('2').innerHTML = "<button class='invisible' id='but2' onclick='butClick2()'></button>"
+            document.getElementById('2').classList.add('blue')
+        }
+
+        if (document.getElementById('2').innerHTML == 6){
+            document.getElementById('2').innerHTML = "<button class='invisible' id='but2' onclick='butClick2()'></button>"
+            document.getElementById('2').classList.add('purple')
+        }
+
+
+
+        if (document.getElementById('3').innerHTML == 1){
+            document.getElementById('3').innerHTML = "<button class='invisible' id='but3' onclick='butClick3()'></button>"
+            document.getElementById('3').classList.add('red')
+        }
+
+        if (document.getElementById('3').innerHTML == 2){
+            document.getElementById('3').innerHTML = "<button class='invisible' id='but3' onclick='butClick3()'></button>"
+            document.getElementById('3').classList.add('orange')
+        }
+
+        if (document.getElementById('3').innerHTML == 3){
+            document.getElementById('3').innerHTML = "<button class='invisible' id='but3' onclick='butClick3()'></button>"
+            document.getElementById('3').classList.add('yellow')
+        }
+
+        if (document.getElementById('3').innerHTML == 4){
+            document.getElementById('3').innerHTML = "<button class='invisible' id='but3' onclick='butClick3()'></button>"
+            document.getElementById('3').classList.add('green')
+        }
+
+        if (document.getElementById('3').innerHTML == 5){
+            document.getElementById('3').innerHTML = "<button class='invisible' id='but3' onclick='butClick3()'></button>"
+            document.getElementById('3').classList.add('blue')
+        }
+
+        if (document.getElementById('3').innerHTML == 6){
+            document.getElementById('3').innerHTML = "<button class='invisible' id='but3' onclick='butClick3()'></button>"
+            document.getElementById('3').classList.add('purple')
+        }
+
+
+
+        if (document.getElementById('4').innerHTML == 1){
+            document.getElementById('4').innerHTML = "<button class='invisible' id='but4' onclick='butClick4()'></button>"
+            document.getElementById('4').classList.add('red')
+        }
+
+        if (document.getElementById('4').innerHTML == 2){
+            document.getElementById('4').innerHTML = "<button class='invisible' id='but4' onclick='butClick4()'></button>"
+            document.getElementById('4').classList.add('orange')
+        }
+
+        if (document.getElementById('4').innerHTML == 3){
+            document.getElementById('4').innerHTML = "<button class='invisible' id='but4' onclick='butClick4()'></button>"
+            document.getElementById('4').classList.add('yellow')
+        }
+
+        if (document.getElementById('4').innerHTML == 4){
+            document.getElementById('4').innerHTML = "<button class='invisible' id='but4' onclick='butClick4()'></button>"
+            document.getElementById('4').classList.add('green')
+        }
+
+        if (document.getElementById('4').innerHTML == 5){
+            document.getElementById('4').innerHTML = "<button class='invisible' id='but4' onclick='butClick4()'></button>"
+            document.getElementById('4').classList.add('blue')
+        }
+
+        if (document.getElementById('4').innerHTML == 6){
+            document.getElementById('4').innerHTML = "<button class='invisible' id='but4' onclick='butClick4()'></button>"
+            document.getElementById('4').classList.add('purple')
+        }
+
+
+
+        if (document.getElementById('5').innerHTML == 1){
+            document.getElementById('5').innerHTML = "<button class='invisible' id='but5' onclick='butClick5()'></button>"
+            document.getElementById('5').classList.add('red')
+        }
+
+        if (document.getElementById('5').innerHTML == 2){
+            document.getElementById('5').innerHTML = "<button class='invisible' id='but5' onclick='butClick5()'></button>"
+            document.getElementById('5').classList.add('orange')
+        }
+
+        if (document.getElementById('5').innerHTML == 3){
+            document.getElementById('5').innerHTML = "<button class='invisible' id='but5' onclick='butClick5()'></button>"
+            document.getElementById('5').classList.add('yellow')
+        }
+
+        if (document.getElementById('5').innerHTML == 4){
+            document.getElementById('5').innerHTML = "<button class='invisible' id='but5' onclick='butClick5()'></button>"
+            document.getElementById('5').classList.add('green')
+        }
+
+        if (document.getElementById('5').innerHTML == 5){
+            document.getElementById('5').innerHTML = "<button class='invisible' id='but5' onclick='butClick5()'></button>"
+            document.getElementById('5').classList.add('blue')
+        }
+
+        if (document.getElementById('5').innerHTML == 6){
+            document.getElementById('5').innerHTML = "<button class='invisible' id='but5' onclick='butClick5()'></button>"
+            document.getElementById('5').classList.add('purple')
+        }
+
+
+
+        if (document.getElementById('6').innerHTML == 1){
+            document.getElementById('6').innerHTML = "<button class='invisible' id='but6' onclick='butClick6()'></button>"
+            document.getElementById('6').classList.add('red')
+        }
+
+        if (document.getElementById('6').innerHTML == 2){
+            document.getElementById('6').innerHTML = "<button class='invisible' id='but6' onclick='butClick6()'></button>"
+            document.getElementById('6').classList.add('orange')
+        }
+
+        if (document.getElementById('6').innerHTML == 3){
+            document.getElementById('6').innerHTML = "<button class='invisible' id='but6' onclick='butClick6()'></button>"
+            document.getElementById('6').classList.add('yellow')
+        }
+
+        if (document.getElementById('6').innerHTML == 4){
+            document.getElementById('6').innerHTML = "<button class='invisible' id='but6' onclick='butClick6()'></button>"
+            document.getElementById('6').classList.add('green')
+        }
+
+        if (document.getElementById('6').innerHTML == 5){
+            document.getElementById('6').innerHTML = "<button class='invisible' id='but6' onclick='butClick6()'></button>"
+            document.getElementById('6').classList.add('blue')
+        }
+
+        if (document.getElementById('6').innerHTML == 6){
+            document.getElementById('6').innerHTML = "<button class='invisible' id='but6' onclick='butClick6()'></button>"
+            document.getElementById('6').classList.add('purple')
+        }
+
+
+
+
+        //Next Section
+
+
+        if (document.getElementById('1_ans').innerHTML == 1){
+            document.getElementById('1_ans').innerHTML = ""
+            document.getElementById('1_ans').classList.add('red')
+        }
+
+        if (document.getElementById('1_ans').innerHTML == 2){
+            document.getElementById('1_ans').innerHTML = ""
+            document.getElementById('1_ans').classList.add('orange')
+        }
+
+        if (document.getElementById('1_ans').innerHTML == 3){
+            document.getElementById('1_ans').innerHTML = ""
+            document.getElementById('1_ans').classList.add('yellow')
+        }
+
+        if (document.getElementById('1_ans').innerHTML == 4){
+            document.getElementById('1_ans').innerHTML = ""
+            document.getElementById('1_ans').classList.add('green')
+        }
+
+        if (document.getElementById('1_ans').innerHTML == 5){
+            document.getElementById('1_ans').innerHTML = ""
+            document.getElementById('1_ans').classList.add('blue')
+        }
+
+        if (document.getElementById('1_ans').innerHTML == 6){
+            document.getElementById('1_ans').innerHTML = ""
+            document.getElementById('1_ans').classList.add('purple')
+        }
+
+
+
+
+        if (document.getElementById('2_ans').innerHTML == 1){
+            document.getElementById('2_ans').innerHTML = ""
+            document.getElementById('2_ans').classList.add('red')
+        }
+
+        if (document.getElementById('2_ans').innerHTML == 2){
+            document.getElementById('2_ans').innerHTML = ""
+            document.getElementById('2_ans').classList.add('orange')
+        }
+
+        if (document.getElementById('2_ans').innerHTML == 3){
+            document.getElementById('2_ans').innerHTML = ""
+            document.getElementById('2_ans').classList.add('yellow')
+        }
+
+        if (document.getElementById('2_ans').innerHTML == 4){
+            document.getElementById('2_ans').innerHTML = ""
+            document.getElementById('2_ans').classList.add('green')
+        }
+
+        if (document.getElementById('2_ans').innerHTML == 5){
+            document.getElementById('2_ans').innerHTML = ""
+            document.getElementById('2_ans').classList.add('blue')
+        }
+
+        if (document.getElementById('2_ans').innerHTML == 6){
+            document.getElementById('2_ans').innerHTML = ""
+            document.getElementById('2_ans').classList.add('purple')
+        }
+
+
+
+        if (document.getElementById('3_ans').innerHTML == 1){
+            document.getElementById('3_ans').innerHTML = ""
+            document.getElementById('3_ans').classList.add('red')
+        }
+
+        if (document.getElementById('3_ans').innerHTML == 2){
+            document.getElementById('3_ans').innerHTML = ""
+            document.getElementById('3_ans').classList.add('orange')
+        }
+
+        if (document.getElementById('3_ans').innerHTML == 3){
+            document.getElementById('3_ans').innerHTML = ""
+            document.getElementById('3_ans').classList.add('yellow')
+        }
+
+        if (document.getElementById('3_ans').innerHTML == 4){
+            document.getElementById('3_ans').innerHTML = ""
+            document.getElementById('3_ans').classList.add('green')
+        }
+
+        if (document.getElementById('3_ans').innerHTML == 5){
+            document.getElementById('3_ans').innerHTML = ""
+            document.getElementById('3_ans').classList.add('blue')
+        }
+
+        if (document.getElementById('3_ans').innerHTML == 6){
+            document.getElementById('3_ans').innerHTML = ""
+            document.getElementById('3_ans').classList.add('purple')
+        }
+
+
+
+        if (document.getElementById('4_ans').innerHTML == 1){
+            document.getElementById('4_ans').innerHTML = ""
+            document.getElementById('4_ans').classList.add('red')
+        }
+
+        if (document.getElementById('4_ans').innerHTML == 2){
+            document.getElementById('4_ans').innerHTML = ""
+            document.getElementById('4_ans').classList.add('orange')
+        }
+
+        if (document.getElementById('4_ans').innerHTML == 3){
+            document.getElementById('4_ans').innerHTML = ""
+            document.getElementById('4_ans').classList.add('yellow')
+        }
+
+        if (document.getElementById('4_ans').innerHTML == 4){
+            document.getElementById('4_ans').innerHTML = ""
+            document.getElementById('4_ans').classList.add('green')
+        }
+
+        if (document.getElementById('4_ans').innerHTML == 5){
+            document.getElementById('4_ans').innerHTML = ""
+            document.getElementById('4_ans').classList.add('blue')
+        }
+
+        if (document.getElementById('4_ans').innerHTML == 6){
+            document.getElementById('4_ans').innerHTML = ""
+            document.getElementById('4_ans').classList.add('purple')
+        }
+
+
+
+
+        if (document.getElementById('5_ans').innerHTML == 1){
+            document.getElementById('5_ans').innerHTML = ""
+            document.getElementById('5_ans').classList.add('red')
+        }
+
+        if (document.getElementById('5_ans').innerHTML == 2){
+            document.getElementById('5_ans').innerHTML = ""
+            document.getElementById('5_ans').classList.add('orange')
+        }
+
+        if (document.getElementById('5_ans').innerHTML == 3){
+            document.getElementById('5_ans').innerHTML = ""
+            document.getElementById('5_ans').classList.add('yellow')
+        }
+
+        if (document.getElementById('5_ans').innerHTML == 4){
+            document.getElementById('5_ans').innerHTML = ""
+            document.getElementById('5_ans').classList.add('green')
+        }
+
+        if (document.getElementById('5_ans').innerHTML == 5){
+            document.getElementById('5_ans').innerHTML = ""
+            document.getElementById('5_ans').classList.add('blue')
+        }
+
+        if (document.getElementById('5_ans').innerHTML == 6){
+            document.getElementById('5_ans').innerHTML = ""
+            document.getElementById('5_ans').classList.add('purple')
+        }
+
+
+        if (document.getElementById('6_ans').innerHTML == 1){
+            document.getElementById('6_ans').innerHTML = ""
+            document.getElementById('6_ans').classList.add('red')
+        }
+
+        if (document.getElementById('6_ans').innerHTML == 2){
+            document.getElementById('6_ans').innerHTML = ""
+            document.getElementById('6_ans').classList.add('orange')
+        }
+
+        if (document.getElementById('6_ans').innerHTML == 3){
+            document.getElementById('6_ans').innerHTML = ""
+            document.getElementById('6_ans').classList.add('yellow')
+        }
+
+        if (document.getElementById('6_ans').innerHTML == 4){
+            document.getElementById('6_ans').innerHTML = ""
+            document.getElementById('6_ans').classList.add('green')
+        }
+
+        if (document.getElementById('6_ans').innerHTML == 5){
+            document.getElementById('6_ans').innerHTML = ""
+            document.getElementById('6_ans').classList.add('blue')
+        }
+
+        if (document.getElementById('6_ans').innerHTML == 6){
+            document.getElementById('6_ans').innerHTML = ""
+            document.getElementById('6_ans').classList.add('purple')
+        }
+
+
+
+
+        detectColors();
+
+        var selectedNum = 0;
+        function butClick1() {
+            console.log('Clicked 1')
+            if (selectedNum != 2){
+                if (document.getElementById('1').classList.contains('selected')){
+                    document.getElementById('1').classList.remove('selected')
+                    selectedNum -= 1;
+                    console.log(selectedNum);
+                } else {
+                    document.getElementById('1').classList.add('selected')
+                    selectedNum += 1;
+                    console.log(selectedNum);
+                    if (selectedNum == 2){
+                        setTimeout(function() { switchColors(); }, 250);
+                    }
+                }
+            } else if (document.getElementById('1').classList.contains('selected')){
+                    document.getElementById('1').classList.remove('selected')
+                    selectedNum -= 1;
+                    console.log(selectedNum);
+                }
+
+        }
+
+        function butClick2() {
+            console.log('Clicked 2');
+            if (selectedNum != 2){
+                if (document.getElementById('2').classList.contains('selected')){
+                    document.getElementById('2').classList.remove('selected')
+                    selectedNum -= 1;
+                    console.log(selectedNum);
+                } else {
+                    document.getElementById('2').classList.add('selected')
+                    selectedNum += 1;
+                    console.log(selectedNum);
+                    if (selectedNum == 2){
+                        setTimeout(function() { switchColors(); }, 250);
+                    }
+                }
+            } else if (document.getElementById('2').classList.contains('selected')){
+                    document.getElementById('2').classList.remove('selected')
+                    selectedNum -= 1;
+                    console.log(selectedNum);
+                }
+
+           
+        }
+
+        function butClick3() {
+            console.log('Clicked 3');
+            if (selectedNum != 2){
+                if (document.getElementById('3').classList.contains('selected')){
+                    document.getElementById('3').classList.remove('selected')
+                    selectedNum -= 1;
+                    console.log(selectedNum);
+                } else {
+                    document.getElementById('3').classList.add('selected')
+                    selectedNum += 1;
+                    console.log(selectedNum);
+                    if (selectedNum == 2){
+                        setTimeout(function() { switchColors(); }, 250);
+                    }
+                }
+            } else if (document.getElementById('3').classList.contains('selected')){
+                    document.getElementById('3').classList.remove('selected')
+                    selectedNum -= 1;
+                    console.log(selectedNum);
+                }
+
+        }
+
+        function butClick4() {
+            console.log('Clicked 4');
+            if (selectedNum != 2){
+                if (document.getElementById('4').classList.contains('selected')){
+                    document.getElementById('4').classList.remove('selected')
+                    selectedNum -= 1;
+                    console.log(selectedNum);
+                } else {
+                    document.getElementById('4').classList.add('selected')
+                    selectedNum += 1;
+                    console.log(selectedNum);
+                    if (selectedNum == 2){
+                        setTimeout(function() { switchColors(); }, 250);
+                    }
+                }
+            } else if (document.getElementById('4').classList.contains('selected')){
+                    document.getElementById('4').classList.remove('selected')
+                    selectedNum -= 1;
+                    console.log(selectedNum);
+                }
+
+        }
+
+        function butClick5() {
+            console.log('Clicked 5');
+            if (selectedNum != 2){
+                if (document.getElementById('5').classList.contains('selected')){
+                    document.getElementById('5').classList.remove('selected')
+                    selectedNum -= 1;
+                    console.log(selectedNum);
+                } else {
+                    document.getElementById('5').classList.add('selected')
+                    selectedNum += 1;
+                    console.log(selectedNum);
+                    if (selectedNum == 2){
+                        setTimeout(function() { switchColors(); }, 250);
+                    }
+                }
+            } else if (document.getElementById('5').classList.contains('selected')){
+                    document.getElementById('5').classList.remove('selected')
+                    selectedNum -= 1;
+                    console.log(selectedNum);
+                }
+
+        }
+
+        function butClick6() {
+            console.log('Clicked 6');
+            if (selectedNum != 2){
+                if (document.getElementById('6').classList.contains('selected')){
+                    document.getElementById('6').classList.remove('selected')
+                    selectedNum -= 1;
+                    console.log(selectedNum);
+                } else {
+                    document.getElementById('6').classList.add('selected')
+                    selectedNum += 1;
+                    console.log(selectedNum);
+                    if (selectedNum == 2){
+                        setTimeout(function() { switchColors(); }, 250);
+                    }
+                }
+            } else if (document.getElementById('6').classList.contains('selected')){
+                    document.getElementById('6').classList.remove('selected')
+                    selectedNum -= 1;
+                    console.log(selectedNum);
+                }
+
+        }
+
+
+        function test() {
+            console.log(selectedNum);
+        }
+
+        var moves = 0;
+        function switchColors(){
+
+            var color1 = ''
+            var color2 = ''
+
+            moves = moves+1;
+            const collection = document.getElementsByClassName("selected");
+                if (collection.length >= 2) {
+                    if (collection[0].classList.contains('red')) {
+                        color1 = 'red'
+                    }
+
+                    if (collection[0].classList.contains('orange')) {
+                        color1 = 'orange'
+                    }
+
+                    if (collection[0].classList.contains('yellow')) {
+                        color1 = 'yellow'
+                    }
+
+                    if (collection[0].classList.contains('green')) {
+                        color1 = 'green'
+                    }
+
+                    if (collection[0].classList.contains('blue')) {
+                        color1 = 'blue'
+                    }
+
+                    if (collection[0].classList.contains('purple')) {
+                        color1 = 'purple'
+                    }
+
+                    if (collection[1].classList.contains('red')) {
+                        color2 = 'red'
+                    }
+
+                    if (collection[1].classList.contains('orange')) {
+                        color2 = 'orange'
+                    }
+
+                    if (collection[1].classList.contains('yellow')) {
+                        color2 = 'yellow'
+                    }
+
+                    if (collection[1].classList.contains('green')) {
+                        color2 = 'green'
+                    }
+
+                    if (collection[1].classList.contains('blue')) {
+                        color2 = 'blue'
+                    }
+
+                    if (collection[1].classList.contains('purple')) {
+                        color2 = 'purple'
+                    }
+
+                    collection[0].classList.remove('red');
+                    collection[0].classList.remove('orange');
+                    collection[0].classList.remove('yellow');
+                    collection[0].classList.remove('green');
+                    collection[0].classList.remove('blue');
+                    collection[0].classList.remove('purple');
+
+                    collection[0].classList.add(color2);
+
+                    collection[1].classList.remove('red');
+                    collection[1].classList.remove('orange');
+                    collection[1].classList.remove('yellow');
+                    collection[1].classList.remove('green');
+                    collection[1].classList.remove('blue');
+                    collection[1].classList.remove('purple');
+                    
+                    collection[1].classList.add(color1);
+                    color1 = ''
+                    color2 = ''
+                    document.getElementById('1').classList.remove('selected')
+                    document.getElementById('2').classList.remove('selected')
+                    document.getElementById('3').classList.remove('selected')
+                    document.getElementById('4').classList.remove('selected')
+                    document.getElementById('5').classList.remove('selected')
+                    document.getElementById('6').classList.remove('selected')
+
+                    document.getElementById('next').innerText = 'Moves:'+moves+' | Next ->';
+                    selectedNum = 0;
+                    detectColors();
+                    
+                } else {
+                    console.error("There are not enough elements with the 'selected' class.");
+                }
+
+
+        }
+
+        
+
+        function detectColors() {
+            var score = 0;
+
+            if (document.getElementById('1').classList.contains('red')){
+                if (document.getElementById('1_ans').classList.contains('red')){
+                    score += 1;
+                    console.log(score);
+                    document.getElementById('score').innerText = score+' / 6'
+                }
+            }
+            if (document.getElementById('1').classList.contains('orange')){
+                if (document.getElementById('1_ans').classList.contains('orange')){
+                    score += 1;
+                    console.log(score);
+                    document.getElementById('score').innerText = score+' / 6'
+                }
+            }
+            if (document.getElementById('1').classList.contains('yellow')){
+                if (document.getElementById('1_ans').classList.contains('yellow')){
+                    score += 1;
+                    console.log(score);
+                    document.getElementById('score').innerText = score+' / 6'
+                }
+            }
+            if (document.getElementById('1').classList.contains('green')){
+                if (document.getElementById('1_ans').classList.contains('green')){
+                    score += 1;
+                    console.log(score);
+                    document.getElementById('score').innerText = score+' / 6'
+                }
+            }
+            if (document.getElementById('1').classList.contains('blue')){
+                if (document.getElementById('1_ans').classList.contains('blue')){
+                    score += 1;
+                    console.log(score);
+                    document.getElementById('score').innerText = score+' / 6'
+                }
+            }
+            if (document.getElementById('1').classList.contains('purple')){
+                if (document.getElementById('1_ans').classList.contains('purple')){
+                    score += 1;
+                    console.log(score);
+                    document.getElementById('score').innerText = score+' / 6'
+                }
+            }
+
+
+
+
+
+
+
+            if (document.getElementById('2').classList.contains('red')){
+                if (document.getElementById('2_ans').classList.contains('red')){
+                    score += 1;
+                    console.log(score);
+                    document.getElementById('score').innerText = score+' / 6'
+                }
+            }
+            if (document.getElementById('2').classList.contains('orange')){
+                if (document.getElementById('2_ans').classList.contains('orange')){
+                    score += 1;
+                    console.log(score);
+                    document.getElementById('score').innerText = score+' / 6'
+                }
+            }
+            if (document.getElementById('2').classList.contains('yellow')){
+                if (document.getElementById('2_ans').classList.contains('yellow')){
+                    score += 1;
+                    console.log(score);
+                    document.getElementById('score').innerText = score+' / 6'
+                }
+            }
+            if (document.getElementById('2').classList.contains('green')){
+                if (document.getElementById('2_ans').classList.contains('green')){
+                    score += 1;
+                    console.log(score);
+                    document.getElementById('score').innerText = score+' / 6'
+                }
+            }
+            if (document.getElementById('2').classList.contains('blue')){
+                if (document.getElementById('2_ans').classList.contains('blue')){
+                    score += 1;
+                    console.log(score);
+                    document.getElementById('score').innerText = score+' / 6'
+                }
+            }
+            if (document.getElementById('2').classList.contains('purple')){
+                if (document.getElementById('2_ans').classList.contains('purple')){
+                    score += 1;
+                    console.log(score);
+                    document.getElementById('score').innerText = score+' / 6'
+                }
+            }
+
+
+
+
+
+
+
+            if (document.getElementById('3').classList.contains('red')){
+                if (document.getElementById('3_ans').classList.contains('red')){
+                    score += 1;
+                    console.log(score);
+                    document.getElementById('score').innerText = score+' / 6'
+                }
+            }
+            if (document.getElementById('3').classList.contains('orange')){
+                if (document.getElementById('3_ans').classList.contains('orange')){
+                    score += 1;
+                    console.log(score);
+                    document.getElementById('score').innerText = score+' / 6'
+                }
+            }
+            if (document.getElementById('3').classList.contains('yellow')){
+                if (document.getElementById('3_ans').classList.contains('yellow')){
+                    score += 1;
+                    console.log(score);
+                    document.getElementById('score').innerText = score+' / 6'
+                }
+            }
+            if (document.getElementById('3').classList.contains('green')){
+                if (document.getElementById('3_ans').classList.contains('green')){
+                    score += 1;
+                    console.log(score);
+                    document.getElementById('score').innerText = score+' / 6'
+                }
+            }
+            if (document.getElementById('3').classList.contains('blue')){
+                if (document.getElementById('3_ans').classList.contains('blue')){
+                    score += 1;
+                    console.log(score);
+                    document.getElementById('score').innerText = score+' / 6'
+                }
+            }
+            if (document.getElementById('3').classList.contains('purple')){
+                if (document.getElementById('3_ans').classList.contains('purple')){
+                    score += 1;
+                    console.log(score);
+                    document.getElementById('score').innerText = score+' / 6'
+                }
+            }
+
+
+
+
+
+
+
+
+            if (document.getElementById('4').classList.contains('red')){
+                if (document.getElementById('4_ans').classList.contains('red')){
+                    score += 1;
+                    console.log(score);
+                    document.getElementById('score').innerText = score+' / 6'
+                }
+            }
+            if (document.getElementById('4').classList.contains('orange')){
+                if (document.getElementById('4_ans').classList.contains('orange')){
+                    score += 1;
+                    console.log(score);
+                    document.getElementById('score').innerText = score+' / 6'
+                }
+            }
+            if (document.getElementById('4').classList.contains('yellow')){
+                if (document.getElementById('4_ans').classList.contains('yellow')){
+                    score += 1;
+                    console.log(score);
+                    document.getElementById('score').innerText = score+' / 6'
+                }
+            }
+            if (document.getElementById('4').classList.contains('green')){
+                if (document.getElementById('4_ans').classList.contains('green')){
+                    score += 1;
+                    console.log(score);
+                    document.getElementById('score').innerText = score+' / 6'
+                }
+            }
+            if (document.getElementById('4').classList.contains('blue')){
+                if (document.getElementById('4_ans').classList.contains('blue')){
+                    score += 1;
+                    console.log(score);
+                    document.getElementById('score').innerText = score+' / 6'
+                }
+            }
+            if (document.getElementById('4').classList.contains('purple')){
+                if (document.getElementById('4_ans').classList.contains('purple')){
+                    score += 1;
+                    console.log(score);
+                    document.getElementById('score').innerText = score+' / 6'
+                }
+            }
+
+
+
+
+
+
+
+            if (document.getElementById('5').classList.contains('red')){
+                if (document.getElementById('5_ans').classList.contains('red')){
+                    score += 1;
+                    console.log(score);
+                    document.getElementById('score').innerText = score+' / 6'
+                }
+            }
+            if (document.getElementById('5').classList.contains('orange')){
+                if (document.getElementById('5_ans').classList.contains('orange')){
+                    score += 1;
+                    console.log(score);
+                    document.getElementById('score').innerText = score+' / 6'
+                }
+            }
+            if (document.getElementById('5').classList.contains('yellow')){
+                if (document.getElementById('5_ans').classList.contains('yellow')){
+                    score += 1;
+                    console.log(score);
+                    document.getElementById('score').innerText = score+' / 6'
+                }
+            }
+            if (document.getElementById('5').classList.contains('green')){
+                if (document.getElementById('5_ans').classList.contains('green')){
+                    score += 1;
+                    console.log(score);
+                    document.getElementById('score').innerText = score+' / 6'
+                }
+            }
+            if (document.getElementById('5').classList.contains('blue')){
+                if (document.getElementById('5_ans').classList.contains('blue')){
+                    score += 1;
+                    console.log(score);
+                    document.getElementById('score').innerText = score+' / 6'
+                }
+            }
+            if (document.getElementById('5').classList.contains('purple')){
+                if (document.getElementById('5_ans').classList.contains('purple')){
+                    score += 1;
+                    console.log(score);
+                    document.getElementById('score').innerText = score+' / 6'
+                }
+            }
+
+
+
+
+
+
+
+            if (document.getElementById('6').classList.contains('red')){
+                if (document.getElementById('6_ans').classList.contains('red')){
+                    score += 1;
+                    console.log(score);
+                    document.getElementById('score').innerText = score+' / 6'
+                }
+            }
+            if (document.getElementById('6').classList.contains('orange')){
+                if (document.getElementById('6_ans').classList.contains('orange')){
+                    score += 1;
+                    console.log(score);
+                    document.getElementById('score').innerText = score+' / 6'
+                }
+            }
+            if (document.getElementById('6').classList.contains('yellow')){
+                if (document.getElementById('6_ans').classList.contains('yellow')){
+                    score += 1;
+                    console.log(score);
+                    document.getElementById('score').innerText = score+' / 6'
+                }
+            }
+            if (document.getElementById('6').classList.contains('green')){
+                if (document.getElementById('6_ans').classList.contains('green')){
+                    score += 1;
+                    console.log(score);
+                    document.getElementById('score').innerText = score+' / 6'
+                }
+            }
+            if (document.getElementById('6').classList.contains('blue')){
+                if (document.getElementById('6_ans').classList.contains('blue')){
+                    score += 1;
+                    console.log(score);
+                    document.getElementById('score').innerText = score+' / 6'
+                }
+            }
+            if (document.getElementById('6').classList.contains('purple')){
+                if (document.getElementById('6_ans').classList.contains('purple')){
+                    score += 1;
+                    console.log(score);
+                    document.getElementById('score').innerText = score+' / 6'
+                }
+            }
+
+
+
+
+
+            if (score == 6){
+                document.getElementById('answersID').style.opacity = '100%';
+                document.getElementById('next').style.opacity = '100%';
+                
+            }
+
+
+            
+        }
+
+
+
+        
+        
+
+        function next() {
+                const getLevel = parseInt(localStorage.getItem("level"));
+                var currentLevel2 = getLevel;
+                var Add1Level = currentLevel2;
+                var one = 1;
+                var result = currentLevel2 + one;
+                localStorage.setItem("level", result);
+                const getPlays = parseInt(localStorage.getItem("HardLevel"));
+                var currentPlay = getPlays;
+                var Add1Play = currentPlay;
+                var one = 1;
+                var playresult = currentPlay + one;
+                localStorage.setItem("HardLevel", playresult);
+            }
+       
+    </script>
+</body>
+</html>

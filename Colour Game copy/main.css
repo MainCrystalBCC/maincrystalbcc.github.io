@@ -1,0 +1,66 @@
+@import url(https://db.onlinewebfonts.com/c/cdc8c3de1e6bd5a9a67c6a001f9fedd0?family=Burbank+Big+Condensed+Black);
+@font-face {
+    font-family: "Burbank Big Condensed Black";
+    src: url("https://db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.eot");
+    src: url("https://db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.svg#Burbank Big Condensed Black")format("svg");
+}
+
+a {
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
+}
+
+.levelsSafe {
+    display: grid;
+    grid-template-columns: 250px 250px;
+    /* gap: 15px; */
+    gap: 10px;
+    
+    grid-template-rows: 220px;
+    color: white;
+    position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.smallText {
+    font-size: 20px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.reset {
+    font-size: 45px;
+    color: red;
+    text-shadow: 0 0 13px #FF0000, 0 0 55px #000000;
+}
+.homeBtn {
+    font-size: 45px;
+    color: lime;
+    text-shadow: 0 0 13px lime, 0 0 55px #000000;
+}
+/* p {
+    font-family: "Burbank Big Condensed Black";
+} */
+
+button {
+    font-family: "Burbank Big Condensed Black";
+}
+.score1 {
+    margin-top: -30px;
+}
+.color {
+    font-family: "Burbank Big Condensed Black";
+}
+
+.fit {
+    width: 600px; 
+    height: 400px;
+}
