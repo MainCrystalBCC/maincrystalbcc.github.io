@@ -5,6 +5,7 @@ import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } f
 const firebaseConfig = {
   apiKey: "AIzaSyCc8czxvJ3G2Rx2QHlhvk_5Rh9OCx5EtWU",
   authDomain: "unblocked-gamez.firebaseapp.com",
+  databaseURL: "https://unblocked-gamez-default-rtdb.firebaseio.com",
   projectId: "unblocked-gamez",
   storageBucket: "unblocked-gamez.appspot.com",
   messagingSenderId: "778528953010",
