@@ -175,19 +175,19 @@ function turn(e) {
       case 13:
         // document.removeEventListener()
         break;
-      case 37:// left
+      case 65:// left
         if (snake.direction === "right") return;
         snake.direction = "left";
         break;
-      case 38:// up
+      case 87:// up
         if (snake.direction === "down") return;
         snake.direction = "up";
         break;
-      case 39:// right
+      case 68:// right
         if (snake.direction === "left") return;
         snake.direction = "right";
         break;
-      case 40:// down
+      case 83:// down
         if (snake.direction === "up") return;
         snake.direction = "down";
         break;
