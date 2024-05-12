@@ -73,16 +73,6 @@
 </style>
 </head>
 <body>
-    <div class="window" id="window1" style="top: 50px; left: 50px; width: 766px; height: 458px; z-index: 1;">
-        <div class="titlebar" id="window1titlebar" onclick="bringToFront('window1')">Color Switch
-          <!-- <button onclick="toggleFullscreen('window1')">⤢</button> -->
-          <button onclick="closeWindow('window1')">✕</button>
-        </div>
-        <div class="content">
-          <iframe id="iframe1" src="../Scaled Games/ColorGameScaled.html" frameborder="0" onclick="bringToFront('window1')"></iframe>
-        </div>
-      </div>
-
       <div class="window" id="window2" style="top: 50px; left: 50px; width: 766px; height: 458px; z-index: 1;">
         <div class="titlebar" id="window2titlebar" onclick="bringToFront('window2')">Lock Game
           <!-- <button onclick="toggleFullscreen('window2')">⤢</button> -->
@@ -90,6 +80,16 @@
         </div>
         <div class="content">
           <iframe id="iframe2" src="../Scaled Games/LockGameScaled.html" frameborder="0" onclick="bringToFront('window2')"></iframe>
+        </div>
+      </div>
+
+      <div class="window" id="window1" style="top: 50px; left: 50px; width: 766px; height: 458px; z-index: 1;">
+        <div class="titlebar" id="window1titlebar" onclick="bringToFront('window1')">Color Switch
+          <!-- <button onclick="toggleFullscreen('window1')">⤢</button> -->
+          <button onclick="closeWindow('window1')">✕</button>
+        </div>
+        <div class="content">
+          <iframe id="iframe1" src="../Scaled Games/ColorGameScaled.html" frameborder="0" onclick="bringToFront('window1')"></iframe>
         </div>
       </div>
 
