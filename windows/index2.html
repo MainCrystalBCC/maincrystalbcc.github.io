@@ -13,6 +13,12 @@
     padding: 0;
     background-size: 100%;
   }
+  .background {
+    background-image: url('../img/windows.jpg');
+    background-size: 110%;
+    height: 100%;
+    width: 100%;
+}
   .window {
     position: absolute;
     border: 1px solid #ccc;
@@ -72,7 +78,8 @@
   }
 </style>
 </head>
-<body>
+<body id="test">
+  <div class="background">
     <div class="window" id="window1" style="top: 50px; left: 50px; width: 766px; height: 458px; z-index: 1;">
         <div class="titlebar" id="window1titlebar" onclick="bringToFront('window1')">Color Switch
           <!-- <button onclick="toggleFullscreen('window1')">⤢</button> -->
@@ -287,8 +294,9 @@
     <button onclick="toggleWindow('window18')">Hangman</button>
     <button onclick="toggleWindow('window19')">Hard Tetris</button>
     <button onclick="switchmode()">Switch Mode</button>
+    <button style="font-size: 18px;" onclick="maxWindow()">⤢</button>
 </div>
-
+</div>
 <script>
   function toggleWindow(windowId) {
     var window = document.getElementById(windowId);
@@ -312,6 +320,18 @@
     var window = document.getElementById(windowId);
     window.style.display = 'none';
   }
+
+  function maxWindow() {
+    var window = document.getElementById('test');
+    if (!document.fullscreenElement) {
+      window.requestFullscreen().catch(err => {
+        console.log(`Error attempting to enable full-screen mode: ${err.message}`);
+      });
+    } else {
+      document.exitFullscreen();
+    }
+  }
+  
 
   function toggleFullscreen(windowId) {
     var window = document.getElementById(windowId);
