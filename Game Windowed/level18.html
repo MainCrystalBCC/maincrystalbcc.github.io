@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lock Puzzle Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id = "confirm">
+        You Won!
+        <div class="close">
+           <button class="Testbutton" onclick = "closeConfirm(), home()"> Home </button>
+           <button class="Testbutton" onclick = "closeConfirm(), nextLevel()"> Next </button>
+        </div>
+     </div>
+    <div class="lock" id="lockMain">
+        <div class="code" id="1">
+            <input type="number" class="numInput" name="input1" pattern="[0-9]" maxlength="1" id="Number1" value="0" min="0" max="9" readonly>
+        </div>
+        <div class="code" id="2">
+            <input type="number" class="numInput" name="input2" pattern="[0-9]" maxlength="1" id="Number2" value="0" min="0" max="9" readonly>
+        </div>
+        <div class="code" id="3">
+            <input type="number" class="numInput" name="input3" pattern="[0-9]" maxlength="1" id="Number3" value="0" min="0" max="9" readonly>
+        </div>
+        <div class="code" id="4">
+            <input type="number" class="numInput" name="input4" pattern="[0-9]" maxlength="1" id="Number4" value="0" min="0" max="9" readonly>
+        </div>
+        <div class="editor" id="edit1">
+            <button class="buttoneditor" id="edit1down" onclick="edit1down()">↓</button>
+            <button class="buttoneditor" id="edit1up" onclick="edit1up()">↑</button>
+        </div>
+        <div class="editor" id="edit2">
+            <button class="buttoneditor" id="edit2down" onclick="edit2down()">↓</button>
+            <button class="buttoneditor" id="edit2up" onclick="edit2up()">↑</button>
+        </div>
+        <div class="editor" id="edit3">
+            <button class="buttoneditor" id="edit3down" onclick="edit3down()">↓</button>
+            <button class="buttoneditor" id="edit3up" onclick="edit3up()">↑</button>
+        </div>
+        <div class="editor" id="edit4">
+            <button class="buttoneditor" id="edit4down" onclick="edit4down()">↓</button>
+            <button class="buttoneditor" id="edit4up" onclick="edit4up()">↑</button>
+        </div>
+        
+    </div>
+    <button class="submit" onclick="submit()">Unlock</button>
+
+    <div class="clueHolder">
+        <div class="clueTitle" id="clue1">Clue 1:</div>
+        <div class="clue" id="Clue1">The sum of all four digits is 24.</div>
+        <div class="clueTitle" id="clue2">Clue 2:</div>
+        <div class="clue" id="Clue2">The first digit is two more than digit four and two less than digit three.</div>
+        <div class="clueTitle" id="clue3">Clue 3:</div>
+        <div class="clue" id="Clue3">The second digit is the smallest odd digit.</div>
+        <div class="clueTitle" id="clue4">Clue 4:</div>
+        <div class="clue" id="Clue4">The third digit is odd.</div>
+        <!-- <button class="helpButton" id="help">Help</button> -->
+        
+    </div>
+    <div class="prevTrials" id="prevTrials">
+        
+    </div>
+
+    <footer>
+        <p class="footer">© 2024 - Landon Smith</p>
+    </footer>
+
+    <script>
+        const Number1 = 7
+        const Number2 = 3
+        const Number3 = 9
+        const Number4 = 5
+
+        console.log(Number1, Number2, Number3, Number4)
+
+        function submit() {
+            let view = document.getElementById("prevTrials");
+            let newTd = document.createElement("li");
+            var temp1 = document.getElementById('Number1').value;
+            var temp2 = document.getElementById('Number2').value;
+            var temp3 = document.getElementById('Number3').value;
+            var temp4 = document.getElementById('Number4').value;
+            var inputText = temp1+''+temp2+''+temp3+''+temp4;
+            var node = document.createTextNode(inputText);
+            newTd.appendChild(node);
+            view.appendChild(newTd);
+
+            var currentLevelStage = 18;
+            var nextLevelStage = 19;
+
+
+            if (document.getElementById('Number1').value == Number1) {
+                // console.log('1 is Right')
+                if (document.getElementById('Number2').value == Number2) {
+                    if (document.getElementById('Number3').value == Number3) {
+                        if (document.getElementById('Number4').value == Number4) {
+                            showConfirm()
+                            if (localStorage.getItem('LockCurrentLevel')==currentLevelStage){
+                                localStorage.setItem('LockCurrentLevel',nextLevelStage);
+                            }
+                        }
+                    }
+                }
+            } else {
+                // console.log('1 is Wrong')
+                document.getElementById('lockMain').classList.add('shake');
+                setTimeout(() => {  document.getElementById('lockMain').classList.remove('shake');; }, 1000);
+            }
+
+            if (document.getElementById('Number2').value == Number2) {
+                // console.log('2 is Right')
+            } else {
+                // console.log('2 is Wrong')
+                document.getElementById('lockMain').classList.add('shake');
+                setTimeout(() => {  document.getElementById('lockMain').classList.remove('shake');; }, 1000);
+            }
+
+            if (document.getElementById('Number3').value == Number3) {
+                // console.log('3 is Right')
+            } else {
+                // console.log('3 is Wrong')
+                document.getElementById('lockMain').classList.add('shake');
+                setTimeout(() => {  document.getElementById('lockMain').classList.remove('shake');; }, 1000);
+            }
+
+            if (document.getElementById('Number4').value == Number4) {
+                // console.log('4 is Right')
+            } else {
+                // console.log('4 is Wrong')
+                document.getElementById('lockMain').classList.add('shake');
+                setTimeout(() => {  document.getElementById('lockMain').classList.remove('shake');; }, 1000);
+            }
+        }
+
+        function edit1down() {
+            var num = document.getElementById('Number1').value
+            var numAfter = num-1
+            if (num >= 1) {
+                document.getElementById('Number1').value = numAfter;
+            } else if (num == 0) {
+                document.getElementById('Number1').value = 9;
+            }
+        }
+        function edit1up() {
+            var num = document.getElementById('Number1').value
+            var numAfter = num+1
+            if (num < 9) {
+                document.getElementById('Number1').stepUp(1)
+                
+            } else if (num = 9) {
+                document.getElementById('Number1').value = 0;
+            }
+        }
+        function edit2down() {
+            var num = document.getElementById('Number2').value
+            var numAfter = num-1
+            if (num >= 1) {
+                document.getElementById('Number2').value = numAfter;
+            } else if (num == 0) {
+                document.getElementById('Number2').value = 9;
+            }
+        }
+        function edit2up() {
+            var num = document.getElementById('Number2').value
+            var numAfter = num+1
+            if (num < 9) {
+                document.getElementById('Number2').stepUp(1)
+                
+            } else if (num = 9) {
+                document.getElementById('Number2').value = 0;
+            }
+        }
+        function edit3down() {
+            var num = document.getElementById('Number3').value
+            var numAfter = num-1
+            if (num >= 1) {
+                document.getElementById('Number3').value = numAfter;
+            } else if (num == 0) {
+                document.getElementById('Number3').value = 9;
+            }
+        }
+        function edit3up() {
+            var num = document.getElementById('Number3').value
+            var numAfter = num+1
+            if (num < 9) {
+                document.getElementById('Number3').stepUp(1)
+                
+            } else if (num = 9) {
+                document.getElementById('Number3').value = 0;
+            }
+        }
+        function edit4down() {
+            var num = document.getElementById('Number4').value
+            var numAfter = num-1
+            if (num >= 1) {
+                document.getElementById('Number4').value = numAfter;
+            } else if (num == 0) {
+                document.getElementById('Number4').value = 9;
+            }
+        }
+        function edit4up() {
+            var num = document.getElementById('Number4').value
+            var numAfter = num+1
+            if (num < 9) {
+                document.getElementById('Number4').stepUp(1)
+            } else if (num = 9) {
+                document.getElementById('Number4').value = 0;
+            }
+        }
+
+
+        var confirmDiv = document.getElementById("confirm");
+   
+        // function to show confirm box
+        function showConfirm() {
+            confirmDiv.style.display = "block";
+        }
+        
+        // function to hide confirm box
+        function closeConfirm() {
+            confirmDiv.style.display = "none";
+        }
+        
+        function nextLevel() {
+            window.location.href = "level19.html";
+        }
+
+        function home() {
+            window.location.href = "home.html";
+        }
+    </script>
+</body>
+</html>

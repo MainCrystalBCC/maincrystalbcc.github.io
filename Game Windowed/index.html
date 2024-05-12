@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detect</title>
+</head>
+<body>
+    <script>
+        // Check if the device is a phone
+        
+            function isPhone() {
+                return /iPhone|Android/.test(navigator.userAgent);
+            }
+
+            // Run specific code if on a phone
+            if (isPhone()) {
+                // Your phone-specific code here
+                window.location.href = "lock.html";
+            } else {
+                // Your code for other devices
+                window.location.href = "home.html";
+            }
+
+    </script>
+</body>
+</html>

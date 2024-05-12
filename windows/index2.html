@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unblocked Gamez</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-image: url('../img/windows.jpg');
+    background-color: #00c8ff;
+    margin: 0;
+    padding: 0;
+    background-size: 100%;
+  }
+  .window {
+    position: absolute;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    z-index: 1;
+    border-radius: 10px; /* Curved borders */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Shadow effect */
+    display: none;
+  }
+  .titlebar {
+    background-color: #ccc;
+    padding: 5px;
+    cursor: move;
+    border-top-left-radius: 10px; /* Curved top-left corner */
+    border-top-right-radius: 10px; /* Curved top-right corner */
+  }
+  .titlebar button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px;
+    float: right;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Mac-like font */
+  }
+  .titlebar button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+  }
+  .content {
+    height: calc(100% - 30px);
+    overflow: auto;
+  }
+  .taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    z-index: 2;
+  }
+  .taskbar button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  .resize-handle {
+    display: none;
+  }
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+</style>
+</head>
+<body>
+    <div class="window" id="window1" style="top: 50px; left: 50px; width: 766px; height: 458px; z-index: 1;">
+        <div class="titlebar" id="window1titlebar" onclick="bringToFront('window1')">Color Switch
+          <!-- <button onclick="toggleFullscreen('window1')">⤢</button> -->
+          <button onclick="closeWindow('window1')">✕</button>
+        </div>
+        <div class="content">
+          <iframe id="iframe1" src="../Scaled Games/ColorGameScaled.html" frameborder="0" onclick="bringToFront('window1')"></iframe>
+        </div>
+      </div>
+
+      <div class="window" id="window2" style="top: 50px; left: 50px; width: 766px; height: 458px; z-index: 1;">
+        <div class="titlebar" id="window2titlebar" onclick="bringToFront('window2')">Lock Game
+          <!-- <button onclick="toggleFullscreen('window2')">⤢</button> -->
+          <button onclick="closeWindow('window2')">✕</button>
+        </div>
+        <div class="content">
+          <iframe id="iframe2" src="../Scaled Games/LockGameScaled.html" frameborder="0" onclick="bringToFront('window2')"></iframe>
+        </div>
+      </div>
+
+      <div class="window" id="window3" style="top: 50px; left: 50px; width: 766px; height: 458px; z-index: 1;">
+        <div class="titlebar" id="window3titlebar" onclick="bringToFront('window3')">Pixel Painter
+          <!-- <button onclick="toggleFullscreen('window3')">⤢</button> -->
+          <button onclick="closeWindow('window3')">✕</button>
+        </div>
+        <div class="content">
+          <iframe id="iframe3" src="../Scaled Games/PixelPainterScaled.html" frameborder="0" onclick="bringToFront('window3')"></iframe>
+        </div>
+      </div>
+
+      <div class="window" id="window4" style="top: 50px; left: 50px; width: 766px; height: 458px; z-index: 1;">
+        <div class="titlebar" id="window4titlebar" onclick="bringToFront('window4')">Shooter
+          <!-- <button onclick="toggleFullscreen('window4')">⤢</button> -->
+          <button onclick="closeWindow('window4')">✕</button>
+        </div>
+        <div class="content">
+          <iframe id="iframe4" src="../Scaled Games/ShooterScaled.html" frameborder="0" onclick="bringToFront('window4')"></iframe>
+        </div>
+      </div>
+
+      <div class="window" id="window5" style="top: 50px; left: 50px; width: 766px; height: 458px; z-index: 1;">
+        <div class="titlebar" id="window5titlebar" onclick="bringToFront('window5')">Memory
+          <!-- <button onclick="toggleFullscreen('window5')">⤢</button> -->
+          <button onclick="closeWindow('window5')">✕</button>
+        </div>
+        <div class="content">
+          <iframe id="iframe5" src="../Scaled Games/MemoryScaled.html" frameborder="0" onclick="bringToFront('window5')"></iframe>
+        </div>
+      </div>
+
+      <div class="window" id="window6" style="top: 50px; left: 50px; width: 766px; height: 458px; z-index: 1;">
+        <div class="titlebar" id="window6titlebar" onclick="bringToFront('window6')">Food Memory
+          <!-- <button onclick="toggleFullscreen('window6')">⤢</button> -->
+          <button onclick="closeWindow('window6')">✕</button>
+        </div>
+        <div class="content">
+          <iframe id="iframe6" src="../Scaled Games/FoodMemoryScaled.html" frameborder="0" onclick="bringToFront('window6')"></iframe>
+        </div>
+      </div>
+
+      <div class="window" id="window7" style="top: 50px; left: 50px; width: 766px; height: 458px; z-index: 1;">
+        <div class="titlebar" id="window7titlebar" onclick="bringToFront('window7')">Puzzle
+          <!-- <button onclick="toggleFullscreen('window7')">⤢</button> -->
+          <button onclick="closeWindow('window7')">✕</button>
+        </div>
+        <div class="content">
+          <iframe id="iframe7" src="../Scaled Games/PicPuzzleScaled.html" frameborder="0" onclick="bringToFront('window7')"></iframe>
+        </div>
+      </div>
+
+      <div class="window" id="window8" style="top: 50px; left: 50px; width: 766px; height: 458px; z-index: 1;">
+        <div class="titlebar" id="window8titlebar" onclick="bringToFront('window8')">Trivia
+          <!-- <button onclick="toggleFullscreen('window8')">⤢</button> -->
+          <button onclick="closeWindow('window8')">✕</button>
+        </div>
+        <div class="content">
+          <iframe id="iframe8" src="../Scaled Games/TriviaScaled.html" frameborder="0" onclick="bringToFront('window8')"></iframe>
+        </div>
+      </div>
+
+      <div class="window" id="window9" style="top: 50px; left: 50px; width: 766px; height: 458px; z-index: 1;">
+        <div class="titlebar" id="window9titlebar" onclick="bringToFront('window9')">Word Search
+          <!-- <button onclick="toggleFullscreen('window9')">⤢</button> -->
+          <button onclick="closeWindow('window9')">✕</button>
+        </div>
+        <div class="content">
+          <iframe id="iframe9" src="../Scaled Games/WordSearchScaled.html" frameborder="0" onclick="bringToFront('window9')"></iframe>
+        </div>
+      </div>
+
+      <div class="window" id="window10" style="top: 50px; left: 50px; width: 766px; height: 458px; z-index: 1;">
+        <div class="titlebar" id="window10titlebar" onclick="bringToFront('window10')">TicTacToe
+          <!-- <button onclick="toggleFullscreen('window10')">⤢</button> -->
+          <button onclick="closeWindow('window10')">✕</button>
+        </div>
+        <div class="content">
+          <iframe id="iframe10" src="../Scaled Games/TicTacToeScaled.html" frameborder="0" onclick="bringToFront('window10')"></iframe>
+        </div>
+      </div>
+
+      <div class="window" id="window11" style="top: 50px; left: 50px; width: 766px; height: 458px; z-index: 1;">
+        <div class="titlebar" id="window11titlebar" onclick="bringToFront('window11')">Tilting Maze
+          <!-- <button onclick="toggleFullscreen('window11')">⤢</button> -->
+          <button onclick="closeWindow('window11')">✕</button>
+        </div>
+        <div class="content">
+          <iframe id="iframe11" src="../Scaled Games/TiltingMazeScaled.html" frameborder="0" onclick="bringToFront('window11')"></iframe>
+        </div>
+      </div>
+
+      <div class="window" id="window12" style="top: 50px; left: 50px; width: 766px; height: 458px; z-index: 1;">
+        <div class="titlebar" id="window12titlebar" onclick="bringToFront('window12')">Maze
+          <!-- <button onclick="toggleFullscreen('window12')">⤢</button> -->
+          <button onclick="closeWindow('window12')">✕</button>
+        </div>
+        <div class="content">
+          <iframe id="iframe12" src="../Scaled Games/MazeScaled.html" frameborder="0" onclick="bringToFront('window12')"></iframe>
+        </div>
+      </div>
+
+      <div class="window" id="window13" style="top: 50px; left: 50px; width: 766px; height: 458px; z-index: 1;">
+        <div class="titlebar" id="window13titlebar" onclick="bringToFront('window13')">Tetris
+          <!-- <button onclick="toggleFullscreen('window13')">⤢</button> -->
+          <button onclick="closeWindow('window13')">✕</button>
+        </div>
+        <div class="content">
+          <iframe id="iframe13" src="../Scaled Games/TetrisScaled.html" frameborder="0" onclick="bringToFront('window13')"></iframe>
+        </div>
+      </div>
+
+      <div class="window" id="window14" style="top: 50px; left: 50px; width: 766px; height: 458px; z-index: 1;">
+        <div class="titlebar" id="window14titlebar" onclick="bringToFront('window14')">Snake
+          <!-- <button onclick="toggleFullscreen('window14')">⤢</button> -->
+          <button onclick="closeWindow('window14')">✕</button>
+        </div>
+        <div class="content">
+          <iframe id="iframe14" src="../Scaled Games/SnakeScaled.html" frameborder="0" onclick="bringToFront('window14')"></iframe>
+        </div>
+      </div>
+
+      <div class="window" id="window15" style="top: 50px; left: 50px; width: 766px; height: 458px; z-index: 1;">
+        <div class="titlebar" id="window15titlebar" onclick="bringToFront('window15')">Tennis
+          <!-- <button onclick="toggleFullscreen('window15')">⤢</button> -->
+          <button onclick="closeWindow('window15')">✕</button>
+        </div>
+        <div class="content">
+          <iframe id="iframe15" src="../Scaled Games/TennisScaled.html" frameborder="0" onclick="bringToFront('window15')"></iframe>
+        </div>
+      </div>
+
+      <div class="window" id="window16" style="top: 50px; left: 50px; width: 766px; height: 458px; z-index: 1;">
+        <div class="titlebar" id="window16titlebar" onclick="bringToFront('window16')">Solitare
+          <!-- <button onclick="toggleFullscreen('window16')">⤢</button> -->
+          <button onclick="closeWindow('window16')">✕</button>
+        </div>
+        <div class="content">
+          <iframe id="iframe16" src="../Scaled Games/SolitareScaled.html" frameborder="0" onclick="bringToFront('window16')"></iframe>
+        </div>
+      </div>
+
+      <div class="window" id="window17" style="top: 50px; left: 50px; width: 766px; height: 458px; z-index: 1;">
+        <div class="titlebar" id="window17titlebar" onclick="bringToFront('window17')">Tower Blocks
+          <!-- <button onclick="toggleFullscreen('window17')">⤢</button> -->
+          <button onclick="closeWindow('window17')">✕</button>
+        </div>
+        <div class="content">
+          <iframe id="iframe17" src="../Scaled Games/TowerBlocksScaled.html" frameborder="0" onclick="bringToFront('window17')"></iframe>
+        </div>
+      </div>
+
+      <div class="window" id="window18" style="top: 50px; left: 50px; width: 766px; height: 458px; z-index: 1;">
+        <div class="titlebar" id="window18titlebar" onclick="bringToFront('window18')">Hangman
+          <!-- <button onclick="toggleFullscreen('window18')">⤢</button> -->
+          <button onclick="closeWindow('window18')">✕</button>
+        </div>
+        <div class="content">
+          <iframe id="iframe18" src="../Scaled Games/HangmanScaled.html" frameborder="0" onclick="bringToFront('window18')"></iframe>
+        </div>
+      </div>
+
+      <div class="window" id="window19" style="top: 50px; left: 50px; width: 766px; height: 458px; z-index: 1;">
+        <div class="titlebar" id="window19titlebar" onclick="bringToFront('window19')">Hangman
+          <!-- <button onclick="toggleFullscreen('window19')">⤢</button> -->
+          <button onclick="closeWindow('window19')">✕</button>
+        </div>
+        <div class="content">
+          <iframe id="iframe19" src="../Scaled Games/HardTetrisScaled.html" frameborder="0" onclick="bringToFront('window19')"></iframe>
+        </div>
+      </div>
+
+
+
+
+<div class="taskbar">
+    <button onclick="toggleWindow('window1')">Color Switch</button>
+    <button onclick="toggleWindow('window2')">Lock Game</button>
+    <button onclick="toggleWindow('window3')">Pixel Painter</button>
+    <button onclick="toggleWindow('window4')">Shooter</button>
+    <button onclick="toggleWindow('window5')">Memory</button>
+    <button onclick="toggleWindow('window6')">Food Memory</button>
+    <button onclick="toggleWindow('window7')">Puzzle</button>
+    <button onclick="toggleWindow('window8')">Trivia</button>
+    <button onclick="toggleWindow('window9')">Word Search</button>
+    <button onclick="toggleWindow('window10')">TicTacToe</button>
+    <button onclick="toggleWindow('window11')">Tilting Maze</button>
+    <button onclick="toggleWindow('window12')">Maze</button>
+    <button onclick="toggleWindow('window13')">Tetris</button>
+    <button onclick="toggleWindow('window14')">Snake</button>
+    <button onclick="toggleWindow('window15')">Tennis</button>
+    <button onclick="toggleWindow('window16')">Solitare</button>
+    <button onclick="toggleWindow('window17')">Tower Blocks</button>
+    <button onclick="toggleWindow('window18')">Hangman</button>
+    <button onclick="toggleWindow('window19')">Hard Tetris</button>
+    <button onclick="switchmode()">Switch Mode</button>
+</div>
+
+<script>
+  function toggleWindow(windowId) {
+    var window = document.getElementById(windowId);
+    if (window.style.display === 'none') {
+      window.style.display = 'block';
+    } else {
+      window.style.display = 'none';
+    }
+  }
+
+  function bringToFront(windowId) {
+    var windows = document.getElementsByClassName("window");
+    for (var i = 0; i < windows.length; i++) {
+      windows[i].style.zIndex = 1;
+    }
+    var window = document.getElementById(windowId);
+    window.style.zIndex = 2;
+  }
+
+  function closeWindow(windowId) {
+    var window = document.getElementById(windowId);
+    window.style.display = 'none';
+  }
+
+  function toggleFullscreen(windowId) {
+    var window = document.getElementById(windowId);
+    if (!document.fullscreenElement) {
+      window.requestFullscreen().catch(err => {
+        console.log(`Error attempting to enable full-screen mode: ${err.message}`);
+      });
+    } else {
+      document.exitFullscreen();
+    }
+  }
+
+  
+  function dragElement(elmnt) {
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    elmnt.querySelector('.titlebar').onmousedown = dragMouseDown;
+
+    function dragMouseDown(e) {
+      e = e || window.event;
+      e.preventDefault();
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      document.onmouseup = closeDragElement;
+      document.onmousemove = elementDrag;
+    }
+
+    function elementDrag(e) {
+      e = e || window.event;
+      e.preventDefault();
+      pos1 = pos3 - e.clientX;
+      pos2 = pos4 - e.clientY;
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+      elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    }
+
+    function closeDragElement() {
+      document.onmouseup = null;
+      document.onmousemove = null;
+    }
+  }
+
+
+  var windows = document.getElementsByClassName("window");
+  for (var i = 0; i < windows.length; i++) {
+    dragElement(windows[i]);
+  }
+
+  function switchmode() {
+    window.location.href = "../home.html"
+  }
+
+</script>
+</body>
+</html>
