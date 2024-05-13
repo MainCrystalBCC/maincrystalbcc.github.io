@@ -42,7 +42,7 @@ body {
   width: 80px;
   height: 80px;
   border-radius: 100%;
-  background-image: url(https://images.unsplash.com/photo-1486578077620-8a022ddd481f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60);
+  background-image: url(../../img/north.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
