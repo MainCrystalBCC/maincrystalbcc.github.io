@@ -10,7 +10,10 @@ $('.arrow').on('click', () => {
     $('.tbar').css('color', 'black').css('background-color', 'rgb(200,200,200)');
     $('.chrome').css('display', 'block');
     // setTimeout(() => {
-      window.location.href = '../../windows/index2.html';
+      // window.location.href = '../../windows/index2.html';
+      setTimeout(() => {
+      document.getElementById('test1222').style.display = 'block';
+      }, 500);
     
   } else {
       $('#password').effect("shake")  }
