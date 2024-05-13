@@ -233,3 +233,11 @@ main {
   text-align: left;
   font-size: 16px;
 }
+
+.background {
+  background-image: url(https://images.unsplash.com/photo-1471921152622-ee4bff0a0238?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+    background-size: 110%;
+    height: 100%;
+    width: 100%;
+
+}

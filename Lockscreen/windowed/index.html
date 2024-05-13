@@ -9,7 +9,8 @@
 <link rel="stylesheet" href="style.css">
 
 </head>
-<body>
+<body id="test">
+  <div class="background">
 <!-- partial:index.partial.html -->
 <nav class='tbar'>
   <span class='percent'>70%</span>
@@ -30,12 +31,13 @@
     </button>
   </div>
   <div class='cancel-wrap'>
-    <button class='x'>X</button>
+    <button class='x' onclick="maxWindow()">X</button>
     <span>Cancel</span>
   </div>
 </div>
 
 <iframe style="height: 100%; width: 100%; margin-top: -25px;" src="../../windows/index2.html"></iframe>
+</div>
 <!-- <div class='chrome'>
  
   <nav class='toolbar'>

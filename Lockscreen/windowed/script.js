@@ -16,3 +16,15 @@ $('.arrow').on('click', () => {
   } else {
       $('#password').effect("shake")  }
 });
+
+
+function maxWindow() {
+  var window = document.getElementById('test');
+  if (!document.fullscreenElement) {
+    window.requestFullscreen().catch(err => {
+      console.log(`Error attempting to enable full-screen mode: ${err.message}`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}
