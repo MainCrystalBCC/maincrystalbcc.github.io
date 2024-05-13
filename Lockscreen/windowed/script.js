@@ -9,9 +9,9 @@ $('.arrow').on('click', () => {
     $('.content').slideUp();
     $('.tbar').css('color', 'black').css('background-color', 'rgb(200,200,200)');
     $('.chrome').css('display', 'block');
-    setTimeout(() => {
-      // window.location.href = '../../windows/index2.html';
-    }, 500);
+    // setTimeout(() => {
+      window.location.href = '../../windows/index2.html';
+    
   } else {
       $('#password').effect("shake")  }
 });
