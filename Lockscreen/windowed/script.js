@@ -20,6 +20,8 @@ $('.arrow').on('click', () => {
 });
 
 
+
+
 function maxWindow() {
   var window = document.getElementById('test');
   if (!document.fullscreenElement) {
@@ -30,3 +32,4 @@ function maxWindow() {
     document.exitFullscreen();
   }
 }
+
