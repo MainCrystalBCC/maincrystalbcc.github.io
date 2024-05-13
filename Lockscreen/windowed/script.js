@@ -10,8 +10,7 @@ $('.arrow').on('click', () => {
     $('.tbar').css('color', 'black').css('background-color', 'rgb(200,200,200)');
     $('.chrome').css('display', 'block');
     setTimeout(() => {
-      // console.log("Delayed for 1 second.");
-      window.location.href = '../../windows/index2.html';
+      // window.location.href = '../../windows/index2.html';
     }, 500);
   } else {
       $('#password').effect("shake")  }
