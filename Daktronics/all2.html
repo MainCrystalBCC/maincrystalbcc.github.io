@@ -312,7 +312,7 @@
             color: white;
             background-color: transparent;
             border: none;
-            font-size: 60px;
+            font-size: 30px;
             margin-top: -10px;
             height: 100%;
             width: 100%;
@@ -324,7 +324,7 @@
             background-color: transparent;
             border: none;
             margin-top: -10px;
-            font-size: 60px;
+            font-size: 30px;
             height: 100%;
             width: 100%;
         }
@@ -339,7 +339,7 @@
 
         .screenpower {
             height: 50px;
-            width: 50px;
+            width: 120px;
             position: absolute;
             top: 50%;
             left: 1%;
@@ -347,7 +347,9 @@
 
         .screenpower button {
             border: none;
+            width: 70%;
             border-radius: 10px;
+            font-size: 100%;
             background-color: #242424;
             color: white;
         }
@@ -1166,16 +1168,16 @@
     </div>
 
     <div class="powerHolder">
-        <button onclick="turnon()" class="powerSwitch">⏻</button>
+        <button onclick="turnon()" class="powerSwitch">Power</button>
         <div class="color" id="screenlight"></div>
     </div>
     <div class="wirecastHolder">
         <img src="wirecast.png" alt="" class="wirecastLogo">
-        <button class="powerSwitch" onclick="startWirecast()">⏻</button>
+        <button class="powerSwitch" onclick="startWirecast()">Power</button>
         <div class="color" id="wirecastlight"></div>
     </div>
     <div class="screenpower">
-        <button class="powerSwitch" onclick="turnscreenon()">⏻</button>
+        <button class="powerSwitch" onclick="turnscreenon()">Power</button>
     </div>
     
     <div id="computer-wirecastblank"></div>
