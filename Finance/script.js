@@ -91,8 +91,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         // Update total expenses and budget left
-        budgetData.totalExpenses += expenseAmount;
-        budgetData.budgetLeft -= expenseAmount;
+        budgetData.totalExpenses -= expenseAmount;
+        budgetData.budgetLeft += expenseAmount;
 
         updateLocalStorage();
         updateUI();

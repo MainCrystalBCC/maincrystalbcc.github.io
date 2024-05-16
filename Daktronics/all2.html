@@ -1,0 +1,2390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daktronics</title>
+    <style>
+@font-face {
+    font-family: 'Digital Display';
+    src: url('https://praxeds.github.io/scrimba-basketball-scoreboard/Assets/Digital-Display.woff2') format('woff2'),
+        url('https://praxeds.github.io/basketball-scoreboard/Assets/Digital-Display.woff2') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        .header {
+            margin-top: -25px;
+            padding: 0;
+            color: #ffffff;
+            width: 100%;
+            height: 100px;
+            background-color: #242424;
+        }
+
+        .header h1 {
+            text-align: center;
+            position: absolute;
+            top: 1px;
+            left: 43%;
+        }
+
+        .buttons {
+            position: absolute;
+            left: 40%;
+            display: grid;
+            grid-template-columns: 300px;
+            row-gap: 20px;
+            margin-top: 20px;
+        }
+
+        .button {
+            margin: 0;
+            height: 100px;
+            width: 300px;
+            border-radius: 20px;
+            font-size: 100%;
+            border: none;
+            background-color: #242424;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        .screen {
+            z-index: 1;
+            border: #242424 solid 5px;
+            height: 300px;
+            width: 400px;
+            position: absolute;
+            top: 26%;
+            left: 5%;
+            display: none;
+        }
+
+        .backdrop {
+            width: 100%;
+            height: 100%;
+        }
+
+        .dmp-8 {
+            height: 60px;
+            width: 45px;
+            position: absolute;
+            top: 60%;
+            left: 1%;
+        }
+
+        .displayStudio {
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            top: 30%;
+            left: 1%;
+        }
+
+        .dmp-8icon {
+            width: 100%;
+            height: 100%;
+        }
+
+        .popup {
+            height: 60%;
+            width: 60%;
+            background-color: black;
+            border-top: #ffffff 20px solid;
+            position: absolute;
+            top: 15%;
+            left: 25%;
+            display: none;
+        }
+
+        .popup p {
+            color: white;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        .header {
+            margin-top: -25px;
+            padding: 0;
+            color: #ffffff;
+            width: 100%;
+            height: 100px;
+            background-color: #242424;
+        }
+
+        .header h1 {
+            text-align: center;
+            position: absolute;
+            top: 1px;
+            left: 43%;
+        }
+
+        .buttons {
+            position: absolute;
+            left: 40%;
+            display: grid;
+            grid-template-columns: 300px;
+            row-gap: 20px;
+            margin-top: 20px;
+        }
+
+        .button {
+            margin: 0;
+            height: 100px;
+            width: 300px;
+            border-radius: 20px;
+            font-size: 100%;
+            border: none;
+            background-color: #242424;
+            color: #ffffff;
+            cursor: pointer;
+        }
+        .window {
+            height: 400px;
+            width: 500px;
+            border: #242424 double 17px;
+            position: absolute;
+            top: 12%;
+            left: 70%;
+            /* display: inline; */
+
+        }
+
+        .ledboard {
+            height: 135px;
+            width: 170px;
+            border: #242424 solid 3px;
+            position: absolute;
+            top: 10%;
+            left: 13%;
+        }
+
+        .ledboard img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .computer2 {
+            height: 300px;
+            width: 400px;
+            border: #242424 solid 3px;
+            position: absolute;
+            top: 26%;
+            left: 5%;
+            display: none;
+        }
+
+        .scoreboard {
+            width: 205px;
+            height: 140px;
+            position: absolute;
+            top: 10%;
+            left: 49%;
+        }
+
+        .scoreboard img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .child {
+            display: inline-block;
+        }
+        .blue {
+            background-color: #00a9b2ff;
+            height: 70px;
+            width: 385px;
+            position: absolute;
+            top: 45%;
+            left: 13%;
+            display: grid;
+            grid-template-columns: 70px 70px 70px 70px 70px;
+            column-gap: 9px;
+            /* align-content: center; */
+            /* grid-template-columns: 50px 50px 50px 50px 50px; */
+        }
+
+        .white {
+            background-color: whitesmoke;
+            height: 90%;
+            width: 100%;
+            /* position: absolute;
+            top: 5%; */
+            margin-top: 3px;
+            font-size: 50px;
+
+        }
+        .previewImg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .computerheader {
+            height: 65px;
+            width: 100%;
+            background-color: #242424;
+        }
+
+        .preview {
+            border: #ffffff double 4px;
+            width: 60px;
+            height: 50px;
+            position: absolute;
+            top: 1%;
+            left: 3%;
+        }
+        .tabs {
+            height: 25px;
+            width: 100%;
+            background-color: #5e5e5e;
+            display: flex;
+        }
+
+        .tab-button {
+            height: 100%;
+            width: 90px;
+            border-radius: 15px;
+            font-size: 100%;
+            color: white;
+            background-color: #6c6c6c;
+            border: none;
+            margin-right: 5px;
+        }
+
+        .page {
+            height: 68%;
+            width: 100%;
+            position: absolute;
+            top: 32%;
+            background-color: rgb(56, 55, 55);
+            display: grid;
+            grid-template-columns: 70px 70px 70px 70px 70px;
+            gap: 6px;
+            grid-template-rows: 40px 40px 40px;
+        }
+
+        .selected {
+            background-color: #3a3a3a;
+        }
+
+        .pagebutton {
+            width: 70px;
+            height: 40px;
+            border-radius: 3px;
+            border: none;
+        }
+
+        .hiddenpage {
+            display: none;
+        }
+
+        .powerSwitch {
+            height: 50px;
+            width: 50px;
+            cursor: pointer;
+        }
+
+        .powerHolder {
+            height: 80px;
+            width: 300px;
+            background-color: black;
+            position: absolute;
+            top: 9%;
+            left: 5%;
+        }
+        .wirecastHolder {
+            height: 80px;
+            width: 300px;
+            background-color: gray;
+            position: absolute;
+            top: 16%;
+            left: 5%;
+        }
+
+        .powerHolder button{
+            color: white;
+            background-color: transparent;
+            border: none;
+            font-size: 60px;
+            margin-top: -10px;
+            height: 100%;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .wirecastHolder button{
+            color: white;
+            background-color: transparent;
+            border: none;
+            margin-top: -10px;
+            font-size: 60px;
+            height: 100%;
+            width: 100%;
+        }
+
+        .wirecastLogo {
+            width: 40%;
+            height: 50%;
+            position: absolute;
+            top: 7%;
+            left: 0%;
+        }
+
+        .screenpower {
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            top: 50%;
+            left: 1%;
+        }
+
+        .screenpower button {
+            border: none;
+            border-radius: 10px;
+            background-color: #242424;
+            color: white;
+        }
+
+
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        .header {
+            margin-top: -25px;
+            padding: 0;
+            color: #ffffff;
+            width: 100%;
+            height: 100px;
+            background-color: #242424;
+        }
+
+        .header h1 {
+            text-align: center;
+            position: absolute;
+            top: 1px;
+            left: 43%;
+        }
+
+        .buttons {
+            position: absolute;
+            left: 40%;
+            display: grid;
+            grid-template-columns: 300px;
+            row-gap: 20px;
+            margin-top: 20px;
+        }
+
+        .button {
+            margin: 0;
+            height: 100px;
+            width: 300px;
+            border-radius: 20px;
+            font-size: 100%;
+            border: none;
+            background-color: #242424;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        .controller-img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .controller {
+            height: 300px;
+            width: 600px;
+            border: #242424 solid 3px;
+            position: absolute;
+            top: 60%;
+            left: 10%;
+        }
+
+
+        #computer-wirecast {
+            height: 360px;
+            width: 440px;
+            border: #242424 solid 5px;
+            position: absolute;
+            top: 15%;
+            left: 35%;
+            display: none;
+            background-color: #242424;
+            z-index: 1;
+        }
+        #computer-wirecastblank {
+            height: 360px;
+            width: 440px;
+            border: #242424 solid 5px;
+            position: absolute;
+            top: 15%;
+            left: 35%;
+            display: block;
+            background-color: black;
+        }
+
+        .preview-holder {
+            background-color: #454545;
+            height: 170px;
+            width: 100%;
+
+        }
+
+        .preview2 {
+            height: 135px;
+            width: 40%;
+            background-color: #242424;
+            border-radius: 10px;
+            position: absolute;
+            top: 3%;
+            left: 6%;
+        }
+
+        .live {
+            height: 135px;
+            width: 40%;
+            background-color: #242424;
+            border-radius: 10px;
+            position: absolute;
+            top: 3%;
+            left: 48%;
+        }
+
+        .preview-img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .live-img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .selectors{
+            height: 42px;
+            width: 100%;
+            margin-bottom: 5px;
+            background-color: #454545;
+            display: flex;
+        }
+
+        .selector1 {
+            margin-top: 5px;
+        }
+
+        .cube {
+            height: 100%;
+            width: 40px;
+            background-color: #ffffff;
+            margin-right: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .selector1 div {
+            background-color: #05c5eb;
+        }
+        .selector2 div {
+            background-color: #828586;
+        }
+        .selector3 div {
+            background-color: #ffaa00;
+        }
+        .selector4 div {
+            background-color: #0518eb;
+        }
+
+        h2 {
+            color: wheat;
+            margin-top: 10px;
+        }
+
+        .selectors .selected {
+            background-color: lime;
+        }
+
+        .controller-button-clear1 {
+            background-color: transparent;
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 38.5%;
+            left: 6.5%;
+            cursor: pointer;
+            border: none;
+            opacity: 40%;
+        }
+        .controller-button-clear2 {
+            background-color: transparent;
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 48.5%;
+            left: 6.5%;
+            cursor: pointer;
+            border: none;
+            opacity: 40%;
+        }
+        .controller-button-clear3 {
+            background-color: transparent;
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 58.5%;
+            left: 6.5%;
+            cursor: pointer;
+            border: none;
+            opacity: 40%;
+        }
+        .controller-button-clear4 {
+            background-color: transparent;
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 78.5%;
+            left: 6.5%;
+            cursor: pointer;
+            border: none;
+            opacity: 40%;
+        }
+
+        .controller-button {
+            background-color: transparent;
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 38.5%;
+            left: 12%;
+            cursor: pointer;
+            border: none;
+            opacity: 40%;
+        }
+        .controller-button2 {
+            background-color: transparent;
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 38.5%;
+            left: 17.5%;
+            cursor: pointer;
+            border: none;
+            opacity: 40%;
+        }
+        .controller-button3 {
+            background-color: transparent;
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 38.5%;
+            left: 23%;
+            cursor: pointer;
+            border: none;
+            opacity: 40%;
+        }
+        .controller-button4 {
+            background-color: transparent;
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 38.5%;
+            left: 28.5%;
+            cursor: pointer;
+            border: none;
+            opacity: 40%;
+        }
+        .controller-button5 {
+            background-color: transparent;
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 38.5%;
+            left: 34%;
+            cursor: pointer;
+            border: none;
+            opacity: 40%;
+        }
+        .controller-button6 {
+            background-color: transparent;
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 38.5%;
+            left: 39.5%;
+            cursor: pointer;
+            border: none;
+            opacity: 40%;
+        }
+        .controller-button7 {
+            background-color: transparent;
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 48.5%;
+            left: 12%;
+            cursor: pointer;
+            border: none;
+            opacity: 40%;
+        }
+        .controller-button8 {
+            background-color: transparent;
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 58.5%;
+            left: 12%;
+            cursor: pointer;
+            border: none;
+            opacity: 40%;
+        }
+        .controller-button9 {
+            background-color: transparent;
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 58.5%;
+            left: 17.5%;
+            cursor: pointer;
+            border: none;
+            opacity: 40%;
+        }
+        .controller-button10 {
+            background-color: transparent;
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 58.5%;
+            left: 23%;
+            cursor: pointer;
+            border: none;
+            opacity: 40%;
+        }
+        .controller-button11 {
+            background-color: transparent;
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 58.5%;
+            left: 28.5%;
+            cursor: pointer;
+            border: none;
+            opacity: 40%;
+        }
+        .controller-button12 {
+            background-color: transparent;
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 58.5%;
+            left: 34%;
+            cursor: pointer;
+            border: none;
+            opacity: 40%;
+        }
+        .controller-button13 {
+            background-color: transparent;
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 78.5%;
+            left: 12%;
+            cursor: pointer;
+            border: none;
+            opacity: 40%;
+        }
+        .controller-button14 {
+            background-color: transparent;
+            height: 30px;
+            width: 70px;
+            position: absolute;
+            top: 78.3%;
+            left: 83.5%;
+            cursor: pointer;
+            border: none;
+            opacity: 40%;
+        }
+
+        #scorebot-img {
+            height: 22px;
+            width: 90%;
+            position: absolute;
+            top: 80%;
+            left: 5%;
+            display: none;
+        }
+        #live-scorebot-img {
+            height: 22px;
+            width: 90%;
+            position: absolute;
+            top: 80%;
+            left: 5%;
+            display: none;
+        }
+
+        #game-img {
+            height: 100%;
+            width: 100%;
+            /* margin-top: -15px; */
+            border-radius: 10px;
+            display: none;
+        }
+        #live-game-img {
+            height: 100%;
+            width: 100%;
+            /* margin-top: -15px; */
+            border-radius: 10px;
+            display: none;
+        }
+
+        #preview-img {
+            height: 100%;
+            width: 100%;
+            /* margin-top: -15px; */
+            border-radius: 10px;
+            display: none;
+        }
+        #live-img {
+            height: 100%;
+            width: 100%;
+            /* margin-top: -15px; */
+            border-radius: 10px;
+            display: none;
+        }
+        .Go-Btn {
+            height: 20px;
+            width: 60px;
+            border-radius: 5px;
+            border: none;
+            position: absolute;
+            top: 41%;
+            left: 49%;
+            background-color: #242424;
+            color: white;
+            font-size: 100%;
+            cursor: pointer;
+       }
+       .Transition-Btn {
+            height: 20px;
+            width: 60px;
+            border-radius: 5px;
+            border: none;
+            position: absolute;
+            top: 41%;
+            left: 33%;
+            background-color: #242424;
+            color: white;
+            font-size: 100%;
+            cursor:not-allowed;
+       }
+
+       .color {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            border: none;
+       }
+       #wirecastlight {
+            background-color: red;
+            position: absolute;
+            top: 25%;
+            left: 74%;
+        }
+        #screenlight {
+            background-color: red;
+            position: absolute;
+            top: 25%;
+            left: 74%;
+        }
+
+        .pts {
+            font-family: 'Digital Display',monospace;
+            font-size: 11em;
+            text-align: end;
+
+            position: relative;
+            z-index: 2;
+            top: 1%;
+            left: -17%;
+            transform: translate(-50%, -50%);
+
+            margin: 0;
+            margin-right: 37.2px;
+            color: var(--text-color1);
+        }
+
+        .name2 {
+            position: absolute;
+            top: 0;
+            left: 80%;
+        }
+
+        .pts2 {
+            font-family: 'Digital Display',monospace;
+            font-size: 11em;
+            text-align: end;
+
+            position: relative;
+            z-index: 2;
+            top: -23%;
+            left: 64%;
+            transform: translate(-50%, -50%);
+
+            margin: 0;
+            margin-right: 37.2px;
+            color: var(--text-color1);
+        }
+
+        .period {
+            font-family: 'Digital Display',monospace;
+            font-size: 11em;
+            text-align: end;
+
+            position: relative;
+            z-index: 2;
+            top: -23%;
+            left: 54%;
+            transform: translate(-50%, -50%);
+
+            margin: 0;
+            margin-right: 37.2px;
+            color: var(--text-color1);
+        }
+
+        .periodTitle {
+            position: relative;
+            top: -38%;
+            left: 40%;
+            font-size: 20px;
+        }
+        .period {
+                font-family: 'Digital Display',monospace;
+                font-size: 11em;
+                text-align: end;
+
+                position: relative;
+                z-index: 2;
+                top: -40%;
+                left: 15%;
+                transform: translate(-50%, -50%);
+
+                margin: 0;
+                margin-right: 37.2px;
+                color: var(--text-color1);
+        }
+        .time {
+            font-family: 'Digital Display',monospace;
+                font-size: 11em;
+                text-align: end;
+
+                position: relative;
+                z-index: 2;
+                top: -100%;
+                left: 28%;
+                transform: translate(-50%, -50%);
+
+                margin: 0;
+                margin-right: 37.2px;
+                color: var(--text-color1);
+        }
+
+        .foulTitle {
+            position: relative;
+            top: -98%;
+            left: 10%;
+            font-size: 20px;
+        }
+        .foulTitle2 {
+            position: relative;
+            top: -151%;
+            left: 74%;
+            font-size: 20px;
+        }
+
+        .foul {
+            font-family: 'Digital Display',monospace;
+                font-size: 11em;
+                text-align: end;
+
+                position: relative;
+                z-index: 2;
+                top: -100%;
+                left: -17%;
+                transform: translate(-50%, -50%);
+
+                margin: 0;
+                margin-right: 37.2px;
+                color: var(--text-color1);
+        }
+
+        .foul2 {
+            font-family: 'Digital Display',monospace;
+                font-size: 11em;
+                text-align: end;
+
+                position: relative;
+                z-index: 2;
+                top: -153%;
+                left: 47%;
+                transform: translate(-50%, -50%);
+
+                margin: 0;
+                margin-right: 37.2px;
+                color: var(--text-color1);
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Daktronics Tutorial</h1>
+        <button class="button" onclick="home()">Back</button>
+    </div>
+
+
+
+    <div class="screen" id="screenhide">
+        <img class="backdrop" src="windows.png" id="backdrop" alt="">
+        <div class="popup" id="popup">
+            <p></p>
+        </div>
+        <div class="dmp-8">
+            <img class="dmp-8icon" src="dmp8.png" alt="" id="icon" onclick="openDMP()" style="cursor: pointer;">
+        </div>
+        <div class="displayStudio">
+            <img class="dmp-8icon" src="DisplayStudo.png" alt="" id="icon" onclick="displayStudio()" style="cursor: pointer;">
+        </div>
+    </div>
+
+    <div class="window">
+
+        <div class="child ledboard">
+            <img src="startupshowcontrol/black.png" alt="" class="boardimg" id="board-img">
+            
+        </div>
+        <div class="child scoreboard">
+            <h2 style="color: black;">HOME</h2>
+            <h1 id="homePoints" class="pts" style="font-size: 50px;">0</h1>
+            <h2 style="color: black;" class="name2">GUEST</h2>
+            <h1 id="guestPoints" class="pts2" style="font-size: 50px;">0</h1>
+            <h2 style="color: black;" class="periodTitle">PERIOD</h2>
+            <h1 id="currentPeriod" class="period" style="font-size: 40px;">1</h1>
+            <h1 id="currentTime" class="time" style="font-size: 35px;">10:00</h1>
+            <h2 style="color: black;" class="foulTitle">FOULS</h2>
+            <h1 id="homeFouls" class="foul" style="font-size: 40px;">0</h1>
+            <h2 style="color: black;" class="foulTitle2">FOULS</h2>
+            <h1 id="guestFouls" class="foul2" style="font-size: 40px;">0</h1>
+        </div>
+        <script>
+            var currentHomeScore = 0;
+            var currentGuestScore = 0;
+            var currenthomeFoul = 0;
+            var currentguestFoul = 0;
+            var currentPeriod = 1;
+            function homeScorePlus1() {
+                currentHomeScore = currentHomeScore+1;
+                document.getElementById('homePoints').innerText = currentHomeScore;
+                document.getElementById('homeScoreController').innerText = 'H=       '+currentHomeScore;
+                setTimeout(() => {
+                    testifScore();
+                }, 500);
+            }
+            function homeScorePlus2() {
+                currentHomeScore = currentHomeScore+2;
+                document.getElementById('homePoints').innerText = currentHomeScore;
+                document.getElementById('homeScoreController').innerText = 'H=       '+currentHomeScore;
+                setTimeout(() => {
+                    testifScore();
+                }, 500);
+            }
+            function homeScorePlus3() {
+                currentHomeScore = currentHomeScore+3;
+                document.getElementById('homePoints').innerText = currentHomeScore;
+                document.getElementById('homeScoreController').innerText = 'H=       '+currentHomeScore;
+                setTimeout(() => {
+                    testifScore();
+                }, 500);
+            }
+            function homeScoreMinus1() {
+                currentHomeScore = currentHomeScore-1;
+                document.getElementById('homePoints').innerText = currentHomeScore;
+                document.getElementById('homeScoreController').innerText = 'H=       '+currentHomeScore;
+                if (currentHomeScore <= 0){
+                    currentHomeScore = 100;
+                }
+            }
+            function guestScorePlus1() {
+                currentGuestScore = currentGuestScore+1;
+                document.getElementById('guestPoints').innerText = currentGuestScore;
+                document.getElementById('guestScoreController').innerText = 'G=       '+currentGuestScore;
+                setTimeout(() => {
+                    testifScore2();
+                }, 500);
+            }
+            function guestScorePlus2() {
+                currentGuestScore = currentGuestScore+2;
+                document.getElementById('guestPoints').innerText = currentGuestScore;
+                document.getElementById('guestScoreController').innerText = 'G=       '+currentGuestScore;
+                setTimeout(() => {
+                    testifScore2();
+                }, 500);
+            }
+            function guestScorePlus3() {
+                currentGuestScore = currentGuestScore+3;
+                document.getElementById('guestPoints').innerText = currentGuestScore;
+                document.getElementById('guestScoreController').innerText = 'G=       '+currentGuestScore;
+                setTimeout(() => {
+                    testifScore2();
+                }, 500);
+            }
+            function guestScoreMinus1() {
+                currentGuestScore = currentGuestScore-1;
+                document.getElementById('guestPoints').innerText = currentGuestScore;
+                document.getElementById('guestScoreController').innerText = 'G=       '+currentGuestScore;
+                if (currentGuestScore <= 0){
+                    currentGuestScore = 100;
+                }
+            }
+            function addPeriod() {
+                currentPeriod = currentPeriod+1
+                document.getElementById('currentPeriod').innerText = currentPeriod;
+                if (currentPeriod == 2){
+                    currentPeriod = 0;
+                }
+            }
+            function addhomeFouls() {
+                currenthomeFoul = currenthomeFoul+1
+                document.getElementById('homeFouls').innerText = currenthomeFoul;
+                if (currenthomeFoul == 9){
+                    currenthomeFoul = -1;
+                }
+            }
+            function addguestFouls() {
+                currentguestFoul = currentguestFoul+1
+                document.getElementById('guestFouls').innerText = currentguestFoul;
+                if (currentguestFoul == 9){
+                    currentguestFoul = -1;
+                }
+            }
+            function removehomeFouls() {
+                currenthomeFoul = currenthomeFoul-1
+                document.getElementById('homeFouls').innerText = currenthomeFoul;
+                if (currenthomeFoul == 0){
+                    currenthomeFoul = 10;
+                }
+            }
+            function removeguestFouls() {
+                currentguestFoul = currentguestFoul-1
+                document.getElementById('guestFouls').innerText = currentguestFoul;
+                if (currentguestFoul == 0){
+                    currentguestFoul = 10;
+                }
+            }
+            function testifScore(){
+                if (currentHomeScore > 99){
+                    currentHomeScore = currentHomeScore-100;
+                }
+            }
+            function testifScore2(){
+                if (currentGuestScore > 99){
+                    currentGuestScore = currentGuestScore-100;
+                }
+            }
+
+        </script>
+        <div class="blue"><div class=" white">AD</div><div class=" white">AD</div><div class=" white">AD</div><div class=" white">AD</div><div class=" white">AD</div></div>
+    </div>
+
+    <div class="computer2" id="comuter2">
+        <div class="computerheader">
+            <div class="preview">
+                <img class="previewImg" src="images/1.jpeg" alt="" id="board-img2">
+            </div>
+        </div>
+        <div class="tabs">
+            <button class="tab-button selected" id="tab-button1" onclick="loadBasketball()">Basketball</button>
+            <button class="tab-button" id="tab-button2" onclick="loadVolleyball()">Volleyball</button>
+            <button class="tab-button" id="tab-button3" onclick="loadScript()">Script</button>
+        </div>
+        <div class="page" id="page1">
+            <button class="pagebutton" id="image1" onclick="loadImage1()">Image1</button>
+            <button class="pagebutton" id="image2" onclick="loadImage2()">Image2</button>
+            <button class="pagebutton" id="image3" onclick="loadImage3()">Image3</button>
+            <br>
+            <button class="pagebutton" id="image4" onclick="loadImage4()">Image4</button>
+            <button class="pagebutton" id="image5" onclick="loadImage5()">Image5</button>
+            <br>
+            <button class="pagebutton" id="image6" onclick="loadImage6()">Image6</button>
+            <br>
+            <button class="pagebutton" id="image7" onclick="loadImage7()">Image7</button>
+            <button class="pagebutton" id="image8" onclick="loadImage8()">Image8</button>
+            <br>
+            <button class="pagebutton" id="image9" onclick="loadImage9()">Image9</button>
+        </div>
+        <div class="page hiddenpage" id="page2">
+            <button class="pagebutton" id="image10" onclick="loadImage10()">Image10</button>
+            <br>
+            <button class="pagebutton" id="image11" onclick="loadImage11()">Image11</button>
+            <button class="pagebutton" id="image12" onclick="loadImage12()">Image12</button>
+            <br>
+            <button class="pagebutton" id="image13" onclick="loadImage13()">Image13</button>
+            <br>
+            <button class="pagebutton" id="image14" onclick="loadImage14()">Image14</button>
+            <button class="pagebutton" id="image15" onclick="loadImage15()">Image15</button>
+            <br>
+            <button class="pagebutton" id="image16" onclick="loadImage16()">Image16</button>
+            <br>
+            <button class="pagebutton" id="image17" onclick="loadImage17()">Image17</button>
+        </div>
+        <div class="page hiddenpage" id="page3">
+            <br>
+            <button class="pagebutton" id="image18" onclick="loadImage18()">Image18</button>
+            <button class="pagebutton" id="image19" onclick="loadImage19()">Image19</button>
+            <button class="pagebutton" id="image20" onclick="loadImage20()">Image20</button>
+            <button class="pagebutton" id="image21" onclick="loadImage21()">Image21</button>
+            <br>
+            <button class="pagebutton" id="image22" onclick="loadImage22()">Image22</button>
+            <br>
+            <button class="pagebutton" id="image23" onclick="loadImage23()">Image23</button>
+            <button class="pagebutton" id="image24" onclick="loadImage24()">Image24</button>
+            <br>
+            <button class="pagebutton" id="image25" onclick="loadImage25()">Image25</button>
+            <br>
+            <button class="pagebutton" id="image26" onclick="loadImage26()">Image26</button>
+        </div>
+    </div>
+
+    <div class="powerHolder">
+        <button onclick="turnon()" class="powerSwitch">⏻</button>
+        <div class="color" id="screenlight"></div>
+    </div>
+    <div class="wirecastHolder">
+        <img src="wirecast.png" alt="" class="wirecastLogo">
+        <button class="powerSwitch" onclick="startWirecast()">⏻</button>
+        <div class="color" id="wirecastlight"></div>
+    </div>
+    <div class="screenpower">
+        <button class="powerSwitch" onclick="turnscreenon()">⏻</button>
+    </div>
+    
+    <div id="computer-wirecastblank"></div>
+
+    <div class="computer" id="computer-wirecast">
+        <div class="preview-holder">
+            <div class="preview2">
+                <img src="" id="preview-img" alt="">
+                <img src="Bar.png" id="scorebot-img" alt="">
+                <img src="" id="game-img" alt="">
+            </div>
+            <div class="live">
+                <img src="" id="live-img" alt="">
+                <img src="Bar.png" id="live-scorebot-img" alt="">
+                <img src="" id="live-game-img" alt="">
+            </div>
+        </div>
+        <div class="selectors selector1">
+            <div class="cube" id="1" onclick="change1()"></div>
+            <div class="cube" id="2" onclick="change2()"></div>
+            <div class="cube" id="3" onclick="change3()"></div>
+            <div class="cube" id="4" onclick="change4()"></div>
+            <div class="cube" id="5" onclick="change5()"></div>
+            <div class="cube" id="6" onclick="change6()"></div>
+            <h2>ADVERTISEMENTS</h2>
+        </div>
+        <div class="selectors selector2">
+            <div class="cube" id="7" onclick="change7()"></div>
+            <h2>SCOREBOT</h2>
+        </div>
+        <div class="selectors selector3">
+            <div class="cube" id="8" onclick="change8()"></div>
+            <div class="cube" id="9" onclick="change9()"></div>
+            <div class="cube" id="10" onclick="change10()"></div>
+            <div class="cube" id="11" onclick="change11()"></div>
+            <div class="cube" id="12" onclick="change12()"></div>
+            <h2>CAMERAS</h2>
+        </div>
+        <div class="selectors selector4">
+            <div class="cube" id="13" onclick="change13()"></div>
+            <h2>Microphone</h2>
+        </div>
+        <button class="Transition-Btn">Cut</button>
+        <button onclick="setLive()" class="Go-Btn">Go</button>
+    </div>
+    
+    <div class="controller">
+        <img class="controller-img" src="images/controller.png" alt="">
+        <button class="controller-button-clear1" id="clear1" onclick="clear1()"></button>
+        <button class="controller-button" id="button1" onclick="change1()"></button>
+        <button class="controller-button2" id="button2" onclick="change2()"></button>
+        <button class="controller-button3" id="button3" onclick="change3()"></button>
+        <button class="controller-button4" id="button4" onclick="change4()"></button>
+        <button class="controller-button5" id="button5" onclick="change5()"></button>
+        <button class="controller-button6" id="button6" onclick="change6()"></button>
+        <button class="controller-button-clear2" id="clear2" onclick="clear2()"></button>
+        <button class="controller-button7" id="button7" onclick="change7()"></button>
+        <button class="controller-button-clear3" id="clear3" onclick="clear3()"></button>
+        <button class="controller-button8" id="button8" onclick="change8()"></button>
+        <button class="controller-button9" id="button9" onclick="change9()"></button>
+        <button class="controller-button10" id="button10" onclick="change10()"></button>
+        <button class="controller-button11" id="button11" onclick="change11()"></button>
+        <button class="controller-button12" id="button12" onclick="change12()"></button>
+        <button class="controller-button-clear4" id="clear4" onclick="clear4()"></button>
+        <button class="controller-button13" id="button13" onclick="change13()"></button>
+        <button class="controller-button14" id="button14" onclick="setLive()"></button>
+    </div>
+
+    <style>
+        .allsport5000 {
+            height: 400px;
+            width: 900px;
+            background-color: #828586;
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            border-radius: 15px;
+            border: none;
+        }
+        .allsportHeader {
+            height: 35%;
+            width: 100%;
+            background-color: #6c6c6c;
+            border-top-right-radius: 15px;
+            border-top-left-radius: 15px;
+        }
+        .allsportButtons {
+            margin-top: 20px;
+            margin-left: 10px;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            height: 50%;
+            width: 50%;
+            background-color: #8c8e8f;
+            display: grid;
+            grid-template-columns: 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px;
+            grid-template-rows: 40px 40px 40px 40px;
+            gap: 5px;
+        }
+
+        .numpad {
+            margin-top: 20px;
+            margin-left: 15px;
+            border-radius: 15px;
+            height: 50%;
+            width: 15%;
+            background-color: #8c8e8f;
+            display: grid;
+            grid-template-columns: 40px 40px 40px;
+            grid-template-rows: 40px 40px 40px 40px;
+            gap: 5px;
+            position: absolute;
+            top: 35%;
+            left: 51%;
+        }
+        .otherBtns {
+            margin-top: 20px;
+            margin-left: 15px;
+            border-radius: 15px;
+            height: 50%;
+            width: 28%;
+            background-color: #8c8e8f;
+            display: grid;
+            grid-template-columns: 40px 40px 40px 40px 65px;
+            grid-template-rows: 40px 40px 40px 40px;
+            gap: 5px;
+            position: absolute;
+            top: 35%;
+            left: 68%;
+        }
+
+        .allsport5000 button{
+            border-radius: 5px;
+            cursor: pointer;
+            /* border: none; */
+        }
+        .allsport5000 button h3{
+           margin-top: 7px;
+        }
+        .allsport5000 button p{
+           font-size: 8px;
+           margin-top: 3px;
+           margin-left: -3px;
+        }
+
+        .greenBtn {
+            border: lime 3px solid;
+        }
+        .blackBtn {
+            border: black 3px solid;
+        }
+        .redBtn {
+            border: red 3px solid;
+        }
+        .yellowBtn {
+            border: black 3px solid;
+            background-color: yellow;
+        }
+        .redfullBtn {
+            border: black 3px solid;
+            background-color: red;
+        }
+        .greenfullBtn {
+            border: black 3px solid;
+            background-color: lime;
+        }
+        .emptyBtn {
+            border: none;
+        }
+        .moveCover {
+            width: 30px;
+            height: 50px;
+            border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px;
+            color: white;
+            border: none;
+            background-color: #8c8e8f;
+            position: absolute;
+            top: 60%;
+            left: -3%;
+        }
+
+        #lettersCover {
+            display: none;
+        }
+
+        #mainCover {
+            display: grid;
+        }
+        .controller-led {
+            height: 25%;
+            width: 45%;
+            position: absolute;
+            top: 5%;
+            left: 28%;
+            background-color: white;
+            border-radius: 10px;
+            display: grid;
+            grid-template-columns: 180px 180px 60px;
+            grid-template-rows: 50% 50%;
+        }
+        .controller-led h1 {
+            margin-left: 5px;
+            white-space:pre;
+            font-size: 39.5px;
+            margin-top: 10px;
+        }
+    </style>
+
+    <div class="allsport5000">
+        <div class="allsportHeader">
+            <div class="controller-led">
+                <h1>TIME</h1>
+                <h1 id="timeCurrent">10:00:0</h1>
+                <h1 id="upordown">↓</h1>
+                <h1 id="homeScoreController">H=       0</h1>
+                <h1 id="guestScoreController">G=       0</h1>
+                <h1>:25</h1>
+            </div>
+        </div>
+        <button class="moveCover" id="switchCover1" onclick="switchLayer()">←</button>
+        <div class="allsportButtons" id="mainCover">
+            <button class="greenBtn" onclick="homeScorePlus1()"><p>SCORE<br>+1</p></button>
+            <button class="greenBtn" onclick="homeScoreMinus1();"><p>SCORE<br>-1</p></button>
+            <button class="greenBtn"><p>TIME<br>OUT</p></button>
+            <button class="blackBtn"><p>RECALL<br>SHOT<br>TIME</p></button>
+            <button class="blackBtn"><p>SET<br>SHOT<br>TIME</p></button>
+            <button class="blackBtn"><p>TIME<br>OUT<br>ON/OFF</p></button>
+            <button class="emptyBtn"></button>
+            <button class="redBtn" onclick="guestScorePlus1()"><p>SCORE<br>+1</p></button>
+            <button class="redBtn" onclick="guestScoreMinus1();"><p>SCORE<br>-1</p></button>
+            <button class="redBtn"><p>TIME<br>OUT</p></button>
+            <button class="greenBtn" onclick="homeScorePlus2()"><p>SCORE<br>+2</p></button>
+            <button class="greenBtn" onclick="addhomeFouls()"><p>TEAM<br>FOULS<br>+1</p></button>
+            <button class="greenBtn"><p>BONUS</p></button>
+            <button class="emptyBtn"></button>
+            <button class="blackBtn"><p>IN<br>GAME</p></button>
+            <button class="blackBtn"><p>OUT OF<br>GAME</p></button>
+            <button class="emptyBtn"></button>
+            <button class="redBtn" onclick="guestScorePlus2()"><p>SCORE<br>+2</p></button>
+            <button class="redBtn" onclick="addguestFouls()"><p>TEAM<br>FOULS<br>+1</p></button>
+            <button class="redBtn"><p>BONUS</p></button>
+            <button class="greenBtn" onclick="homeScorePlus3()"><p>SCORE<br>+3</p></button>
+            <button class="greenBtn" onclick="removehomeFouls()"><p>TEAM<br>FOULS<br>-1</p></button>
+            <button class="greenBtn"><p>POSS</p></button>
+            <button class="emptyBtn"></button>
+            <button class="blackBtn"><p>DELETE<br>PLAYER</p></button>
+            <button class="blackBtn"><p>BLANK<br>PLAYER<br>FOUL</p></button>
+            <button class="emptyBtn"></button>
+            <button class="redBtn" onclick="guestScorePlus3()"><p>SCORE<br>+3</p></button>
+            <button class="redBtn" onclick="removeguestFouls()"><p>TEAM<br>FOULS<br>-1</p></button>
+            <button class="redBtn"><p>POSS</p></button>
+            <button class="greenBtn"><p>PLAYER</p></button>
+            <button class="greenBtn"><p>INDIV.<br>SUB</p></button>
+            <button class="greenBtn"><p>MASS<br>SUB</p></button>
+            <button class="emptyBtn"></button>
+            <button class="blackBtn"><p>CLEAR<br>TEAM<br>FOULS</p></button>
+            <button class="blackBtn" onclick="addPeriod()"><p>PERIOD<br>+1</p></button>
+            <button class="emptyBtn"></button>
+            <button class="redBtn"><p>PLAYER</p></button>
+            <button class="redBtn"><p>INDIV.<br>SUB</p></button>
+            <button class="redBtn"><p>MASS<br>SUB</p></button>
+        </div>
+        
+        <div class="allsportButtons" id="lettersCover">
+            <button class="emptyBtn">A</button>
+            <button class="emptyBtn">B</button>
+            <button class="emptyBtn">C</button>
+            <button class="emptyBtn">D</button>
+            <button class="emptyBtn">E</button>
+            <button class="emptyBtn">F</button>
+            <button class="emptyBtn">G</button>
+            <button class="emptyBtn">H</button>
+            <button class="emptyBtn">I</button>
+            <button class="emptyBtn">J</button>
+            <button class="emptyBtn">K</button>
+            <button class="emptyBtn">L</button>
+            <button class="emptyBtn">M</button>
+            <button class="emptyBtn">N</button>
+            <button class="emptyBtn">O</button>
+            <button class="emptyBtn">P</button>
+            <button class="emptyBtn">Q</button>
+            <button class="emptyBtn">R</button>
+            <button class="emptyBtn">S</button>
+            <button class="emptyBtn">T</button>
+            <button class="emptyBtn">U</button>
+            <button class="emptyBtn">V</button>
+            <button class="emptyBtn">W</button>
+            <button class="emptyBtn">X</button>
+            <button class="emptyBtn">Y</button>
+            <button class="emptyBtn">Z</button>
+            <button class="emptyBtn"></button>
+            <button class="emptyBtn"></button>
+            <button class="emptyBtn"></button>
+            <button class="emptyBtn"></button>
+            <button class="emptyBtn"></button>
+            <button class="emptyBtn"></button>
+            <button class="emptyBtn"></button>
+            <button class="emptyBtn"></button>
+            <button class="emptyBtn"></button>
+            <button class="emptyBtn"></button>
+            <button class="emptyBtn"></button>
+            <button class="emptyBtn"></button>
+            <button class="emptyBtn"></button>
+            <button class="emptyBtn"></button>
+        </div>
+
+        <div class="numpad">
+            <button class="blackBtn">7</button>
+            <button class="blackBtn">8</button>
+            <button class="blackBtn">9</button>
+            <button class="blackBtn">4</button>
+            <button class="blackBtn">5</button>
+            <button class="blackBtn">6</button>
+            <button class="blackBtn">1</button>
+            <button class="blackBtn">2</button>
+            <button class="blackBtn">3</button>
+            <button class="blackBtn"><p>CLEAR<br>NO</p></button>
+            <button class="blackBtn">0</button>
+            <button class="blackBtn"><p>ENTER<br>YES</p></button>
+
+        </div>
+
+        <div class="otherBtns">
+            <br>
+            <button class="blackBtn">↑</button>
+            <br>
+            <button class="blackBtn"><p>AUTO HORN</p></button>
+            <button class="yellowBtn"><h3>HORN</h3></button>
+            <button class="blackBtn">←</button>
+            <button class="blackBtn"><p>MENU</p></button>
+            <button class="blackBtn">→</button>
+            <br>
+            <button class="blackBtn" style="opacity: 0; cursor:auto;"></button>
+            <br>
+            <button class="blackBtn">↓</button>
+            <br>
+            <button class="blackBtn" onclick="switchTime()"><p>COUNT UP DOWN</p></button>
+            <button class="greenfullBtn" onclick="starttimer()"><h3>START</h3></button>
+            <br>
+            <button class="blackBtn"><p>EDIT</p></button>
+            <br>
+            <button class="blackBtn" onclick="resettimer()"><p>SET MAIN CLOCK</p></button>
+            <button class="redfullBtn" onclick="stoptimer()"><h3>STOP</h3></button>
+        </div>
+    </div>
+   
+
+    <script>
+
+
+        var millisec = 0;
+        var seconds = 0;
+        var minutes = 10;
+        var testingSecond = 0;
+        var testingMinute = 0;
+        var timer;
+
+        function display(){
+
+        // if (millisec>=9){
+        //     millisec=0
+        //     seconds+=1
+        // }
+        // if (seconds>=59){
+        //     seconds=0;
+        //     minutes+=1;
+        // }
+        if (millisec<=0){
+            millisec=9
+            seconds-=1
+        }
+        if (seconds<0){
+            seconds=59;
+            minutes-=1;
+        }
+
+        else
+            millisec-=1
+            document.getElementById('currentTime').innerText = minutes+':'+seconds;
+            document.getElementById('timeCurrent').innerText = minutes+':'+seconds+':'+millisec;
+            timer = setTimeout("display()",100);
+        }
+
+        function display2(){
+
+        if (millisec>=9){
+            millisec=0
+            seconds+=1
+        }
+        if (seconds>=60){
+            seconds=0;
+            minutes+=1;
+        }
+        // if (millisec<=0){
+        //     millisec=9
+        //     seconds-=1
+        // }
+        // if (seconds<=0){
+        //     seconds=59;
+        //     minutes-=1;
+        // }
+
+        else
+            millisec+=1
+            document.getElementById('currentTime').innerText = minutes+':'+seconds;
+            document.getElementById('timeCurrent').innerText = minutes+':'+seconds+':'+millisec;
+            timer = setTimeout("display2()",100);
+        }
+
+        function starttimer() {
+            
+        if (timer > 0) {
+            return;
+        }
+        if (document.getElementById('upordown').innerText === '↓'){
+            display();	
+        }
+        if (document.getElementById('upordown').innerText ==='↑'){
+            display2();	
+        }
+        }
+        function stoptimer() {
+        clearTimeout(timer);
+        timer = 0;
+        }
+
+        function startstoptimer() {
+        if (timer > 0) {
+            clearTimeout(timer);
+            timer = 0;
+        } else {
+            display();
+        }
+        }
+
+        function resettimer() {
+            stoptimer();
+            millisec = 0;
+            seconds = 0;
+            minutes = 10;
+            document.getElementById('currentTime').innerText = minutes+':'+seconds;
+            document.getElementById('timeCurrent').innerText = minutes+':'+seconds+':'+millisec;
+        }
+        
+        var upordown = 0;
+
+
+
+        function switchLayer() {
+            if (document.getElementById('lettersCover').style.display === 'grid') {
+                document.getElementById('mainCover').style.display = 'grid';
+                document.getElementById('lettersCover').style.display = 'none';
+            } else {
+                document.getElementById('mainCover').style.display = 'none';
+                document.getElementById('lettersCover').style.display = 'grid';
+            }
+        }
+
+        function switchTime() {
+            if (upordown === 0) {
+                document.getElementById('upordown').innerHTML = '↓';
+                upordown = 1;
+
+            }else{
+                document.getElementById('upordown').innerHTML = '↑';
+                upordown = 0;
+            }
+            
+        }
+
+    
+
+
+
+        function home() {
+            window.location.href = 'index.html'
+        }
+
+        function openDMP() {
+            //popup the black window, then have them open control studio that leads to showcontrol.html
+        }
+
+        function home() {
+            window.location.href = 'index.html'
+        }
+
+        function loadBasketball() {
+            document.getElementById('page1').classList.remove('hiddenpage');
+            document.getElementById('page2').classList.add('hiddenpage');
+            document.getElementById('page3').classList.add('hiddenpage');
+
+            document.getElementById('tab-button1').classList.add('selected');
+            document.getElementById('tab-button2').classList.remove('selected');
+            document.getElementById('tab-button3').classList.remove('selected');
+        }
+
+        function loadVolleyball() {
+            document.getElementById('page1').classList.add('hiddenpage');
+            document.getElementById('page2').classList.remove('hiddenpage');
+            document.getElementById('page3').classList.add('hiddenpage');
+
+            document.getElementById('tab-button1').classList.remove('selected');
+            document.getElementById('tab-button2').classList.add('selected');
+            document.getElementById('tab-button3').classList.remove('selected');
+        }
+
+        function loadScript() {
+            document.getElementById('page1').classList.add('hiddenpage');
+            document.getElementById('page2').classList.remove('hiddenpage');
+            document.getElementById('page3').classList.remove('hiddenpage');
+
+            document.getElementById('tab-button1').classList.remove('selected');
+            document.getElementById('tab-button2').classList.remove('selected');
+            document.getElementById('tab-button3').classList.add('selected');
+        }
+
+        var unlocked = 0;
+        var dmpopen = 0;
+        function loadImage1() {
+            document.getElementById('board-img').src = 'images/1.jpeg'
+            document.getElementById('board-img2').src = 'images/1.jpeg'
+        }
+        function loadImage2() {
+            document.getElementById('board-img').src = 'images/2.jpeg'
+            document.getElementById('board-img2').src = 'images/2.jpeg'
+        }
+        function loadImage3() {
+            document.getElementById('board-img').src = 'images/3.jpeg'
+            document.getElementById('board-img2').src = 'images/3.jpeg'
+        }
+        function loadImage4() {
+            document.getElementById('board-img').src = 'images/4.jpeg'
+            document.getElementById('board-img2').src = 'images/4.jpeg'
+        }
+        function loadImage5() {
+            document.getElementById('board-img').src = 'images/5.jpeg'
+            document.getElementById('board-img2').src = 'images/5.jpeg'
+        }
+        function loadImage6() {
+            document.getElementById('board-img').src = 'images/6.jpeg'
+            document.getElementById('board-img2').src = 'images/6.jpeg'
+        }
+        function loadImage7() {
+            document.getElementById('board-img').src = 'images/7.jpeg'
+            document.getElementById('board-img2').src = 'images/7.jpeg'
+        }
+        function loadImage8() {
+            document.getElementById('board-img').src = 'images/8.jpeg'
+            document.getElementById('board-img2').src = 'images/8.jpeg'
+        }
+        function loadImage9() {
+            document.getElementById('board-img').src = 'images/9.jpeg'
+            document.getElementById('board-img2').src = 'images/9.jpeg'
+        }
+        function loadImage10() {
+            document.getElementById('board-img').src = 'images/10.jpeg'
+            document.getElementById('board-img2').src = 'images/10.jpeg'
+        }
+        function loadImage11() {
+            document.getElementById('board-img').src = 'images/11.jpeg'
+            document.getElementById('board-img2').src = 'images/11.jpeg'
+        }
+        function loadImage12() {
+            document.getElementById('board-img').src = 'images/12.jpeg'
+            document.getElementById('board-img2').src = 'images/12.jpeg'
+        }
+        function loadImage13() {
+            document.getElementById('board-img').src = 'images/13.jpeg'
+            document.getElementById('board-img2').src = 'images/13.jpeg'
+        }
+        function loadImage14() {
+            document.getElementById('board-img').src = 'images/14.jpeg'
+            document.getElementById('board-img2').src = 'images/14.jpeg'
+        }
+        function loadImage15() {
+            document.getElementById('board-img').src = 'images/15.jpeg'
+            document.getElementById('board-img2').src = 'images/15.jpeg'
+        }
+        function loadImage16() {
+            document.getElementById('board-img').src = 'images/16.jpeg'
+            document.getElementById('board-img2').src = 'images/16.jpeg'
+        }
+        function loadImage17() {
+            document.getElementById('board-img').src = 'images/17.jpeg'
+            document.getElementById('board-img2').src = 'images/17.jpeg'
+        }
+        function loadImage18() {
+            document.getElementById('board-img').src = 'images/18.jpeg'
+            document.getElementById('board-img2').src = 'images/18.jpeg'
+        }
+        function loadImage19() {
+            document.getElementById('board-img').src = 'images/19.jpeg'
+            document.getElementById('board-img2').src = 'images/19.jpeg'
+        }
+        function loadImage20() {
+            document.getElementById('board-img').src = 'images/20.jpeg'
+            document.getElementById('board-img2').src = 'images/20.jpeg'
+        }
+        function loadImage21() {
+            document.getElementById('board-img').src = 'images/21.jpeg'
+            document.getElementById('board-img2').src = 'images/21.jpeg'
+        }
+        function loadImage22() {
+            document.getElementById('board-img').src = 'images/22.jpeg'
+            document.getElementById('board-img2').src = 'images/22.jpeg'
+        }
+        function loadImage23() {
+            document.getElementById('board-img').src = 'images/23.jpeg'
+            document.getElementById('board-img2').src = 'images/23.jpeg'
+        }
+        function loadImage24() {
+            document.getElementById('board-img').src = 'images/24.jpeg'
+            document.getElementById('board-img2').src = 'images/24.jpeg'
+        }
+        function loadImage25() {
+            document.getElementById('board-img').src = 'images/25.jpeg'
+            document.getElementById('board-img2').src = 'images/25.jpeg'
+        }
+        function loadImage26() {
+            document.getElementById('board-img').src = 'images/26.jpeg'
+            document.getElementById('board-img2').src = 'images/26.jpeg'
+        }
+        
+
+        function turnon() {
+            dmpopen = 1;
+            document.getElementById('screenlight').style.backgroundColor = 'lime';
+        }
+
+        function openDMP() {
+            if (dmpopen === 1){
+                document.getElementById('popup').style.display = 'block';
+                setTimeout(() => {
+                    showstartup()
+                    setTimeout(() => {
+                        showstartup2();
+                        setTimeout(() => {
+                            showstartup3();
+                            unlocked = 1;
+                        }, 3000);
+                    }, 3000);
+                }, 2000);
+            }
+        }
+        function showstartup() {
+                document.getElementById("board-img").src = 'startupshowcontrol/IMAGE1.png'
+            }
+            function showstartup2() {
+                document.getElementById("board-img").src = 'startupshowcontrol/image2.png'
+            }
+            function showstartup3() {
+                document.getElementById("board-img").src = 'startupshowcontrol/black.png'
+            }
+            function showstartup4() {
+                document.getElementById("board-img").src = 'startupshowcontrol/black.png'
+            }
+
+        function displayStudio() {
+            if (unlocked === 1){
+                document.getElementById("board-img").src = 'images/1.jpeg'
+                document.getElementById('screenhide').style.display = 'none'
+                document.getElementById('computer2').style.display = 'block'
+            }
+        }
+
+        function turnscreenon() {
+            if (unlocked === 0){
+                if (document.getElementById('screenhide').style.display === 'block'){
+                    document.getElementById('screenhide').style.display = 'none'
+                } else {
+                    document.getElementById('screenhide').style.display = 'block'
+                }
+            }
+
+            if (document.getElementById('computer2').style.display === 'block'){
+                document.getElementById('computer2').style.display = 'none'
+            } else {
+                document.getElementById('computer2').style.display = 'block'
+            }
+             
+
+
+
+        }
+
+
+
+
+
+
+
+        function home() {
+            window.location.href = 'index.html'
+        }
+
+        var isScorebotVisible = 0;
+        var isGameVisible = 0;
+        var currentImage = 0;
+        var currentAd = 0;
+
+        function start() {
+            document.getElementById('clear1').style.backgroundColor = 'lime';
+            document.getElementById('clear2').style.backgroundColor = 'lime';
+            document.getElementById('clear3').style.backgroundColor = 'lime';
+            document.getElementById('clear4').style.backgroundColor = 'lime';
+        }
+
+
+        start();
+
+
+        function change1() {
+            if (document.getElementById('1').classList.contains('selected')){
+                document.getElementById('1').classList.remove('selected');
+                document.getElementById('button1').style.backgroundColor = 'transparent';
+                document.getElementById('clear1').style.backgroundColor = 'lime';
+                document.getElementById('preview-img').style.display = 'none';
+                currentAd = 0;
+                if (isScorebotVisible == 1){
+                    document.getElementById('scorebot-img').style.display = 'block';
+                }
+                if (isGameVisible == 1){
+                    document.getElementById('game-img').style.display = 'block';
+                }
+            } else {
+                document.getElementById('1').classList.add('selected');
+                document.getElementById('2').classList.remove('selected');
+                document.getElementById('3').classList.remove('selected');
+                document.getElementById('4').classList.remove('selected');
+                document.getElementById('5').classList.remove('selected');
+                document.getElementById('6').classList.remove('selected');
+                document.getElementById('button1').style.backgroundColor = 'lime';
+                document.getElementById('button2').style.backgroundColor = 'transparent';
+                document.getElementById('button3').style.backgroundColor = 'transparent';
+                document.getElementById('button4').style.backgroundColor = 'transparent';
+                document.getElementById('button5').style.backgroundColor = 'transparent';
+                document.getElementById('button6').style.backgroundColor = 'transparent';
+                document.getElementById('clear1').style.backgroundColor = 'transparent';
+                document.getElementById('preview-img').style.display = 'block';
+                document.getElementById('preview-img').src = 'images/ads/1.png';
+                document.getElementById('game-img').style.display = 'none';
+                document.getElementById('scorebot-img').style.display = 'none';
+                currentImage = 0;
+                currentAd = 1;
+            }
+        }
+        function change2() {
+            if (document.getElementById('2').classList.contains('selected')){
+                document.getElementById('2').classList.remove('selected');
+                document.getElementById('button2').style.backgroundColor = 'transparent';
+                document.getElementById('clear1').style.backgroundColor = 'lime';
+                document.getElementById('preview-img').style.display = 'none';
+                currentAd = 0;
+                if (isScorebotVisible == 1){
+                    document.getElementById('scorebot-img').style.display = 'block';
+                }
+                if (isGameVisible == 1){
+                    document.getElementById('game-img').style.display = 'block';
+                }
+            } else {
+                document.getElementById('1').classList.remove('selected');
+                document.getElementById('2').classList.add('selected');
+                document.getElementById('3').classList.remove('selected');
+                document.getElementById('4').classList.remove('selected');
+                document.getElementById('5').classList.remove('selected');
+                document.getElementById('6').classList.remove('selected');
+                document.getElementById('button1').style.backgroundColor = 'transparent';
+                document.getElementById('button2').style.backgroundColor = 'lime';
+                document.getElementById('button3').style.backgroundColor = 'transparent';
+                document.getElementById('button4').style.backgroundColor = 'transparent';
+                document.getElementById('button5').style.backgroundColor = 'transparent';
+                document.getElementById('button6').style.backgroundColor = 'transparent';
+                document.getElementById('clear1').style.backgroundColor = 'transparent';
+                document.getElementById('preview-img').style.display = 'block';
+                document.getElementById('preview-img').src = 'images/ads/2.png';
+                document.getElementById('game-img').style.display = 'none';
+                document.getElementById('scorebot-img').style.display = 'none';
+                currentImage = 0;
+                currentAd = 2;
+            }
+        }
+        function change3() {
+            if (document.getElementById('3').classList.contains('selected')){
+                document.getElementById('3').classList.remove('selected');
+                document.getElementById('button3').style.backgroundColor = 'transparent';
+                document.getElementById('clear1').style.backgroundColor = 'lime';
+                document.getElementById('preview-img').style.display = 'none';
+                currentAd = 0;
+                if (isScorebotVisible == 1){
+                    document.getElementById('scorebot-img').style.display = 'block';
+                }
+                if (isGameVisible == 1){
+                    document.getElementById('game-img').style.display = 'block';
+                }
+            } else {
+                document.getElementById('1').classList.remove('selected');
+                document.getElementById('2').classList.remove('selected');
+                document.getElementById('3').classList.add('selected');
+                document.getElementById('4').classList.remove('selected');
+                document.getElementById('5').classList.remove('selected');
+                document.getElementById('6').classList.remove('selected');
+                document.getElementById('button1').style.backgroundColor = 'transparent';
+                document.getElementById('button2').style.backgroundColor = 'transparent';
+                document.getElementById('button3').style.backgroundColor = 'lime';
+                document.getElementById('button4').style.backgroundColor = 'transparent';
+                document.getElementById('button5').style.backgroundColor = 'transparent';
+                document.getElementById('button6').style.backgroundColor = 'transparent';
+                document.getElementById('clear1').style.backgroundColor = 'transparent';
+                document.getElementById('preview-img').style.display = 'block';
+                document.getElementById('preview-img').src = 'images/ads/3.png';
+                document.getElementById('game-img').style.display = 'none';
+                document.getElementById('scorebot-img').style.display = 'none';
+                currentImage = 0;
+                currentAd = 3;
+            }
+        }
+        function change4() {
+            if (document.getElementById('4').classList.contains('selected')){
+                document.getElementById('4').classList.remove('selected');
+                document.getElementById('button4').style.backgroundColor = 'transparent';
+                document.getElementById('clear1').style.backgroundColor = 'lime';
+                document.getElementById('preview-img').style.display = 'none';
+                currentAd = 0;
+                if (isScorebotVisible == 1){
+                    document.getElementById('scorebot-img').style.display = 'block';
+                }
+                if (isGameVisible == 1){
+                    document.getElementById('game-img').style.display = 'block';
+                }
+            } else {
+                document.getElementById('1').classList.remove('selected');
+                document.getElementById('2').classList.remove('selected');
+                document.getElementById('3').classList.remove('selected');
+                document.getElementById('4').classList.add('selected');
+                document.getElementById('5').classList.remove('selected');
+                document.getElementById('6').classList.remove('selected');
+                document.getElementById('button1').style.backgroundColor = 'transparent';
+                document.getElementById('button2').style.backgroundColor = 'transparent';
+                document.getElementById('button3').style.backgroundColor = 'transparent';
+                document.getElementById('button4').style.backgroundColor = 'lime';
+                document.getElementById('button5').style.backgroundColor = 'transparent';
+                document.getElementById('button6').style.backgroundColor = 'transparent';
+                document.getElementById('clear1').style.backgroundColor = 'transparent';
+                document.getElementById('preview-img').style.display = 'block';
+                document.getElementById('preview-img').src = 'images/ads/4.png';
+                document.getElementById('game-img').style.display = 'none';
+                document.getElementById('scorebot-img').style.display = 'none';
+                currentImage = 0;
+                currentAd = 4;
+            }
+        }
+        function change5() {
+            if (document.getElementById('5').classList.contains('selected')){
+                document.getElementById('5').classList.remove('selected');
+                document.getElementById('button5').style.backgroundColor = 'transparent';
+                document.getElementById('clear1').style.backgroundColor = 'lime';
+                document.getElementById('preview-img').style.display = 'none';
+                currentAd = 0;
+                if (isScorebotVisible == 1){
+                    document.getElementById('scorebot-img').style.display = 'block';
+                }
+                if (isGameVisible == 1){
+                    document.getElementById('game-img').style.display = 'block';
+                }
+            } else {
+                document.getElementById('1').classList.remove('selected');
+                document.getElementById('2').classList.remove('selected');
+                document.getElementById('3').classList.remove('selected');
+                document.getElementById('4').classList.remove('selected');
+                document.getElementById('5').classList.add('selected');
+                document.getElementById('6').classList.remove('selected');
+                document.getElementById('button1').style.backgroundColor = 'transparent';
+                document.getElementById('button2').style.backgroundColor = 'transparent';
+                document.getElementById('button3').style.backgroundColor = 'transparent';
+                document.getElementById('button4').style.backgroundColor = 'transparent';
+                document.getElementById('button5').style.backgroundColor = 'lime';
+                document.getElementById('button6').style.backgroundColor = 'transparent';
+                document.getElementById('clear1').style.backgroundColor = 'transparent';
+                document.getElementById('preview-img').style.display = 'block';
+                document.getElementById('preview-img').src = 'images/ads/5.png';
+                document.getElementById('game-img').style.display = 'none';
+                document.getElementById('scorebot-img').style.display = 'none';
+                currentImage = 0;
+                currentAd = 5;
+            }
+        }
+        function change6() {
+            if (document.getElementById('6').classList.contains('selected')){
+                document.getElementById('6').classList.remove('selected');
+                document.getElementById('button6').style.backgroundColor = 'transparent';
+                document.getElementById('clear1').style.backgroundColor = 'lime';
+                document.getElementById('preview-img').style.display = 'none';
+                currentAd = 0;
+                if (isScorebotVisible == 1){
+                    document.getElementById('scorebot-img').style.display = 'block';
+                }
+                if (isGameVisible == 1){
+                    document.getElementById('game-img').style.display = 'block';
+                }
+            } else {
+                document.getElementById('1').classList.remove('selected');
+                document.getElementById('2').classList.remove('selected');
+                document.getElementById('3').classList.remove('selected');
+                document.getElementById('4').classList.remove('selected');
+                document.getElementById('5').classList.remove('selected');
+                document.getElementById('6').classList.add('selected');
+                document.getElementById('button1').style.backgroundColor = 'transparent';
+                document.getElementById('button2').style.backgroundColor = 'transparent';
+                document.getElementById('button3').style.backgroundColor = 'transparent';
+                document.getElementById('button4').style.backgroundColor = 'transparent';
+                document.getElementById('button5').style.backgroundColor = 'transparent';
+                document.getElementById('button6').style.backgroundColor = 'lime';
+                document.getElementById('clear1').style.backgroundColor = 'transparent';
+                document.getElementById('preview-img').style.display = 'block';
+                document.getElementById('preview-img').src = 'images/ads/6.png';
+                document.getElementById('game-img').style.display = 'none';
+                document.getElementById('scorebot-img').style.display = 'none';
+                currentImage = 0;
+                currentAd = 6;
+            }
+        }
+
+
+
+
+
+        function change7() {
+            if (document.getElementById('7').classList.contains('selected')) {
+                document.getElementById('7').classList.remove('selected');
+                document.getElementById('button7').style.backgroundColor = 'transparent';
+                document.getElementById('scorebot-img').style.display = 'none';
+                document.getElementById('clear2').style.backgroundColor = 'lime';
+                isScorebotVisible = 0;
+            } else {
+                document.getElementById('7').classList.add('selected');
+                document.getElementById('button7').style.backgroundColor = 'lime';
+                document.getElementById('scorebot-img').style.display = 'block';
+                isScorebotVisible = 1;
+                document.getElementById('clear2').style.backgroundColor = 'transparent';
+            }
+        }
+
+
+
+
+        function change8() {
+            if (document.getElementById('8').classList.contains('selected')){
+                document.getElementById('8').classList.remove('selected');
+                document.getElementById('button8').style.backgroundColor = 'transparent';
+                document.getElementById('game-img').style.display = 'none';
+                document.getElementById('clear3').style.backgroundColor = 'lime';
+                isGameVisible = 0;
+            } else {
+                if (currentAd === 0){
+                    document.getElementById('8').classList.add('selected');
+                    document.getElementById('9').classList.remove('selected');
+                    document.getElementById('10').classList.remove('selected');
+                    document.getElementById('11').classList.remove('selected');
+                    document.getElementById('12').classList.remove('selected');
+                    document.getElementById('button8').style.backgroundColor = 'lime';
+                    document.getElementById('button9').style.backgroundColor = 'transparent';
+                    document.getElementById('button10').style.backgroundColor = 'transparent';
+                    document.getElementById('button11').style.backgroundColor = 'transparent';
+                    document.getElementById('button12').style.backgroundColor = 'transparent';
+                    document.getElementById('clear3').style.backgroundColor = 'transparent';
+                    document.getElementById('game-img').style.display = 'block';
+                    document.getElementById('game-img').src = 'images/1.jpeg';
+                    isGameVisible = 1;
+                    currentImage = 1;
+                }
+            }
+        }
+        function change9() {
+            if (document.getElementById('9').classList.contains('selected')){
+                document.getElementById('9').classList.remove('selected');
+                document.getElementById('button9').style.backgroundColor = 'transparent';
+                document.getElementById('game-img').style.display = 'none';
+                document.getElementById('clear3').style.backgroundColor = 'lime';
+                isGameVisible = 0;
+            } else {
+                if (currentAd === 0){
+                    document.getElementById('8').classList.remove('selected');
+                    document.getElementById('9').classList.add('selected');
+                    document.getElementById('10').classList.remove('selected');
+                    document.getElementById('11').classList.remove('selected');
+                    document.getElementById('12').classList.remove('selected');
+                    document.getElementById('button8').style.backgroundColor = 'transparent';
+                    document.getElementById('button9').style.backgroundColor = 'lime';
+                    document.getElementById('button10').style.backgroundColor = 'transparent';
+                    document.getElementById('button11').style.backgroundColor = 'transparent';
+                    document.getElementById('button12').style.backgroundColor = 'transparent';
+                    document.getElementById('clear3').style.backgroundColor = 'transparent';
+                    document.getElementById('game-img').style.display = 'block';
+                    document.getElementById('game-img').src = 'images/2.jpeg';
+                    isGameVisible = 1;
+                    currentImage = 2;
+                }
+            }
+        }
+        function change10() {
+            if (document.getElementById('10').classList.contains('selected')){
+                document.getElementById('10').classList.remove('selected');
+                document.getElementById('button10').style.backgroundColor = 'transparent';
+                document.getElementById('game-img').style.display = 'none';
+                document.getElementById('clear3').style.backgroundColor = 'lime';
+                isGameVisible = 0;
+            } else {
+                if (currentAd === 0){
+                    document.getElementById('8').classList.remove('selected');
+                    document.getElementById('9').classList.remove('selected');
+                    document.getElementById('10').classList.add('selected');
+                    document.getElementById('11').classList.remove('selected');
+                    document.getElementById('12').classList.remove('selected');
+                    document.getElementById('button8').style.backgroundColor = 'transparent';
+                    document.getElementById('button9').style.backgroundColor = 'transparent';
+                    document.getElementById('button10').style.backgroundColor = 'lime';
+                    document.getElementById('button11').style.backgroundColor = 'transparent';
+                    document.getElementById('button12').style.backgroundColor = 'transparent';
+                    document.getElementById('clear3').style.backgroundColor = 'transparent';
+                    document.getElementById('game-img').style.display = 'block';
+                    document.getElementById('game-img').src = 'images/3.jpeg';
+                    isGameVisible = 1;
+                    currentImage = 3;
+                }
+            }
+        }
+        function change11() {
+            if (document.getElementById('11').classList.contains('selected')){
+                document.getElementById('11').classList.remove('selected');
+                document.getElementById('button11').style.backgroundColor = 'transparent';
+                document.getElementById('game-img').style.display = 'none';
+                document.getElementById('clear3').style.backgroundColor = 'lime';
+                isGameVisible = 0;
+            } else {
+                if (currentAd === 0){
+                    document.getElementById('8').classList.remove('selected');
+                    document.getElementById('9').classList.remove('selected');
+                    document.getElementById('10').classList.remove('selected');
+                    document.getElementById('11').classList.add('selected');
+                    document.getElementById('12').classList.remove('selected');
+                    document.getElementById('button8').style.backgroundColor = 'transparent';
+                    document.getElementById('button9').style.backgroundColor = 'transparent';
+                    document.getElementById('button10').style.backgroundColor = 'transparent';
+                    document.getElementById('button11').style.backgroundColor = 'lime';
+                    document.getElementById('button12').style.backgroundColor = 'transparent';
+                    document.getElementById('clear3').style.backgroundColor = 'transparent';
+                    document.getElementById('game-img').style.display = 'block';
+                    document.getElementById('game-img').src = 'images/4.jpeg';
+                    isGameVisible = 1;
+                    currentImage = 4;
+                }
+            }
+        }
+        function change12() {
+            if (document.getElementById('12').classList.contains('selected')){
+                document.getElementById('12').classList.remove('selected');
+                document.getElementById('button12').style.backgroundColor = 'transparent';
+                document.getElementById('game-img').style.display = 'none';
+                document.getElementById('clear3').style.backgroundColor = 'lime';
+                isGameVisible = 0;
+            } else {
+                if (currentAd === 0){
+                    document.getElementById('8').classList.remove('selected');
+                    document.getElementById('9').classList.remove('selected');
+                    document.getElementById('10').classList.remove('selected');
+                    document.getElementById('11').classList.remove('selected');
+                    document.getElementById('12').classList.add('selected');
+                    document.getElementById('button8').style.backgroundColor = 'transparent';
+                    document.getElementById('button9').style.backgroundColor = 'transparent';
+                    document.getElementById('button10').style.backgroundColor = 'transparent';
+                    document.getElementById('button11').style.backgroundColor = 'transparent';
+                    document.getElementById('button12').style.backgroundColor = 'lime';
+                    document.getElementById('clear3').style.backgroundColor = 'transparent';
+                    document.getElementById('game-img').style.display = 'block';
+                    document.getElementById('game-img').src = 'images/5.jpeg';
+                    isGameVisible = 1;
+                    currentImage = 5;
+                }
+            }
+        }
+
+
+
+
+        function change13() {
+            if (document.getElementById('13').classList.contains('selected')) {
+                document.getElementById('13').classList.remove('selected');
+                document.getElementById('button13').style.backgroundColor = 'transparent';
+                document.getElementById('clear4').style.backgroundColor = 'lime';
+            } else {
+                document.getElementById('13').classList.add('selected');
+                document.getElementById('button13').style.backgroundColor = 'lime';
+                document.getElementById('clear4').style.backgroundColor = 'transparent';
+            }
+        }
+
+        function setLive() {
+            // if (document.getElementById('preview-img').style.display === 'block') {
+            //     const currentAdSrc = document.getElementById('preview-img').src;
+
+            //     document.getElementById('live-img').src = currentAdSrc;
+            //     document.getElementById('live-img').style.display = 'block';
+            // }
+            // if (document.getElementById('live-img').style.display === 'block') {
+            //     const currentImageSrc = document.getElementById('game-img').src;
+
+            //     document.getElementById('live-game-img').src = currentImageSrc;
+            //     document.getElementById('live-game-img').style.display = 'block';
+            // }
+
+            document.getElementById('live-img').style.display = document.getElementById('preview-img').style.display;
+            document.getElementById('live-img').src = document.getElementById('preview-img').src;
+            document.getElementById('live-scorebot-img').style.display = document.getElementById('scorebot-img').style.display;
+            document.getElementById('live-game-img').style.display = document.getElementById('game-img').style.display;
+            document.getElementById('live-game-img').src = document.getElementById('game-img').src;
+
+            }
+
+            function clear1() {
+                currentAd = 0;
+                document.getElementById('preview-img').style.display = 'none';
+                document.getElementById('1').classList.remove('selected');
+                document.getElementById('2').classList.remove('selected');
+                document.getElementById('3').classList.remove('selected');
+                document.getElementById('4').classList.remove('selected');
+                document.getElementById('5').classList.remove('selected');
+                document.getElementById('6').classList.remove('selected');
+                document.getElementById('button1').style.backgroundColor = 'transparent';
+                document.getElementById('button2').style.backgroundColor = 'transparent';
+                document.getElementById('button3').style.backgroundColor = 'transparent';
+                document.getElementById('button4').style.backgroundColor = 'transparent';
+                document.getElementById('button5').style.backgroundColor = 'transparent';
+                document.getElementById('button6').style.backgroundColor = 'transparent';
+                document.getElementById('clear1').style.backgroundColor = 'lime';
+
+                if (document.getElementById('8').classList.contains('selected')) {
+                    // change8();
+                    document.getElementById('game-img').style.display = 'block';
+                }
+                if (document.getElementById('9').classList.contains('selected')) {
+                    // change9();
+                    document.getElementById('game-img').style.display = 'block';
+                }
+                if (document.getElementById('10').classList.contains('selected')) {
+                    // change10();
+                    document.getElementById('game-img').style.display = 'block';
+                }
+                if (document.getElementById('11').classList.contains('selected')) {
+                    // change11();
+                    document.getElementById('game-img').style.display = 'block';
+                }
+                if (document.getElementById('12').classList.contains('selected')) {
+                    // change12();
+                    document.getElementById('game-img').style.display = 'block';
+                }
+                if (document.getElementById('7').classList.contains('selected')) {
+                    // change12();
+                    document.getElementById('scorebot-img').style.display = 'block';
+                }
+            }
+
+            function clear2() {
+                isScorebotVisible = 0;
+                document.getElementById('scorebot-img').style.display = 'none';
+                document.getElementById('7').classList.remove('selected');
+                document.getElementById('button7').style.backgroundColor = 'transparent';
+                document.getElementById('clear2').style.backgroundColor = 'lime';
+
+                document.getElementById('scorebot-img').style.display = 'none';
+            }
+
+
+            function clear3() {
+                isGameVisible = 0;
+                document.getElementById('game-img').style.display = 'none';
+                document.getElementById('8').classList.remove('selected');
+                document.getElementById('9').classList.remove('selected');
+                document.getElementById('10').classList.remove('selected');
+                document.getElementById('11').classList.remove('selected');
+                document.getElementById('12').classList.remove('selected');
+                document.getElementById('button8').style.backgroundColor = 'transparent';
+                document.getElementById('button9').style.backgroundColor = 'transparent';
+                document.getElementById('button10').style.backgroundColor = 'transparent';
+                document.getElementById('button11').style.backgroundColor = 'transparent';
+                document.getElementById('button12').style.backgroundColor = 'transparent';
+                document.getElementById('clear3').style.backgroundColor = 'lime';
+            }
+
+
+            function clear4() {
+                document.getElementById('13').classList.remove('selected');
+                document.getElementById('button13').style.backgroundColor = 'transparent';
+                document.getElementById('clear4').style.backgroundColor = 'lime';
+            }
+
+            function startWirecast() {
+                if (document.getElementById('computer-wirecast').style.display === 'block') {
+                    document.getElementById('computer-wirecast').style.display = 'none';
+                    document.getElementById('wirecastlight').style.backgroundColor = 'red';
+                } else {
+                    document.getElementById('computer-wirecast').style.display = 'block';
+                    document.getElementById('wirecastlight').style.backgroundColor = 'lime';
+                }
+            }
+            
+
+
+
+    </script>
+</body>
+</html>
+
+
+
