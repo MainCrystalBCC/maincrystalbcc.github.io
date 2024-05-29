@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.top-container {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+}
+
+.header {
+  padding: 10px 16px;
+  background: #555;
+  color: #f1f1f1;
+}
+
+.content {
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 13px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+
+.box {
+    height: 500px;
+    width: 47%;
+    background-color: #555;
+    border-radius: 15px;
+    border: none;
+    color: white;
+}
+
+.box h3 {
+    padding-left: 13px;
+}
+
+.box p {
+    padding-left: 13px;
+}
+
+
+</style>
+</head>
+<body>
+<!-- 
+<div class="top-container">
+  <h1>Scroll Down</h1>
+  <p>Scroll down to see the sticky effect.</p>
+</div> -->
+
+<div class="header" id="myHeader">
+  <h2>Glacier Trends and Water Availability</h2>
+</div>
+
+<div class="content">
+    <div class="box Box1">
+        <h3>Glacier Trends</h3>
+        <p>Glacier Trends</p>
+    </div>
+
+    <div class="box Box2">
+        <h3>Water Availability</h3>
+        <p>Water Availability</p>
+    </div>
+  
+</div>
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
+
+</body>
+</html>

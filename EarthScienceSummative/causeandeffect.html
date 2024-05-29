@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cause and Effect Relationships</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #7a7878;
+}
+
+.top-container {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+}
+
+.header {
+  padding: 10px 16px;
+  background: #555;
+  color: #f1f1f1;
+}
+
+.content {
+  padding: 16px;
+  /* display: flex;
+  flex-direction: row;
+  gap: 13px; */
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+
+.box {
+    height: fit-content;
+    width: 100%;
+    background-color: #555;
+    border-radius: 15px;
+    border: none;
+    color: white;
+}
+
+.box h1 {
+    padding-left: 13px;
+}
+
+.box h2 {
+    padding-left: 13px;
+}
+
+.bottomBar button {
+    height: 50px;
+    font-size: 20px;
+    width: fit-content;
+    border-radius: 20px;
+    border: 1px black solid;
+    margin-top: 10px;
+}
+img {
+  max-width: 600px;
+}
+
+</style>
+</head>
+<body>
+<!-- 
+<div class="top-container">
+  <h1>Scroll Down</h1>
+  <p>Scroll down to see the sticky effect.</p>
+</div> -->
+
+<div class="header" id="myHeader">
+  <h2>Glacier Trends and Water Availability - Cause and Effect Relationships</h2>
+</div>
+
+<div class="content">
+    <div class="box Box1">
+        <h1>Cause and Effect Relationships</h1>
+        <h2>
+          The size of glaciers has a direct and profound impact on water availability. As glaciers melt, they release freshwater into rivers, lakes, and aquifers, which is crucial for various ecosystems and human activities. However, with the ongoing trend of glacier retreat due to global warming, the volume of meltwater is decreasing. This reduction in glacial meltwater affects seasonal water flows, leading to reduced water availability during dry periods. For example, in regions like the Himalayas and the Andes, communities rely heavily on glacial meltwater for irrigation, drinking water, and hydropower. As glaciers shrink, these water sources become less reliable, threatening agricultural productivity, water supply for households, and energy generation. The cryosphere, hydrosphere, and biosphere are deeply interconnected, and changes in one system can have cascading effects on the others. The cryosphere, which includes all of the Earth's frozen water such as glaciers and ice sheets, influences the hydrosphere by contributing meltwater to rivers, lakes, and oceans. This interaction regulates water flow, availability, and quality. When glaciers retreat, the hydrosphere is directly impacted, leading to altered water cycles and decreased freshwater resources. These changes also affect the biosphere, which encompasses all living organisms. Reduced water availability can lead to habitat loss, decreased biodiversity, and altered ecosystems. For instance, fish populations in glacier-fed rivers may decline due to lower water levels and higher temperatures, affecting both aquatic and terrestrial food webs. Additionally, vegetation that depends on consistent water supply may struggle to survive, impacting agriculture and natural ecosystems.
+       <!-- <br><img src="images/glaciersmelting.webp" alt=""> -->
+
+       <br>
+       <br>
+       Sources: 
+       <br>
+       <a href="https://nsidc.org/home" target="_blank">NSIDC Glacier Mass Balance</a>
+       &nbsp;
+       <a href="https://www.fao.org/land-water/water/scarcity/en/" target="_blank">FAO Water Scarcity Reports</a>
+       &nbsp;
+       <a href="https://www.ipcc.ch/" target="_blank">Intergovernmental Panel on Climate Change (IPCC)</a>
+       &nbsp;
+       <!-- <img src="images/greenland.png" alt=""> -->
+      </h2>
+    </div>
+
+
+    <div class="bottomBar">
+        <a href="potentialsolutions.html"><button>Next | Potential Solutions and Adaptations</button></a>
+    </div>
+
+</div>
+
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quantitative Data</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #7a7878;
+}
+
+.top-container {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+}
+
+.header {
+  padding: 10px 16px;
+  background: #555;
+  color: #f1f1f1;
+}
+
+.content {
+  padding: 16px;
+  /* display: flex;
+  flex-direction: row;
+  gap: 13px; */
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+
+.box {
+    height: fit-content;
+    width: 100%;
+    background-color: #555;
+    border-radius: 15px;
+    border: none;
+    color: white;
+}
+
+.box h1 {
+    padding-left: 13px;
+}
+
+.box h2 {
+    padding-left: 13px;
+}
+
+.bottomBar button {
+    height: 50px;
+    font-size: 20px;
+    width: fit-content;
+    border-radius: 20px;
+    border: 1px black solid;
+    margin-top: 10px;
+}
+img {
+  max-width: 600px;
+}
+
+</style>
+</head>
+<body>
+<!-- 
+<div class="top-container">
+  <h1>Scroll Down</h1>
+  <p>Scroll down to see the sticky effect.</p>
+</div> -->
+
+<div class="header" id="myHeader">
+  <h2>Glacier Trends and Water Availability - Quantitative Data</h2>
+</div>
+
+<div class="content">
+    <div class="box Box1">
+        <h1>Quantitative Data</h1>
+        <h2>
+
+          Quantitative data is essential for understanding the trends in glacier melt and its impact on water availability. This section presents graphs and charts that illustrate these trends, providing a clear visual representation of the changes occurring over time. The data is sourced from reputable scientific studies, government reports, and satellite imagery to ensure accuracy and reliability.
+
+          By analyzing these graphs and charts, we can see the clear and pressing impact of glacier retreat on water availability. The data underscores the importance of addressing climate change and implementing strategies to mitigate its effects on our vital water resources.
+
+
+       <br><img src="images/%lost.jpg" alt="">
+       <img src="images/greenland.png" alt="">
+       <br>
+       Sources: 
+       <br>
+       <a href="https://nsidc.org/home" target="_blank">NSIDC Glacier Mass Balance</a>
+       &nbsp;
+       <a href="https://www.unep.org/" target="_blank">United Nations Environment Programme (UNEP)</a>
+       &nbsp;
+       <a href="https://www.esa.int/" target="_blank">European Space Agency (ESA)</a>
+       &nbsp;
+       
+      </h2>
+    </div>
+
+
+    <div class="bottomBar">
+        <a href="qualitativeobservations.html"><button>Next | Qualitative Observations</button></a>
+    </div>
+
+</div>
+
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Feedback Loop</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #7a7878;
+}
+
+.top-container {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+}
+
+.header {
+  padding: 10px 16px;
+  background: #555;
+  color: #f1f1f1;
+}
+
+.content {
+  padding: 16px;
+  /* display: flex;
+  flex-direction: row;
+  gap: 13px; */
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+
+.box {
+    height: fit-content;
+    width: 100%;
+    background-color: #555;
+    border-radius: 15px;
+    border: none;
+    color: white;
+}
+
+.box h1 {
+    padding-left: 13px;
+}
+
+.box h2 {
+    padding-left: 13px;
+}
+
+.bottomBar button {
+    height: 50px;
+    font-size: 20px;
+    width: fit-content;
+    border-radius: 20px;
+    border: 1px black solid;
+    margin-top: 10px;
+}
+img {
+  max-width: 600px;
+}
+
+</style>
+</head>
+<body>
+<!-- 
+<div class="top-container">
+  <h1>Scroll Down</h1>
+  <p>Scroll down to see the sticky effect.</p>
+</div> -->
+
+<div class="header" id="myHeader">
+  <h2>Glacier Trends and Water Availability - Feedback Loop</h2>
+</div>
+
+<div class="content">
+    <div class="box Box1">
+        <h1>Feedback Loop</h1>
+        <h2>
+          
+          As global temperatures rise due to increased greenhouse gas emissions, glaciers and ice sheets begin to melt at an accelerated rate. This meltwater flows into rivers, lakes, and oceans, initially increasing freshwater availability. However, as glaciers continue to retreat, the long-term supply of meltwater decreases. This reduction in freshwater availability can lead to drought conditions, especially in regions that heavily rely on glacial meltwater for their water needs, such as the Himalayas, the Andes, and parts of North America.
+<br><br>
+Reduced water availability affects local climates and ecosystems. For example, lower river flows can lead to higher water temperatures, which in turn can increase evaporation rates. This loss of water from the surface exacerbates drought conditions, creating a cycle of increasing aridity. Additionally, the loss of reflective ice surfaces (high albedo) exposes darker land or water surfaces, which absorb more solar radiation, further increasing local temperatures and accelerating glacier melt. This creates a feedback loop where glacier retreat and reduced water availability reinforce each other, amplifying the impacts of climate change.
+          
+
+       <br><img src="images/feedbackloop.png" alt="">
+<br>
+Scientific Evidence Supporting the Loop:
+<br>
+<br>
+Temperature Rise and Glacier Retreat: Studies have shown that rising global temperatures correlate strongly with accelerated glacier retreat. According to the IPCC, the average global temperature has increased by about 1.1°C since the late 19th century, contributing significantly to the melting of glaciers worldwide.
+<br>
+<br>
+Source: IPCC Sixth Assessment Report
+<br>
+<br>
+Impact on Freshwater Availability: Research indicates that many major rivers fed by glaciers, such as the Ganges, the Yangtze, and the Colorado River, are experiencing changes in flow patterns due to reduced glacial input. These changes are impacting agriculture, hydropower, and drinking water supplies.
+<br>
+<br>
+Source: <a href="https://nsidc.org/">National Snow and Ice Data Center (NSIDC)</a>
+<br>
+<br>
+Albedo Effect and Local Temperature Increase: The loss of ice surfaces reduces the Earth's albedo, leading to higher absorption of solar radiation and further warming. This effect is particularly noticeable in the Arctic, where the loss of sea ice has been linked to accelerated regional warming.
+<br>
+<br>
+Source: <a href="https://earthobservatory.nasa.gov/">NASA Earth Observatory</a>
+<br>
+<br>
+Evaporation and Drought Intensification: Increased temperatures and reduced water levels in rivers and lakes enhance evaporation rates, contributing to more severe and prolonged droughts. This phenomenon has been observed in several regions, including the western United States and parts of Central Asia.
+<br>
+<br>
+Source: <a href="https://www.usgs.gov/">United States Geological Survey (USGS)</a>
+       <!-- <br>
+          <br>
+       Sources: 
+       <br>
+       <a href="https://www.nationalgeographic.com/environment/topic/climate-change" target="_blank">National Geographic Climate Change</a>
+       &nbsp;
+       <a href="https://www.fao.org/" target="_blank">Food and Agriculture Organization (FAO)</a>
+       &nbsp;
+       <a href="https://www.worldwildlife.org/" target="_blank">World Wildlife Fund (WWF)</a>
+       &nbsp;
+       <a href="https://www.icimod.org/" target="_blank">International Centre for Integrated Mountain Development (ICIMOD)</a>
+       &nbsp;
+        -->
+       <!-- <img src="images/greenland.png" alt=""> -->
+      </h2>
+    </div>
+
+
+    <div class="bottomBar">
+        <a href="index.html"><button>HOMEPAGE</button></a>
+    </div>
+
+</div>
+
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conclusion</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #7a7878;
+}
+
+.top-container {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+}
+
+.header {
+  padding: 10px 16px;
+  background: #555;
+  color: #f1f1f1;
+}
+
+.content {
+  padding: 16px;
+  /* display: flex;
+  flex-direction: row;
+  gap: 13px; */
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+
+.box {
+    height: fit-content;
+    width: 100%;
+    background-color: #555;
+    border-radius: 15px;
+    border: none;
+    color: white;
+}
+
+.box h1 {
+    padding-left: 13px;
+}
+
+.box h2 {
+    padding-left: 13px;
+}
+
+.bottomBar button {
+    height: 50px;
+    font-size: 20px;
+    width: fit-content;
+    border-radius: 20px;
+    border: 1px black solid;
+    margin-top: 10px;
+}
+img {
+  max-width: 600px;
+}
+
+</style>
+</head>
+<body>
+<!-- 
+<div class="top-container">
+  <h1>Scroll Down</h1>
+  <p>Scroll down to see the sticky effect.</p>
+</div> -->
+
+<div class="header" id="myHeader">
+  <h2>Glacier Trends and Water Availability - Conclusion</h2>
+</div>
+
+<div class="content">
+    <div class="box Box1">
+        <h1>Conclusion</h1>
+        <h2>
+          
+          The research and observations detailed throughout this project illustrate the critical and multifaceted role glaciers play in global water availability and ecosystem stability. Key findings underscore the rapid decline in glacier volume worldwide, a phenomenon that poses significant risks to freshwater supplies, agricultural productivity, and biodiversity. The data highlights how glacier retreat is already impacting water flows in major rivers, leading to increased water scarcity during critical periods, and affecting the livelihoods and survival of millions.
+<br>
+The importance of addressing glacier melt and its consequences on water availability cannot be overstated. As these ice masses diminish, so does the resilience of natural systems and human communities that depend on them. The implications for global sea levels, agricultural sectors, and natural habitats are profound and require urgent and concerted efforts to mitigate.
+<br>
+This call to action is not just for further research to continue monitoring glacier changes and predicting future scenarios but also for significant policy changes. Governments, organizations, and communities must collaborate to develop and implement adaptive strategies that address both the causes and effects of glacier retreat. Policies that promote sustainable water and land management, reduce carbon emissions, and support climate resilience initiatives are crucial. Additionally, international cooperation is essential, as the effects of glacier melt transcend borders, affecting global climate systems and water cycles.
+<br>
+<br>
+Suggested Sources for Further Research:
+<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;National Snow and Ice Data Center (NSIDC)
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Source: The NSIDC offers extensive data on glaciers and ice sheets, contributing to global understanding and tracking of cryospheric changes.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Website: <a href="https://nsidc.org/">NSIDC</a>
+<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;United Nations Environment Programme (UNEP)
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Source: UNEP works on environmental issues including climate change, offering resources for policy development and sustainability projects.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Website: <a href="https://www.unep.org/">UNEP</a>
+<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;World Wildlife Fund (WWF)
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Source: WWF is involved in global efforts to address the impacts of climate change on ecosystems and communities, promoting conservation and sustainable practices.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Website: <a href="https://www.worldwildlife.org/">WWF</a>
+<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Food and Agriculture Organization (FAO)
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Source: The FAO provides insights into how water scarcity and climate change affect agricultural sectors worldwide.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Website: <a href="https://www.fao.org/">FAO</a>
+<br>
+<br>
+        
+       <!-- <br><img src="images/glaciersmelting.webp" alt=""> -->
+
+      
+       
+       <!-- <img src="images/greenland.png" alt=""> -->
+      </h2>
+    </div>
+
+
+    <div class="bottomBar">
+        <a href="feedbackloopp.html"><button>Next | Feedback Loop</button></a>
+    </div>
+
+</div>
+
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
+
+</body>
+</html>
